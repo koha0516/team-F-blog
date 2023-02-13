@@ -6,7 +6,7 @@ function get_connect() {
   //パスワード
   $pass = "T4tZhGD-GRUfDtUgF6";
   //データベース名
-  $database = "weather_act";
+  $database = "blog_app";
   //サーバー
   $server = "127.0.0.1:3308";
 

@@ -37,18 +37,17 @@ if (isset($_SESSION['error_pass'])) {
 <html>
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<form action="signUp.php" method="post">
-  <input type="text" name="name" placeholder="名前" value="<?php echo $name; ?>"><br>
-  <input type="date" name="birth" value="<?php echo $birth; ?>"><br>
-  <input type="text" name="mail" placeholder="メール" value="<?php echo $mail; ?>"><br>
-  <input type="password" name="pass1" placeholder="パスワード"><br>
-  <input type="password" name="pass2" placeholder="パスワードの再入力"><br>
+  <form action="signUp.php" method="post">
+    <input type="text" name="name" placeholder="名前" value="<?php echo $name; ?>"><br><br>
+    <input type="date" name="birth" value="<?php echo $birth; ?>"><br><br>
+    <input type="text" name="mail" placeholder="メール" value="<?php echo $mail; ?>"><br><br>
+    <input type="password" name="pass1" placeholder="パスワード"><br><br>
+    <input type="password" name="pass2" placeholder="パスワードの再入力"><br><br>
 
-  <a href="#">戻る</a>
-  <input type="submit" value="登録する">
-</form>
+    <a href="#">戻る</a>
+    <input type="submit" value="登録する">
+  </form>
 </body>
 </html>

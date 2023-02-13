@@ -1,5 +1,0 @@
-
-^	php:S1808"=Move this open curly brace to the beginning of the next line.(œô¢Íùÿÿÿÿ8ôÇâÎã0
-rphp:S100"RRename function "get_connect" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(œô¢Íùÿÿÿÿ8õÇâÎã0
-j	php:S1779"VReplace all non line feed end of line characters in this file "get_connect.php" by LF.8öÇâÎã0
-:php:S125"Remove this commented out code.(¼¨ìœ8øÇâÎã0
