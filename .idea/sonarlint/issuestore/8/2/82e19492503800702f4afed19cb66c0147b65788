@@ -1,0 +1,30 @@
+
+Q	php:S1808"=Move this open curly brace to the beginning of the next line.(†ôÇc
+W	php:S1808"=Move this open curly brace to the beginning of the next line.(ò·º’úÿÿÿÿ
+W	php:S1808
+"=Move this open curly brace to the beginning of the next line.(ó­ú‚úÿÿÿÿ
+W	php:S1808"=Move this open curly brace to the beginning of the next line.(ÏÙ÷Ãÿÿÿÿÿ
+Q	php:S1808"=Move this open curly brace to the beginning of the next line.(¬İ·;
+W	php:S1808)"=Move this open curly brace to the beginning of the next line.(â„€¦ùÿÿÿÿ
+W	php:S18088"=Move this open curly brace to the beginning of the next line.(Ñ¬¿şÿÿÿÿ
+R	php:S1808="=Move this open curly brace to the beginning of the next line.(Ãö§Ğ
+W	php:S1808G"=Move this open curly brace to the beginning of the next line.(¡•Ú˜ÿÿÿÿÿ
+qphp:S100
+"XRename function "space_replacement" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(ó­ú‚úÿÿÿÿ
+qphp:S100"XRename function "length_validation" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(ÏÙ÷Ãÿÿÿÿÿ
+iphp:S100"VRename function "mail_validation" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(¬İ·;
+mphp:S100)"TRename function "pw_validation" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(â„€¦ùÿÿÿÿ
+ophp:S1008"VRename function "repeat_pw_check" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(Ñ¬¿şÿÿÿÿ
+jphp:S100="VRename function "name_validation" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(Ãö§Ğ
+nphp:S100G"URename function "tel_validation" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(¡•Ú˜ÿÿÿÿÿ
+dphp:S101"QRename class "user_function" to match the regular expression ^[A-Z][a-zA-Z0-9]*$.(†ôÇc
+lphp:S1178"SRename this parameter "$re_pw" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(Ñ¬¿şÿÿÿÿ
+e	php:S1779"XReplace all non line feed end of line characters in this file "user_function.php" by LF.
+Z	php:S1126 "EReplace this "if-then-else" statement by a single "return" statement.(“ñ½
+Z	php:S1126/"EReplace this "if-then-else" statement by a single "return" statement.(ºåëˆ
+Z	php:S1126?"EReplace this "if-then-else" statement by a single "return" statement.(¾ƒ“ß
+_	php:S1126M"EReplace this "if-then-else" statement by a single "return" statement.(®‚ãıÿÿÿÿ
+U	php:S6353M";Use concise character class syntax '\d' instead of '[0-9]'.(®‚ãıÿÿÿÿ
+U	php:S6353M";Use concise character class syntax '\d' instead of '[0-9]'.(®‚ãıÿÿÿÿ
+U	php:S6353M";Use concise character class syntax '\d' instead of '[0-9]'.(®‚ãıÿÿÿÿ
+?	php:S5869/"*Remove duplicates in this character class.(ºåëˆ
