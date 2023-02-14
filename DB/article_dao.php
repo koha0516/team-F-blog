@@ -2,7 +2,7 @@
 require_once "get_connect.php";
 
 //ユーザ情報をINSERTするメソッド
-function user_register($name, $birth, $mail, $salt, $password) {
+function article_register($name, $birth, $mail, $salt, $password) {
   try {
     $sql = "INSERT INTO users (user_name, user_birth, user_mail, salt, password, delete_frag) VALUES (:name, :birth, :mail, :salt, :password, 1)";
     $stm = get_connect()->prepare($sql);

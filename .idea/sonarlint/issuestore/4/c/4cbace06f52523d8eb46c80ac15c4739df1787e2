@@ -1,0 +1,12 @@
+
+^	php:S1808-"JPut one space between the closing parenthesis and the opening curly brace.(Îöõf
+X	php:S1808-"DPut one space between this "if" keyword and the opening parenthesis.(Îöõf
+e	php:S1779"QReplace all non line feed end of line characters in this file "signUp.php" by LF.8Î¬Åä0
+a	php:S18717"LThis branch's code block is the same as the block for the branch on line 52.(ÿæ‹Ë
+Q	php:S1793"<Replace this "else if" keyword sequence by "elseif" keyword.(²Áä
+V	php:S1793%"<Replace this "else if" keyword sequence by "elseif" keyword.(ÙÂíµşÿÿÿÿ
+P	php:S1793-"<Replace this "else if" keyword sequence by "elseif" keyword.(Îöõf
+Q	php:S17934"<Replace this "else if" keyword sequence by "elseif" keyword.(¹ÆÙ 
+Q	php:S17937"<Replace this "else if" keyword sequence by "elseif" keyword.(ÿæ‹Ë
+k	php:S4833"QReplace "require_once" with namespace import mechanism through the "use" keyword.(Ú¦•¶ùÿÿÿÿ
+r	php:S4833"QReplace "require_once" with namespace import mechanism through the "use" keyword.(â›ñŞÿÿÿÿÿ8¼ÍæÃä0
