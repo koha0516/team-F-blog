@@ -1,5 +1,9 @@
 <?php
+session_start();
+require_once './DB/user_dao.php';
 
+//sql実行
+$articles = get_articles();
 ?>
 <!doctype html>
 <html lang="en">
@@ -12,5 +16,6 @@
 </head>
 <body>
   <h2>これはログイン前ホーム画面です</h2>
+  <?php  ?>
 </body>
 </html>
