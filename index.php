@@ -51,16 +51,24 @@ $articles = get_articles();
       <div class="content">
         <a href="browse.html">
           <table border="1">
-            <tr>
-              <td >タイトル</td><td style="text-align: right">いいね</td>
-            </tr>
-            <tr>
-              <td colspan="2">文章</td>
-            </tr>
-            <tr>
-              <td>時間</td>
-              <td>ユーザー名</td>
-            </tr>
+            <?php
+              foreach ($articles as $data) {
+            ?>
+              <tr>
+                <td><?php $data['title'] ?></td>
+                <td style="text-align: right">いいね</td>
+              </tr>
+              <tr>
+                <td colspan="2"><?php $data['article_content'] ?></td>
+              </tr>
+              <tr>
+                <td><?php $data['update_at'] ?></td>
+                <td><?php $data['user_id'] ?></td>
+              </tr>
+            <?php
+              }
+            ?>
+
           </table>
         </a>
       </div>
