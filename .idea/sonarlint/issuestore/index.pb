@@ -1,7 +1,4 @@
 
-:
-
-DB/ddl.sql,c\b\cb1e18d25e4d05cb885a3133e96967f16b6a7b98
 B
 DB/get_connect.php,1\6\16668789eb26f37ffda880273b198c2e698cf941
 J

@@ -20,7 +20,7 @@ CREATE TABLE users
     password      varchar(64) not null,
     create_at     timestamp   DEFAULT CURRENT_TIMESTAMP,
     update_at     timestamp   DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    delete_frag   int         not null,
+    delete_frag   int         not null default 0,
     primary key (user_id)
 );
 
@@ -43,7 +43,7 @@ CREATE TABLE articles
     published       int            not null,
     create_at       timestamp      DEFAULT CURRENT_TIMESTAMP,
     update_at       timestamp      DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    delete_frag     int            not null,
+    delete_frag     int            not null default 0,
     primary key (article_id),
     foreign key (tag_id) references tags (tag_id),
     foreign key (user_id) references users (user_id)
@@ -56,7 +56,7 @@ CREATE TABLE follow
     follow_user_id      int         not null,
     followed_user_id    int         not null,
     create_at           timestamp   DEFAULT CURRENT_TIMESTAMP,
-    delete_frag         int         not null,
+    delete_frag         int         not null default 0,
     primary key (follow_id),
     foreign key (follow_user_id) references users (user_id),
     foreign key (followed_user_id) references users (user_id)
@@ -82,7 +82,7 @@ CREATE TABLE comments
     comment_user_id     int             not null,
     comment_content     varchar(500)    not null unique,
     create_at           timestamp       DEFAULT CURRENT_TIMESTAMP,
-    delete_frag         int             not null,
+    delete_frag         int             not null default 0,
     primary key (comment_id),
     foreign key (article_id) references articles (article_id),
     foreign key (comment_user_id) references users (user_id)
