@@ -93,31 +93,31 @@ INSERT INTO `tags` (`tag_id`, `tag_name`)
 VALUES (1, 'ファッション');
 
 INSERT INTO `tags` (`tag_id`, `tag_name`)
-VALUES (1, 'ペット');
+VALUES (2, 'ペット');
 
 INSERT INTO `tags` (`tag_id`, `tag_name`)
-VALUES (1, '料理');
+VALUES (3, '料理');
 
 INSERT INTO `tags` (`tag_id`, `tag_name`)
-VALUES (1, '美容');
+VALUES (4, '美容');
 
 INSERT INTO `tags` (`tag_id`, `tag_name`)
-VALUES (1, '旅行');
+VALUES (5, '旅行');
 
 INSERT INTO `tags` (`tag_id`, `tag_name`)
-VALUES (1, 'グルメ');
+VALUES (6, 'グルメ');
 
 INSERT INTO `tags` (`tag_id`, `tag_name`)
-VALUES (1, 'インテリア＆DIY');
+VALUES (7, 'インテリア＆DIY');
 
 INSERT INTO `tags` (`tag_id`, `tag_name`)
-VALUES (1, 'コラム');
+VALUES (8, 'コラム');
 
 INSERT INTO `tags` (`tag_id`, `tag_name`)
-VALUES (1, '海外生活');
+VALUES (9, '海外生活');
 
 INSERT INTO `tags` (`tag_id`, `tag_name`)
-VALUES (1, '専門家');
+VALUES (10, '専門家');
 
 INSERT INTO `tags` (`tag_id`, `tag_name`)
-VALUES (1, '趣味');
+VALUES (11, '趣味');
