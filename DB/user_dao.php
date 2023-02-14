@@ -1,5 +1,4 @@
 <?php
-
   require_once "get_connect.php";
 
   //ユーザ情報をINSERTするメソッド
