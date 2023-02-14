@@ -5,17 +5,68 @@ require_once './DB/user_dao.php';
 //sql実行
 $articles = get_articles();
 ?>
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>ミジンコ</title>
 </head>
 <body>
-  <h2>これはログイン前ホーム画面です</h2>
-  <?php  ?>
+<!--ヘッダー-->
+<header>
+  <a href="/"><h1>ミジンコ</h1></a>
+  <nav class="pc-nav">
+    <ul>
+      <li class="btn"><a href="login.html">ログイン</a></li>
+      <li class="btn"><a href="registeraccount.html">新規登録</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!--コンテンツ-->
+<div class="wrapper">
+  <div class="container">
+    <article>
+      <div class="side">
+        <h3>カテゴリー</h3>
+        <ol class="sample1">
+          <li><a href="">ファッション</a></li>
+          <li><a href="">ペット</a></li>
+          <li><a href="">料理</a></li>
+          <li><a href="">美容</a></li>
+          <li><a href="">旅行</a></li>
+          <li><a href="">グルメ</a></li>
+          <li><a href="">インテリア＆DIY</a></li>
+          <li><a href="">コラム</a></li>
+          <li><a href="">海外生活</a></li>
+          <li><a href="">専門家</a></li>
+          <li><a href="">趣味</a></li>
+        </ol>
+      </div>
+
+      <div class="content">
+        <a href="browse.html">
+          <table border="1">
+            <tr>
+              <td >タイトル</td><td style="text-align: right">いいね</td>
+            </tr>
+            <tr>
+              <td colspan="2">文章</td>
+            </tr>
+            <tr>
+              <td>時間</td>
+              <td>ユーザー名</td>
+            </tr>
+          </table>
+        </a>
+      </div>
+    </article>
+    <br>
+  </div>
+</div>
 </body>
 </html>
