@@ -49,7 +49,7 @@
 
       <div class="cp_iptxt">
         <label class="ef">
-          <input type="password" name="pw" placeholder="パスワード" required>
+          <input type="password" name="password" placeholder="パスワード" required>
         </label>
       </div>
 
