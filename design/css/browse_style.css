@@ -168,18 +168,16 @@ article {
    padding:50px;
    margin-left:20px;/*サイドバーとメインコンテンツの間に隙間をあけた*/
 }
- 
-.content2 {
+
+.comment {
    position: relative;
    background:rgba(255,255,255,0.75);
    top: 85px;
-   margin: 0 auto;
-   width:70%;
-   height:500px;
+   left: 10%;
+   width:11%;
+   height:95%;
    text-align:center;
-   overflow-y: scroll;
-   padding:50px;
-} 
+ } 
 
 /* サイドバーなしの時のボックス */
 .box {
