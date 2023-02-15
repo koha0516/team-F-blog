@@ -27,14 +27,16 @@ function article_register($title, $contents, $tag, $userid, $published) {
   }
 }
 
-    //    文字数チェックをする関数
-class user_function {
-  static function length_validation($str, $max, $min) {
-  //    文字数カウント
-  $str = mb_strlen($str, "UTF-8");
-  return $str <= $max && $str >= $min;
+class user_function
+{
+  static function length_validation($str, $max, $min)
+  {
+    //    文字数カウント
+    $str = mb_strlen($str, "UTF-8");
+    return $str <= $max && $str >= $min;
   }
 }
+
 function get_articles() {
   try {
     // sql文の構築

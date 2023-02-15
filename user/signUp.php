@@ -54,7 +54,7 @@ if (empty($_POST['pass1'])) {
   $_SESSION['error_pass'] = "パスワードが間違っています";
 }else if (!user_function::pw_validation($_POST['pass1'])) {
   $error = true;
-  $_SESSION['error_pass'] = "パスワードが間違っています";
+  $_SESSION['error_pass'] = "パスワードは8文字以上32文字以内です";
 }
 
 //入力エラーがどこかで発生したらリダイレクトする
