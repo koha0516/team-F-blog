@@ -20,9 +20,13 @@ if (isset($_SESSION['tag'])) {
 if (isset($_SESSION['publish'])) {
     $publish = $_SESSION['publish'];
 }
+$user=[];
 if (isset($_SESSION['user_info'])){
-    $user = $_SESSION['user_id']; 
+    $user = $_SESSION['user_info']; 
+    $userid=$user[0];
 }
+
+var_dump($userid);
 
 //入力エラーがあった場合にエラーメッセージを表示
 if (isset($_SESSION['error_title'])) {
