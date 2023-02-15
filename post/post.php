@@ -19,6 +19,12 @@ if (isset($_POST['tag'])) {
 if (isset($_POST['publish'])) {
   $_SESSION['publish'] = $_POST['publish'];
 }
+$userid="";
+$user=[];
+if (isset($_SESSION['user_info'])){
+    $user = $_SESSION['user_info']; 
+    $userid=$user['user_id'];
+}
 
 //エラー変数初期化
 $error=false;
@@ -26,8 +32,7 @@ $error=false;
 $title = $_SESSION['title'];
 $contents = $_SESSION['contents'];
 $tag = $_SESSION['tag'];
-$publish = $_SESSION['publish'];
-$user =$_SESSION['user_info'];
+$published = $_SESSION['publish'];
 
 // エラーチェック
 if (empty($title)) {
@@ -49,7 +54,5 @@ if (empty($contents)) {
 if ($error) {
   header('Location: index.php');
 }
-
-$user=$_SESSION['user_info'];
-
+article_register($title, $contents, $tag, $userid, $published);
 ?>

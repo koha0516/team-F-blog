@@ -2,7 +2,7 @@
 require_once "get_connect.php";
 
 //投稿内容をINSERTするメソッド
-function article_register($title, $contents, $tag, $user, $published) {
+function article_register($title, $contents, $tag, $userid, $published) {
   try {
     $sql = "INSERT INTO articles (title, article_content, tag_id, user_id, published, delete_frag) VALUES (:title, :contents, :tag, :user, :published, 1)";
     $stm = get_connect()->prepare($sql);
@@ -10,8 +10,8 @@ function article_register($title, $contents, $tag, $user, $published) {
     // プレースホルダに値をバインドする
     $stm->bindValue(':title', $title, PDO::PARAM_STR);
     $stm->bindValue(':contents', $contents, PDO::PARAM_STR);
-    $stm->bindValue(':tag', $tag, PDO::PARAM_STR);
-    $stm->bindValue(':user', $user, PDO::PARAM_STR);
+    $stm->bindValue(':tag', $tag, PDO::PARAM_INT);
+    $stm->bindValue(':user', $userid, PDO::PARAM_INT);
     $stm->bindValue(':published', $published, PDO::PARAM_STR);
 
     // SQL文を実行する
@@ -27,7 +27,6 @@ function article_register($title, $contents, $tag, $user, $published) {
   }
 }
 
-    //    文字数チェックをする関数
 class user_function
 {
   static function length_validation($str, $max, $min)

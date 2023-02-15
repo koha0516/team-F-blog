@@ -21,9 +21,10 @@ if (isset($_SESSION['publish'])) {
     $publish = $_SESSION['publish'];
 }
 $user=[];
+var_dump($_SESSION['user_info']);
 if (isset($_SESSION['user_info'])){
     $user = $_SESSION['user_info']; 
-    $userid=$user[0];
+    $userid=$user['user_id'];
 }
 
 var_dump($userid);
