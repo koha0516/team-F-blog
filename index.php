@@ -84,15 +84,15 @@ var_dump($_SESSION['user_info']);
               foreach ($articles as $data) {
             ?>
               <tr>
-                <td><?php $data['title'] ?></td>
+                <td><?php echo $data['title']; ?></td>
                 <td style="text-align: right">いいね</td>
               </tr>
               <tr>
-                <td colspan="2"><?php $data['article_content'] ?></td>
+                <td colspan="2"><?php echo $data['article_content'] ?></td>
               </tr>
               <tr>
-                <td><?php $data['update_at'] ?></td>
-                <td><?php $data['user_id'] ?></td>
+                <td><?php echo $data['update_at'] ?></td>
+                <td><?php echo $data['user_id'] ?></td>
               </tr>
             <?php
               }

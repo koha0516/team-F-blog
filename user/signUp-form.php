@@ -37,8 +37,23 @@ if (isset($_SESSION['error_pass'])) {
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>signUp</title>
 </head>
 <body>
+
+  <header>
+    <a href="/"><h1>ミジンコ</h1></a>
+    <nav class="pc-nav">
+      <ul>
+        <li class="btn"><a href="./user/login-form.php">ログイン</a></li>
+        <li class="btn"><a href="./user/signUp-form.php">新規登録</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <form action="signUp.php" method="post">
     <input type="text" name="name" placeholder="名前" value="<?php echo $name; ?>"><br><br>
     <input type="date" name="birth" value="<?php echo $birth; ?>"><br><br>
@@ -49,5 +64,6 @@ if (isset($_SESSION['error_pass'])) {
     <a href="#">戻る</a>
     <input type="submit" value="登録する">
   </form>
+
 </body>
 </html>

@@ -19,12 +19,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>login</title>
 </head>
+
 <body>
+  <header>
+    <a href="/"><h1>ミジンコ</h1></a>
+    <nav class="pc-nav">
+      <ul>
+        <li class="btn"><a href="./user/login-form.php">ログイン</a></li>
+        <li class="btn"><a href="./user/signUp-form.php">新規登録</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <div id="login-form">
     <form action="login.php" method="post">
       <input type="text" name="name" placeholder="氏名" value="<?php echo $name; ?>" required><br>
@@ -34,5 +45,6 @@
       <input type="submit" value="ログイン">
     </form>
   </div>
+
 </body>
 </html>
