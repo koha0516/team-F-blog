@@ -26,6 +26,7 @@ function article_register($name, $birth, $mail, $salt, $password) {
     $pdo = null;
   }
 }
+
 function get_articles() {
   try {
     // sql文の構築
