@@ -2,9 +2,6 @@
 require_once '../DB/get_connect.php';
 require_once '../DB/article_dao.php';
 
-echo"<pre>";
-echo var_dump($_POST);
-echo"</pre>";
 
 //投稿内容のフォーム受取⇒セッションに入力情報登録
 if (isset($_POST['title'])) {
