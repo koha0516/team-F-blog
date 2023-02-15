@@ -53,10 +53,10 @@
   function login($name, $password) {
     try {
       // sql文の構築
-      $sql = "SELECT user_id, user_name, user_birth, user_mail FROM users WHERE user_name = :mail AND password = :password AND delete_frag > 0";
+      $sql = "SELECT user_id, user_name, user_birth, user_mail FROM users WHERE user_name = :name AND password = :password AND delete_frag > 0";
       $stm = get_connect()->prepare($sql);
       // プレースホルダに値をバインドする
-      $stm->bindValue(":mail", $name, PDO::PARAM_STR);
+      $stm->bindValue(":name", $name, PDO::PARAM_STR);
       $stm->bindValue(":password", $password, PDO::PARAM_STR);
       // sql文の実行
       $stm->execute();

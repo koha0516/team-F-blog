@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once './DB/user_dao.php';
+require_once './DB/article_dao.php';
+
 
 //sql実行
 $articles = get_articles();
@@ -26,7 +28,6 @@ $articles = get_articles();
     </ul>
   </nav>
 </header>
-
 <!--コンテンツ-->
 <div class="wrapper">
   <div class="container">
