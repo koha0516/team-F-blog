@@ -33,5 +33,21 @@ class user_function {
   //    文字数カウント
   $str = mb_strlen($str, "UTF-8");
   return $str <= $max && $str >= $min;
+
+function get_articles() {
+  try {
+    // sql文の構築
+    $sql = "SELECT * FROM articles WHERE delete_frag < 1";
+    $stm = get_connect()->prepare($sql);
+    $stm->execute();
+    // 検索結果を配列として全件取得する
+    return $stm->fetchAll(PDO::FETCH_ASSOC);
+
+  } catch (PDOException $e) {
+    // エラー発生
+    echo $e->getMessage();
+  } finally {
+    // DB接続を閉じる
+    $pdo = null;
   }
 }
