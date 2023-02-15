@@ -19,6 +19,7 @@ var_dump($_SESSION['user_info']);
 </head>
 <body>
 <!--ヘッダー-->
+<?php if(empty($_SESSION['user_info'])){ ?>
 <header>
   <a href="/"><h1>ミジンコ</h1></a>
   <nav class="pc-nav">
@@ -28,6 +29,33 @@ var_dump($_SESSION['user_info']);
     </ul>
   </nav>
 </header>
+<?php }else { ?>
+<header>
+  <a href="/"><h1>ミジンコ</h1></a>
+  <nav class="pc-nav">
+    <ul>
+      <form action="index.html" method="post">
+        <li>
+          <div style="display:inline-flex">
+            <div class="cp_iptxt">
+              <label class="ef">
+                <input type="search" name="keyward" placeholder="キーワード">
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" aria-label="検索" class="search_btn">検索</button>
+      </form>
+      </li>
+      <li class="btn"><a href="#">いいね</a></li>
+      <li class="btn"><a href="./articles/post-form.php">投稿</a></li>
+      <li class="btn"><a href="./articles/user-edit.php">アカウント</a></li>
+      <li class="btn"><a href=../user/logout.php"">ログアウト</a></li>
+    </ul>
+  </nav>
+</header>
+<?php } ?>
+
 <!--コンテンツ-->
 <div class="wrapper">
   <div class="container">
@@ -50,7 +78,7 @@ var_dump($_SESSION['user_info']);
       </div>
 
       <div class="content">
-        <a href="browse.html">
+        <a href="#">
           <table border="1">
             <?php
               foreach ($articles as $data) {
