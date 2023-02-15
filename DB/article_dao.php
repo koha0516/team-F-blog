@@ -26,30 +26,6 @@ function article_register($name, $birth, $mail, $salt, $password) {
     $pdo = null;
   }
 }
-
-// nameとpasswordを元にユーザ情報を取ってくる関数
-function login($name, $password) {
-  try {
-    // sql文の構築
-    $sql = "SELECT user_id, user_name, user_birth, user_mail FROM users WHERE user_name = :mail AND password = :password AND delete_frag > 0";
-    $stm = get_connect()->prepare($sql);
-    // プレースホルダに値をバインドする
-    $stm->bindValue(":mail", $name, PDO::PARAM_STR);
-    $stm->bindValue(":password", $password, PDO::PARAM_STR);
-    // sql文の実行
-    $stm->execute();
-
-    return $stm->fetch(PDO::FETCH_ASSOC);
-
-  } catch (PDOException $e) {
-    // エラー発生
-    echo $e->getMessage();
-  } finally {
-    // DB接続を閉じる
-    $pdo = null;
-  }
-}
-
 function get_articles() {
   try {
     // sql文の構築
