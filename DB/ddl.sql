@@ -13,9 +13,9 @@ ON blog_app.* TO 'grant_all_user'@'localhost';
 CREATE TABLE users
 (
     user_id       int auto_increment,
-    user_name     varchar(64) not null,
+    user_name     varchar(64) not null unique,
     user_birth    varchar(32) not null,
-    user_mail     varchar(64) not null unique,
+    user_mail     varchar(64) not null,
     salt          varchar(20) not null,
     password      varchar(64) not null,
     create_at     timestamp   DEFAULT CURRENT_TIMESTAMP,
