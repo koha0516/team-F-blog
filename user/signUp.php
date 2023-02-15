@@ -70,7 +70,7 @@ $password = hash('sha256', $pass . $salt);
 //sql実行
 if (user_register($name, $birth, $mail, $salt, $password)) {
   $_SESSION['user_info'] = login($name, $password);
-  header('Location: #');
+  header('Location: ../');
 } else {
   header('Location: signUp-form.php');
 }
