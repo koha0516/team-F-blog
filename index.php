@@ -50,7 +50,7 @@ var_dump($_SESSION['user_info']);
       <li class="btn"><a href="#">いいね</a></li>
       <li class="btn"><a href="./articles/post-form.php">投稿</a></li>
       <li class="btn"><a href="./articles/user-edit.php">アカウント</a></li>
-      <li class="btn"><a href=../user/logout.php"">ログアウト</a></li>
+      <li class="btn"><a href="./user/logout.php">ログアウト</a></li>
     </ul>
   </nav>
 </header>
