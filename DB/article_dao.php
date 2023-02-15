@@ -34,6 +34,7 @@ class user_function {
   $str = mb_strlen($str, "UTF-8");
   return $str <= $max && $str >= $min;
 
+
 function get_articles() {
   try {
     // sql文の構築
