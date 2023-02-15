@@ -2,16 +2,16 @@
 require_once '../DB/get_connect.php';
 require_once '../DB/article_dao.php';
 
-echo"<pre>";
+echo "<pre>";
 echo var_dump($_POST);
-echo"</pre>";
+echo "</pre>";
 
 //投稿内容のフォーム受取⇒セッションに入力情報登録
 if (isset($_POST['title'])) {
   $_SESSION['title'] = htmlspecialchars(trim($_POST['title'], "\x20\t\n\r\0\v  "), ENT_QUOTES, "UTF-8");
 }
 if (isset($_POST['contents'])) {
-    $_SESSION['contents'] = htmlspecialchars($_POST['contents'],ENT_QUOTES,"UTF-8");
+  $_SESSION['contents'] = htmlspecialchars($_POST['contents'], ENT_QUOTES, "UTF-8");
 }
 if (isset($_POST['tag'])) {
   $_SESSION['tag'] = $_POST['tag'];
@@ -21,13 +21,13 @@ if (isset($_POST['publish'])) {
 }
 
 //エラー変数初期化
-$error=false;
+$error = false;
 
 $title = $_SESSION['title'];
 $contents = $_SESSION['contents'];
 $tag = $_SESSION['tag'];
 $publish = $_SESSION['publish'];
-$user =$_SESSION['user_info'];
+$user = $_SESSION['user_info'];
 
 // エラーチェック
 if (empty($title)) {
@@ -50,6 +50,6 @@ if ($error) {
   header('Location: index.php');
 }
 
-$user=$_SESSION['user_info'];
+$user = $_SESSION['user_info'];
 
 ?>
