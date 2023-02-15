@@ -45,8 +45,7 @@ CREATE TABLE articles
     update_at       timestamp      DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     delete_frag     int            not null default 0,
     primary key (article_id),
-    foreign key (tag_id) references tags (tag_id),
-    foreign key (user_id) references users (user_id)
+    foreign key (tag_id) references tags (tag_id)
 );
 
 -- フォロー

@@ -24,8 +24,8 @@ var_dump($_SESSION['user_info']);
   <a href="/"><h1>ミジンコ</h1></a>
   <nav class="pc-nav">
     <ul>
-      <li class="btn"><a href="login.html">ログイン</a></li>
-      <li class="btn"><a href="registeraccount.html">新規登録</a></li>
+      <li class="btn"><a href="./user/login-form.php">ログイン</a></li>
+      <li class="btn"><a href="./user/signUp-form.php">新規登録</a></li>
     </ul>
   </nav>
 </header>
@@ -34,7 +34,7 @@ var_dump($_SESSION['user_info']);
   <a href="/"><h1>ミジンコ</h1></a>
   <nav class="pc-nav">
     <ul>
-      <form action="index.html" method="post">
+      <form action="index.php" method="post">
         <li>
           <div style="display:inline-flex">
             <div class="cp_iptxt">
@@ -63,22 +63,22 @@ var_dump($_SESSION['user_info']);
       <div class="side">
         <h3>カテゴリー</h3>
         <ol class="sample1">
-          <li><a href="">ファッション</a></li>
-          <li><a href="">ペット</a></li>
-          <li><a href="">料理</a></li>
-          <li><a href="">美容</a></li>
-          <li><a href="">旅行</a></li>
-          <li><a href="">グルメ</a></li>
-          <li><a href="">インテリア＆DIY</a></li>
-          <li><a href="">コラム</a></li>
-          <li><a href="">海外生活</a></li>
-          <li><a href="">専門家</a></li>
-          <li><a href="">趣味</a></li>
+          <li><a href="index.php">ファッション</a></li>
+          <li><a href="index.php">ペット</a></li>
+          <li><a href="index.php">料理</a></li>
+          <li><a href="index.php">美容</a></li>
+          <li><a href="index.php">旅行</a></li>
+          <li><a href="index.php">グルメ</a></li>
+          <li><a href="index.php">インテリア＆DIY</a></li>
+          <li><a href="index.php">コラム</a></li>
+          <li><a href="index.php">海外生活</a></li>
+          <li><a href="index.php">専門家</a></li>
+          <li><a href="index.php">趣味</a></li>
         </ol>
       </div>
 
       <div class="content">
-        <a href="#">
+        <a href="">
           <table border="1">
             <?php
               foreach ($articles as $data) {
