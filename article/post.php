@@ -23,6 +23,7 @@ if (isset($_POST['publish'])) {
 //エラー変数初期化
 $error = false;
 
+
 $title = $_SESSION['title'];
 $contents = $_SESSION['contents'];
 $tag = $_SESSION['tag'];

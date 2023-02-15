@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// プレースホルダの変数
+// 初期値設定用
 $title = "";
 $contents = "";
 $tag = "";

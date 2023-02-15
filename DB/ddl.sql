@@ -52,12 +52,11 @@ CREATE TABLE articles
 -- フォロー
 CREATE TABLE follow
 (
-    follow_id           int         auto_increment,
     follow_user_id      int         not null,
     followed_user_id    int         not null,
     create_at           timestamp   DEFAULT CURRENT_TIMESTAMP,
     delete_frag         int         not null default 0,
-    primary key (follow_id),
+    primary key (follow_user_id, followed_user_id),
     foreign key (follow_user_id) references users (user_id),
     foreign key (followed_user_id) references users (user_id)
 );
@@ -121,3 +120,5 @@ VALUES (10, '専門家');
 
 INSERT INTO `tags` (`tag_id`, `tag_name`)
 VALUES (11, '趣味');
+
+
