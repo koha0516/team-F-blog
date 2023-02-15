@@ -1,18 +1,18 @@
 <?php
 require_once "get_connect.php";
 
-//ユーザ情報をINSERTするメソッド
-function article_register($name, $birth, $mail, $salt, $password) {
+//投稿内容をINSERTするメソッド
+function article_register($title, $contents, $tag, $user, $published) {
   try {
-    $sql = "INSERT INTO users (user_name, user_birth, user_mail, salt, password, delete_frag) VALUES (:name, :birth, :mail, :salt, :password, 1)";
+    $sql = "INSERT INTO articles (title, article_content, tag_id, user_id, published, delete_frag) VALUES (:title, :contents, :tag, :user, :published, 1)";
     $stm = get_connect()->prepare($sql);
 
     // プレースホルダに値をバインドする
-    $stm->bindValue(':name', $name, PDO::PARAM_STR);
-    $stm->bindValue(':birth', $birth, PDO::PARAM_STR);
-    $stm->bindValue(':mail', $mail, PDO::PARAM_STR);
-    $stm->bindValue(':salt', $salt, PDO::PARAM_STR);
-    $stm->bindValue(':password', $password, PDO::PARAM_STR);
+    $stm->bindValue(':title', $title, PDO::PARAM_STR);
+    $stm->bindValue(':contents', $contents, PDO::PARAM_STR);
+    $stm->bindValue(':tag', $tag, PDO::PARAM_STR);
+    $stm->bindValue(':user', $user, PDO::PARAM_STR);
+    $stm->bindValue(':published', $published, PDO::PARAM_STR);
 
     // SQL文を実行する
     $stm->execute();
@@ -26,6 +26,14 @@ function article_register($name, $birth, $mail, $salt, $password) {
     $pdo = null;
   }
 }
+
+    //    文字数チェックをする関数
+class user_function {
+  static function length_validation($str, $max, $min) {
+  //    文字数カウント
+  $str = mb_strlen($str, "UTF-8");
+  return $str <= $max && $str >= $min;
+
 
 function get_articles() {
   try {

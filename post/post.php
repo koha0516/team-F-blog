@@ -1,35 +1,55 @@
 <?php
 require_once '../DB/get_connect.php';
-$sql ="";
+require_once '../DB/article_dao.php';
+
+echo"<pre>";
+echo var_dump($_POST);
+echo"</pre>";
+
+//投稿内容のフォーム受取⇒セッションに入力情報登録
+if (isset($_POST['title'])) {
+  $_SESSION['title'] = htmlspecialchars(trim($_POST['title'], "\x20\t\n\r\0\v  "), ENT_QUOTES, "UTF-8");
+}
+if (isset($_POST['contents'])) {
+    $_SESSION['contents'] = htmlspecialchars($_POST['contents'],ENT_QUOTES,"UTF-8");
+}
+if (isset($_POST['tag'])) {
+  $_SESSION['tag'] = $_POST['tag'];
+}
+if (isset($_POST['publish'])) {
+  $_SESSION['publish'] = $_POST['publish'];
+}
+
+//エラー変数初期化
+$error=false;
+
+$title = $_SESSION['title'];
+$contents = $_SESSION['contents'];
+$tag = $_SESSION['tag'];
+$publish = $_SESSION['publish'];
+$user =$_SESSION['user_info'];
+
+// エラーチェック
+if (empty($title)) {
+  $error = true;
+  $_SESSION['error_title'] = "タイトルは必須項目です";
+} else if (!user_function::length_validation($title, 60, 1)) {
+  $error = true;
+  $_SESSION['error_title'] = "タイトルは60文字以内です";
+}
+if (empty($contents)) {
+  $error = true;
+  $_SESSION['error_contents'] = "記事の内容は必須項目です";
+} else if (!user_function::length_validation($contents, 10000, 1)) {
+  $error = true;
+  $_SESSION['error_contents'] = "記事の内容は10000文字以内です";
+}
+
+//入力エラーがどこかで発生したらリダイレクトする
+if ($error) {
+  header('Location: index.php');
+}
+
+$user=$_SESSION['user_info'];
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-    </header>
-    タイトル<input type="text">
-    <textarea></textarea>
-    <select>
-        <option>子育て</option>
-        <option>ファッション</option>
-        <option>ペット</option>
-        <option>料理</option>
-        <option>美容</option>
-        <option>旅行</option>
-        <option>グルメ</option>
-        <option>インテリア&DIY</option>
-        <option>コラム</option>
-        <option>海外生活</option>
-        <option>専門家</option>
-        <option>趣味</option>
-    </select>
-    
-</body>
-</html>
