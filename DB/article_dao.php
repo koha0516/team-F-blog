@@ -4,7 +4,7 @@ require_once "get_connect.php";
 //投稿内容をINSERTするメソッド
 function article_register($title, $contents, $tag, $userid, $published) {
   try {
-    $sql = "INSERT INTO articles (title, article_content, tag_id, user_id, published, delete_frag) VALUES (:title, :contents, :tag, :user, :published, 1)";
+    $sql = "INSERT INTO articles (title, article_content, tag_id, user_id, published) VALUES (:title, :contents, :tag, :user, :published)";
     $stm = get_connect()->prepare($sql);
 
     // プレースホルダに値をバインドする
