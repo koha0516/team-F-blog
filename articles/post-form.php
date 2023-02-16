@@ -49,7 +49,6 @@ if (isset($_SESSION['error_contents'])) {
   echo "<script>alert('" . $_SESSION['error_contents'] . "')</script>";
 }
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

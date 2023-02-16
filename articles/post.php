@@ -22,6 +22,8 @@ if (isset($_SESSION['user_info'])){
     $user = $_SESSION['user_info']; 
     $userid=$user['user_id'];
 }
+var_dump($userid);
+
 
 //エラー変数初期化
 $error=false;
@@ -49,9 +51,10 @@ if (empty($contents)) {
 
 //入力エラーがどこかで発生したらリダイレクトする
 if ($error) {
-  header('Location: index.php');
+//  header('Location: post-form.php');
 }
+
 if(article_register($title, $contents, $tag, $userid, $published)){
-  header('Location: index.php');
+//  header('Location: ../index.php');
 }
 ?>
