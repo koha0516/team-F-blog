@@ -4,7 +4,7 @@ require_once '../DB/user_dao.php';
 require_once '../function/user_function.php';
 
 
-//フォームの値受取⇒セッションにユーザ情報登録（パスワード以外）
+//フォームの入力値を受け取って、セッションにユーザ情報を格納（パスワード以外）
 if (isset($_POST['name'])) {
   $_SESSION['name'] = htmlspecialchars(trim($_POST['name'], "\x20\t\n\r\0\v  "), ENT_QUOTES, "UTF-8");
 }

@@ -1,47 +1,58 @@
 <?php
+//セッションを利用するためのメソッド
 session_start();
 
-// プレースホルダの変数
+//DBに接続
+require_once '../DB/user_dao.php';
+require_once '../DB/article_dao.php';
+
+//dbからデータを取得(記事とタグ)
+$tags = get_tags();
+
+// 初期値設定用に変数を定義
 $title = "";
 $contents = "";
 $tag = [
-    "1"=>"",
-    "2"=>"",
-    "3"=>"",
-    "4"=>"",
-    "5"=>"",
-    "6"=>"",
-    "7"=>"",
-    "8"=>"",
-    "9"=>"",
-    "10"=>"",
-    "11"=>"",
+  "1" => "",
+  "2" => "",
+  "3" => "",
+  "4" => "",
+  "5" => "",
+  "6" => "",
+  "7" => "",
+  "8" => "",
+  "9" => "",
+  "10" => "",
+  "11" => "",
 ];
 $publish = "";
 
-//セッションに値が入っていたらセットする
+//セッションに値が入っていたら初期値としてセットする
 if (isset($_SESSION['title'])) {
-   $title = $_SESSION['title'];
+  $title = $_SESSION['title'];
 }
 if (isset($_SESSION['contents'])) {
-   $contents = $_SESSION['bcontentsirth'];
+  $contents = $_SESSION['contents'];
 }
-if (isset($_SESSION['tag'])) {
-   $tag = $_SESSION['tag'];
-}
+for ($i = 1; $i < 12; $i++)
+  if (isset($_SESSION['tag'])) {
+    if ($_SESSION['tag'] == $i) {
+      $tag["$i"] = "selected";
+    }
+  }
 if (isset($_SESSION['publish'])) {
-    $publish = $_SESSION['publish'];
-}
-$user=[];
-var_dump($_SESSION['user_info']);
-if (isset($_SESSION['user_info'])){
-    $user = $_SESSION['user_info']; 
-    $userid=$user['user_id'];
+  $publish = $_SESSION['publish'];
 }
 
-var_dump($userid);
 
-//入力エラーがあった場合にエラーメッセージを表示
+//セッション（ログイン情報）からユーザIDを取り出す
+if (isset($_SESSION['user_info'])) {
+  $user = $_SESSION['user_info'];
+  $userid = $user['user_id'];
+}
+
+
+//入力エラーがあった場合にエラーメッセージを表示(これはアラートが表示されるJS)
 if (isset($_SESSION['error_title'])) {
   echo "<script>alert('" . $_SESSION['error_title'] . "')</script>";
 }
@@ -53,42 +64,85 @@ if (isset($_SESSION['error_contents'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>投稿ページ</title>
 </head>
+
 <body>
 <header>
-        <a href="/"><h1>ミジンコ</h1></a>
-        <nav class="pc-nav">
-            <ul>
-                <li class="btn"><a href="login.html">ログイン</a></li>
-                <li class="btn"><a href="registeraccount.html">新規登録</a></li>
-            </ul>
-        </nav>
-    </header>
-<form action="post.php" method="post">
-    <input type="text" name="title" placeholder="タイトル" value="<?php echo $title; ?>"><br>
-    <textarea name="contents" placeholder="内容を入力してください" value="<?php echo $contents; ?>"></textarea><br>
-    <select name="tag">
-        <option value="1" <?php echo $tag['1'];?>>ファッション</option>
-        <option value="2" <?php echo $tag['2'];?>>ペット</option>
-        <option value="3" <?php echo $tag['3'];?>>料理</option>
-        <option value="4" <?php echo $tag['4'];?>>美容</option>
-        <option value="5" <?php echo $tag['5'];?>>旅行</option>
-        <option value="6" <?php echo $tag['6'];?>>グルメ</option>
-        <option value="7" <?php echo $tag['7'];?>>インテリア&DIY</option>
-        <option value="8" <?php echo $tag['8'];?>>コラム</option>
-        <option value="9" <?php echo $tag['9'];?>>海外生活</option>
-        <option value="10"<?php echo $tag['10'];?>>専門家</option>
-        <option value="11"<?php echo $tag['11'];?>>趣味</option>
-    </select>
-    <input type="radio" name="publish" value="公開">公開
-    <input type="radio" name="publish" value="非公開">非公開<br>
-    <input type="submit"value="投稿">
-    <a href="../">戻る</a>
-</form>
-    
+  <a href="../"><h1>ミジンコ</h1></a>
+  <nav class="pc-nav">
+    <ul>
+      <!--  検索窓　-->
+      <li>
+        <form action="index.php" method="get">
+          <div style="display:inline-flex">
+            <div class="cp_iptxt">
+              <label class="ef">
+                <input type="search" name="keyward" placeholder="キーワード">
+              </label>
+            </div>
+          </div>
+          <button type="submit" aria-label="検索" class="search_btn">検索</button>
+          <a href="../">戻る</a>
+        </form>
+      </li>
+      <!--  ヘッダーナビ   -->
+      <li class="btn"><a href="#">いいね</a></li>
+      <li class="btn"><a href="../articles/post-form.php">投稿</a></li>
+      <li class="btn"><a href="../user/mypage.php">アカウント</a></li>
+      <li class="btn"><a href="../user/logout.php">ログアウト</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<!--コンテンツ-->
+<div class="wrapper">
+  <div class="container">
+    <article>
+
+      <!--  サイドバー  -->
+      <div class="side">
+        <h3>カテゴリー</h3>
+        <ol class="sample1">
+          <li><a href="../index.php">すべて</a></li>
+          <?php
+          foreach ($tags as $t){
+          ?>
+          <li><a href="../index.php?tag_id=<?php echo $t['tag_id']?>"><?php echo $t['tag_name']?></a></li>
+          <?php } ?>
+        </ol>
+      </div>
+
+      <!--   投稿フォーム   -->
+      <div class="content">
+        <form action="post.php" method="post">
+          <input type="text" name="title" placeholder="タイトル" value="<?php echo $title; ?>"><br>
+          <textarea name="contents" placeholder="内容を入力してください" value="<?php echo $contents; ?>"></textarea>
+          <div class="wordcount">
+            <div>残り</div>
+            <div class="length">10000</div>
+            文字
+          </div>
+          <select name="tag">
+            <?php for ($i = 1; $i < 12; $i++) { ?>
+              <option value="<?php echo $i; ?>" <?php echo $tag[$i]; ?>><?php echo get_tag_name($i); ?></option>
+            <?php } ?>
+          </select><br>
+          <input type="radio" name="publish" value="1">公開
+          <input type="radio" name="publish" value="0">非公開<br>
+          <button type="submit" value="投稿" class="button" >投稿</button>
+        </form>
+      </div>
+
+    </article>
+  </div>
+</div>
+
+<script src="../js/main.js"></script>
 </body>
 </html>

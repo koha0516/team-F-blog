@@ -4,7 +4,7 @@
   //ユーザ情報をINSERTするメソッド
   function user_register($name, $birth, $mail, $salt, $password) {
     try {
-      $sql = "INSERT INTO users (user_name, user_birth, user_mail, salt, password, delete_frag) VALUES (:name, :birth, :mail, :salt, :password, 1)";
+      $sql = "INSERT INTO users (user_name, user_birth, user_mail, salt, password) VALUES (:name, :birth, :mail, :salt, :password)";
       $stm = get_connect()->prepare($sql);
 
       // プレースホルダに値をバインドする
@@ -30,7 +30,7 @@
   function get_salt($name) {
     try {
       // sql文の構築
-      $sql = "SELECT salt FROM users WHERE user_name = :name";
+      $sql = "SELECT salt FROM users WHERE user_name = :name AND delete_frag < 1";
       $stm = get_connect()->prepare($sql);
       // プレースホルダに値をバインドする
       $stm->bindValue(":name", $name, PDO::PARAM_STR);
@@ -53,7 +53,7 @@
   function login($name, $password) {
     try {
       // sql文の構築
-      $sql = "SELECT user_id, user_name, user_birth, user_mail FROM users WHERE user_name = :name AND password = :password AND delete_frag > 0";
+      $sql = "SELECT user_id, user_name, user_birth, user_mail FROM users WHERE user_name = :name AND password = :password  AND delete_frag < 1";
       $stm = get_connect()->prepare($sql);
       // プレースホルダに値をバインドする
       $stm->bindValue(":name", $name, PDO::PARAM_STR);
@@ -94,6 +94,7 @@ function create_follow($follow_user_id, $followed_user_id) {
   }
 }
 
+//DELETE文ではなくUPDATE文で後で実装
 function delete_follow($follow_user_id, $followed_user_id) {
   try {
     $sql = "DELETE FROM follow WHERE follow_user_id = :follow_user_id AND followed_user_id = :followed_user_id";

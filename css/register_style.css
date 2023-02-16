@@ -53,6 +53,14 @@
     font-size: 14px;
  }
 
+ /* カウント文字を横並び */
+.wordcount{
+   display: flex;
+}
+
+.length{
+   display: flex;
+}
  /* サイドバーのリスト装飾 */
  ol.sample1{
    counter-reset:list;
@@ -198,9 +206,9 @@ table{
    border-collapse:  collapse;
    width: 100%;
    text-align: left;
-  border-bottom:1px solid #1b2538;
  }
  th, td{
+   border:1px solid #000000;
    padding: 10px 20px;
  }
 
@@ -263,6 +271,11 @@ table{
 	outline: none;
 	box-shadow: 0 0 5px 1px rgba(0, 37, 79, 0.5);
 }
+
+/* textarea */
+textarea {
+   resize: none;
+ }
 
 /* submitボタン */
 .submit {
