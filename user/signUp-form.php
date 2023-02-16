@@ -48,8 +48,8 @@ if (isset($_SESSION['error_pass'])) {
   <a href="/"><h1>ミジンコ</h1></a>
   <nav class="pc-nav">
     <ul>
-      <li class="btn"><a href="./user/login-form.php">ログイン</a></li>
-      <li class="btn"><a href="./user/signUp-form.php">新規登録</a></li>
+      <li class="btn"><a href="login-form.php">ログイン</a></li>
+      <li class="btn"><a href="signUp-form.php">新規登録</a></li>
     </ul>
   </nav>
 </header>

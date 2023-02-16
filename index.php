@@ -7,7 +7,7 @@ $articles =[];
 if(!empty($_GET['tag_id'])) {
   $articles = get_tag_articles($_GET['tag_id']);
 }else{
-//  $articles = get_articles();
+  $articles = get_articles();
 }
 $tags = get_tags();
 ?>
