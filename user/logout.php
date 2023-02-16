@@ -8,4 +8,4 @@ if(isset($_COOKIE[session_name()])){
 session_destroy();
 
 //ログイン前ページに飛ぶ
-//header('Location: ../index.php');
+header('Location: ../index.php');
