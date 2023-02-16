@@ -55,6 +55,28 @@ function get_articles() {
   }
 }
 
+//userごとに記事を取り出す
+function get_user_articles($user_id) {
+  try {
+    // sql文の構築
+    $sql = "SELECT * FROM articles WHERE user_id=:user_id AND delete_frag < 1";
+    $stm = get_connect()->prepare($sql);
+
+    $stm->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+
+    $stm->execute();
+    // 検索結果を配列として全件取得する
+    return $stm->fetchAll(PDO::FETCH_ASSOC);
+
+  } catch (PDOException $e) {
+    // エラー発生
+    echo $e->getMessage();
+  } finally {
+    // DB接続を閉じる
+    $pdo = null;
+  }
+}
+
 //投稿内容をUPDATEするメソッド
 function article_update($title, $contents, $tag, $userid, $published, $articleid) {
   try {

@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #F2EBDE;
+}
+
+header {
+  padding: 10px 4% 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #005B75;
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+  color: #fff;
+}
+
+h2 {
+  font-size: 30px;
+  color: #005B75;
+  padding-top: 25px;
+}
+
+a {
+  text-decoration: none;
+  color: #00556D;
+  display:block;
+}
+
+nav {
+  margin: 0 0 0 auto;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+}
+
+li {
+  margin: 0 0 0 15px;
+  font-size: 14px;
+}
+
+/* ボタンの装飾 */
+.btn a {
+  background: #eee;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  width: 120px;
+  max-width: 240px;
+  padding: 10px 25px;
+  color: #313131;
+  transition: 0.3s ease-in-out;
+  font-weight: 500;
+  z-index:0;
+}
+.btn a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  display: block;
+  background: #74a7be;
+  transition: .3s;
+  left:0;
+}
+.btn a:hover {
+  color: #FFF;
+}
+.btn a:hover:before {
+  width: 100%;
+  z-index: -1;
+}
+
+/* ボタンの装飾2 */
+.btn2 a {
+  font-size: 14px;
+  background: #B19A7F;
+  position: relative;
+  display: inline-block;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  width: 110px;
+  max-width: 240px;
+  padding: 10px 25px;
+  color: #313131;
+  transition: 0.3s ease-in-out;
+  font-weight: 500;
+  z-index:0;
+}
+.btn2 a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  display: block;
+  background: #8d775e;
+  transition: .3s;
+  left:0;
+}
+.btn2 a:hover {
+  color: #FFF;
+}
+.btn2 a:hover:before {
+  width: 100%;
+  z-index: -1;
+}
