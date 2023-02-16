@@ -51,5 +51,7 @@ if (empty($contents)) {
 if ($error) {
   header('Location: index.php');
 }
-article_register($title, $contents, $tag, $userid, $published);
+if(article_register($title, $contents, $tag, $userid, $published)){
+  header('Location: index.php');
+}
 ?>
