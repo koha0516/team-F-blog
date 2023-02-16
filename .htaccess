@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^index.php/$ /index.php/aaa.cgi?test=01&no=123#link
