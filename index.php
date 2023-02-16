@@ -2,10 +2,14 @@
 session_start();
 require_once './DB/user_dao.php';
 require_once './DB/article_dao.php';
-
-//sql実行
-$articles = get_articles();
-var_dump($_SESSION['user_info']);
+$articles =[];
+//dbからデータを取得
+if(!empty($_GET['tag_id'])) {
+  $articles = get_tag_articles($_GET['tag_id']);
+}else{
+  $articles = get_articles();
+}
+$tags = get_tags();
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +54,7 @@ var_dump($_SESSION['user_info']);
       <li class="btn"><a href="#">いいね</a></li>
       <li class="btn"><a href="./articles/post-form.php">投稿</a></li>
       <li class="btn"><a href="./articles/user-edit.php">アカウント</a></li>
-      <li class="btn"><a href=../user/logout.php"">ログアウト</a></li>
+      <li class="btn"><a href="./user/logout.php">ログアウト</a></li>
     </ul>
   </nav>
 </header>
@@ -60,39 +64,34 @@ var_dump($_SESSION['user_info']);
 <div class="wrapper">
   <div class="container">
     <article>
+
       <div class="side">
         <h3>カテゴリー</h3>
         <ol class="sample1">
-          <li><a href="index.php">ファッション</a></li>
-          <li><a href="index.php">ペット</a></li>
-          <li><a href="index.php">料理</a></li>
-          <li><a href="index.php">美容</a></li>
-          <li><a href="index.php">旅行</a></li>
-          <li><a href="index.php">グルメ</a></li>
-          <li><a href="index.php">インテリア＆DIY</a></li>
-          <li><a href="index.php">コラム</a></li>
-          <li><a href="index.php">海外生活</a></li>
-          <li><a href="index.php">専門家</a></li>
-          <li><a href="index.php">趣味</a></li>
+          <?php
+          foreach ($tags as $tag){
+          ?>
+          <li><a href="index.php?tag_id=<?php echo $tag['tag_id']?>"><?php echo $tag['tag_name']?></a></li>
+          <?php } ?>
         </ol>
       </div>
 
       <div class="content">
         <a href="">
-          <table border="1">
+          <table>
             <?php
               foreach ($articles as $data) {
             ?>
               <tr>
-                <td><?php $data['title'] ?></td>
+                <td><?php echo $data['title']; ?></td>
                 <td style="text-align: right">いいね</td>
               </tr>
               <tr>
-                <td colspan="2"><?php $data['article_content'] ?></td>
+                <td colspan="2"><?php echo $data['article_content'] ?></td>
               </tr>
               <tr>
-                <td><?php $data['update_at'] ?></td>
-                <td><?php $data['user_id'] ?></td>
+                <td><?php echo $data['update_at'] ?></td>
+                <td><?php echo $data['user_id'] ?></td>
               </tr>
             <?php
               }

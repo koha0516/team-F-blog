@@ -37,17 +37,64 @@ if (isset($_SESSION['error_pass'])) {
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>signUp</title>
 </head>
 <body>
-  <form action="signUp.php" method="post">
-    <input type="text" name="name" placeholder="名前" value="<?php echo $name; ?>"><br><br>
-    <input type="date" name="birth" value="<?php echo $birth; ?>"><br><br>
-    <input type="text" name="mail" placeholder="メール" value="<?php echo $mail; ?>"><br><br>
-    <input type="password" name="pass1" placeholder="パスワード"><br><br>
-    <input type="password" name="pass2" placeholder="パスワードの再入力"><br><br>
 
-    <a href="#">戻る</a>
-    <input type="submit" value="登録する">
+<header>
+  <a href="/"><h1>ミジンコ</h1></a>
+  <nav class="pc-nav">
+    <ul>
+      <li class="btn"><a href="login-form.php">ログイン</a></li>
+      <li class="btn"><a href="signUp-form.php">新規登録</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!--コンテンツ-->
+<div class="box">
+  <h2>新規登録</h2>
+  <form action="signUp.php" method="post">
+
+    <div class="cp_iptxt">
+      <label class="ef">
+        <input type="text" name="name" placeholder="お名前">
+      </label>
+    </div>
+
+    <div class="cp_iptxt">
+      <label class="ef">
+        <input type="date" name="birth" value="<?php echo $birth; ?>">
+      </label>
+    </div>
+
+    <div class="cp_iptxt">
+      <label class="ef">
+        <input type="text" name="mail" placeholder="メールアドレス" value="<?php echo $mail; ?>">
+      </label>
+    </div>
+
+    <div class="cp_iptxt">
+      <label class="ef">
+        <input type="password" name="pass1" placeholder="パスワード">
+      </label>
+    </div>
+
+    <div class="cp_iptxt">
+      <label class="ef">
+        <input type="password" name="pass2" placeholder="パスワードの再入力">
+      </label>
+    </div>
+    <div style="display:inline-flex;">
+      <button type="submit" value="登録" class="button">登録</button>
   </form>
+
+  <div class="btn2"><a href="index.php">戻る</a></div>
+  <br>
+</div>
+
 </body>
 </html>

@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <title>ミジンコ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>ミジンコ/投稿</title>
 </head>
 <body>
     <!--ヘッダー-->
     <header>
-            <a href="/"><h1>ミジンコ</h1></a>
+            <a href="./"><h1>ミジンコ</h1></a>
         <nav class="pc-nav">
             <ul>
-                <li class="btn"><a href="#">ログイン</a></li>
-                <li class="btn"><a href="#">新規登録</a></li>
+                <li class="btn"><a href="">いいね</a></li>
+                <li class="btn"><a href="register.html">投稿</a></li>
+                <li class="btn"><a href="mypage.html">アカウント</a></li>
+                <li class="btn"><a href="">ログアウト</a></li>
             </ul>
         </nav>
     </header>
@@ -24,15 +26,38 @@
         <div class="container">
             <article>
                 <div class="side">
-                    あいうえお
+                    <h3>カテゴリー</h3>
+                    <ol class="sample1">
+                        <li><a href="">ファッション</a></li>
+                        <li><a href="">ペット</a></li>
+                        <li><a href="">料理</a></li>
+                        <li><a href="">美容</a></li>
+                        <li><a href="">旅行</a></li>
+                        <li><a href="">グルメ</a></li>
+                        <li><a href="">インテリア＆DIY</a></li>
+                        <li><a href="">コラム</a></li>
+                        <li><a href="">海外生活</a></li>
+                        <li><a href="">専門家</a></li>
+                        <li><a href="">趣味</a></li>
+                    </ol>
                 </div>
                 
                 <div class="content">
-                    あいうえお
+                    <form action="" method="post">
+                        <textarea name="" id="textarea"></textarea>
+                        <div class="wordcount">
+                            <div>残り</div>
+                            <div class="length">10000</div>
+                            文字
+                        </div>
+                    
+                    <button type="submit" value="投稿" class="button" disabled>投稿</button>
+                </form>
                 </div>
               </article>
           <br>
          </div>
         </div>
+<script src="js/main.js"></script>
 </body>
 </html>

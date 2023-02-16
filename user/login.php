@@ -8,7 +8,7 @@ $error = false;
 
 //フォームの値受け取り
 $name = htmlspecialchars($_POST['name'], ENT_QUOTES, "UTF-8");
-$pass = htmlspecialchars($_POST['pass'], ENT_QUOTES, "UTF-8");
+$pass = htmlspecialchars($_POST['password'], ENT_QUOTES, "UTF-8");
 
 // 値が入っているかチェック
 if (empty($name)) {

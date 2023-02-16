@@ -54,6 +54,7 @@ function get_articles() {
     $pdo = null;
   }
 }
+
 //投稿内容をUPDATEするメソッド
 function article_update($title, $contents, $tag, $userid, $published, $articleid) {
   try {
@@ -72,6 +73,25 @@ function article_update($title, $contents, $tag, $userid, $published, $articleid
     $stm->execute();
 
     return true;
+    
+  } catch (PDOException $e) {
+   // エラー発生
+   echo $e->getMessage();
+  } finally {
+    // DB接続を閉じる
+   $pdo = null;
+  }
+}
+
+function get_tags() {
+  try {
+    // sql文の構築
+    $sql = "SELECT * FROM tags";
+    $stm = get_connect()->prepare($sql);
+    $stm->execute();
+    // 検索結果を配列として全件取得する
+    return $stm->fetchAll(PDO::FETCH_ASSOC);
+    
   } catch (PDOException $e) {
     // エラー発生
     echo $e->getMessage();
@@ -80,7 +100,8 @@ function article_update($title, $contents, $tag, $userid, $published, $articleid
     $pdo = null;
   }
 }
-//articleidをもとに一覧取得
+
+//articleidをもとに一件取得
 function get_article($articleid) {
   try {
     // sql文の構築
@@ -91,6 +112,28 @@ function get_article($articleid) {
     $stm->execute();
     // 検索結果を配列として全件取得する
     return $article=$stm->fetch(PDO::FETCH_ASSOC);
+    
+    } catch (PDOException $e) {
+    // エラー発生
+    echo $e->getMessage();
+  } finally {
+    // DB接続を閉じる
+    $pdo = null;
+  }
+}
+
+function get_tag_articles($tag_id) {
+  try {
+    // sql文の構築
+    $sql = "SELECT * FROM articles WHERE tag_id = :tag_id AND delete_frag < 1";
+    $stm = get_connect()->prepare($sql);
+    // プレースホルダに値をバインドする
+    $stm->bindValue(':tag_id', $tag_id, PDO::PARAM_INT);
+    // sql文の実行
+    $stm->execute();
+
+    return $stm->fetchAll(PDO::FETCH_ASSOC);
+
   } catch (PDOException $e) {
     // エラー発生
     echo $e->getMessage();
@@ -99,3 +142,4 @@ function get_article($articleid) {
     $pdo = null;
   }
 }
+
