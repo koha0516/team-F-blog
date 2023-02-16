@@ -78,7 +78,7 @@ $tags = get_tags();
 
       <div class="content">
         <a href="">
-          <table border="1">
+          <table>
             <?php
               foreach ($articles as $data) {
             ?>
