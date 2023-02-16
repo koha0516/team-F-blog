@@ -4,7 +4,19 @@ session_start();
 // プレースホルダの変数
 $title = "";
 $contents = "";
-$tag = "";
+$tag = [
+    "1"=>"",
+    "2"=>"",
+    "3"=>"",
+    "4"=>"",
+    "5"=>"",
+    "6"=>"",
+    "7"=>"",
+    "8"=>"",
+    "9"=>"",
+    "10"=>"",
+    "11"=>"",
+];
 $publish = "";
 
 //セッションに値が入っていたらセットする
@@ -57,26 +69,26 @@ if (isset($_SESSION['error_contents'])) {
             </ul>
         </nav>
     </header>
-    <form action="post.php" method="post">
-        <input type="text" name="title" placeholder="タイトル"><br>
-        <textarea name="contents" placeholder="内容を入力してください"></textarea><br>
-        <select name="tag">
-            <option value="1">ファッション</option>
-            <option value="2">ペット</option>
-            <option value="3">料理</option>
-            <option value="4">美容</option>
-            <option value="5">旅行</option>
-            <option value="6">グルメ</option>
-            <option value="7">インテリア&DIY</option>
-            <option value="8">コラム</option>
-            <option value="9">海外生活</option>
-            <option value="10">専門家</option>
-            <option value="11">趣味</option>
-        </select>
-        <input type="radio" name="publish" value="公開">公開
-        <input type="radio" name="publish" value="非公開">非公開<br>
-        <input type="submit"value="投稿">
-        <a href="../">戻る</a>
+<form action="post.php" method="post">
+    <input type="text" name="title" placeholder="タイトル" value="<?php echo $title; ?>"><br>
+    <textarea name="contents" placeholder="内容を入力してください" value="<?php echo $contents; ?>"></textarea><br>
+    <select name="tag">
+        <option value="1" <?php echo $tag['1'];?>>ファッション</option>
+        <option value="2" <?php echo $tag['2'];?>>ペット</option>
+        <option value="3" <?php echo $tag['3'];?>>料理</option>
+        <option value="4" <?php echo $tag['4'];?>>美容</option>
+        <option value="5" <?php echo $tag['5'];?>>旅行</option>
+        <option value="6" <?php echo $tag['6'];?>>グルメ</option>
+        <option value="7" <?php echo $tag['7'];?>>インテリア&DIY</option>
+        <option value="8" <?php echo $tag['8'];?>>コラム</option>
+        <option value="9" <?php echo $tag['9'];?>>海外生活</option>
+        <option value="10"<?php echo $tag['10'];?>>専門家</option>
+        <option value="11"<?php echo $tag['11'];?>>趣味</option>
+    </select>
+    <input type="radio" name="publish" value="公開">公開
+    <input type="radio" name="publish" value="非公開">非公開<br>
+    <input type="submit"value="投稿">
+    <a href="../">戻る</a>
 </form>
     
 </body>
