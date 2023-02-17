@@ -38,7 +38,7 @@ if (isset($_SESSION['error_contents'])) {
         </ul>
     </nav>
 </header>
-<?php echo $article['article_content'] ?>
+
 <form action="user-edit.php" method="post">
     <input type="text" name="title" placeholder="タイトル" value="<?php echo $article['title'] ?>"><br>
     <textarea name="contents" placeholder="内容を入力してください"><?php echo $article['article_content'] ?></textarea><br>

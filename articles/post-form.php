@@ -24,10 +24,33 @@ if (isset($_SESSION['title'])) {
    $title = $_SESSION['title'];
 }
 if (isset($_SESSION['contents'])) {
-   $contents = $_SESSION['bcontentsirth'];
+   $contents = $_SESSION['contents'];
 }
-if (isset($_SESSION['tag'])) {
-   $tag = $_SESSION['tag'];
+
+if(isset($_SESSION['tag'])){
+    if($_SESSION['tag'] === "1"){
+        $tag['1'] = "checked";
+    } else if($_SESSION['tag'] === "2"){
+        $tag['2'] = "checked";
+    }else if($_SESSION['tag'] === "3"){
+        $tag['3'] = "checked";
+    }else if($_SESSION['tag'] === "4"){
+        $tag['4'] = "checked";
+    }else if($_SESSION['tag'] === "5"){
+        $tag['5'] = "checked";
+    }else if($_SESSION['tag'] === "6"){
+        $tag['6'] = "checked";
+    }else if($_SESSION['tag'] === "7"){
+        $tag['7'] = "checked";
+    }else if($_SESSION['tag'] === "8"){
+        $tag['8'] = "checked";
+    }else if($_SESSION['tag'] === "9"){
+        $tag['9'] = "checked";
+    }else if($_SESSION['tag'] === "10"){
+        $tag['10'] = "checked";
+    }else if($_SESSION['tag'] === "11"){
+        $tag['11'] = "checked";
+    }
 }
 if (isset($_SESSION['publish'])) {
     $publish = $_SESSION['publish'];
@@ -39,7 +62,6 @@ if (isset($_SESSION['user_info'])){
     $userid=$user['user_id'];
 }
 
-var_dump($userid);
 
 //入力エラーがあった場合にエラーメッセージを表示
 if (isset($_SESSION['error_title'])) {
