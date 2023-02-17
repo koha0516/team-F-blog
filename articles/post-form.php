@@ -34,12 +34,13 @@ if (isset($_SESSION['title'])) {
 if (isset($_SESSION['contents'])) {
   $contents = $_SESSION['contents'];
 }
-for ($i = 1; $i < 12; $i++)
+for ($i = 1; $i < 12; $i++) {
   if (isset($_SESSION['tag'])) {
     if ($_SESSION['tag'] == $i) {
       $tag["$i"] = "selected";
     }
   }
+}
 if (isset($_SESSION['publish'])) {
   $publish = $_SESSION['publish'];
 }

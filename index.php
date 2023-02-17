@@ -10,6 +10,8 @@ require_once './DB/article_dao.php';
 $articles =[];
 if(!empty($_GET['tag_id'])) {
   $articles = get_tag_articles($_GET['tag_id']);
+}else if(!empty($_GET['keyword'])) {
+  $articles = get_keyword_articles($_GET['keyword']);
 }else{
   $articles = get_articles();
 }
@@ -40,7 +42,7 @@ $tags = get_tags();
           <div style="display:inline-flex">
             <div class="cp_iptxt">
               <label class="ef">
-                <input type="search" name="keyward" placeholder="キーワード">
+                <input type="search" name="keyword" placeholder="キーワード">
               </label>
             </div>
           </div>
@@ -104,12 +106,15 @@ $tags = get_tags();
       <!--   記事一覧  (新しい順) -->
       <div class="content">
         <?php
+        if(!empty($articles)){
         foreach (array_reverse($articles) as $data) {
         ?>
           <table>
             <tr>
               <td><a href="./articles/browse-article.php?article_id=<?php echo $data['article_id'] ?>"><?php echo $data['title']; ?></a></td>
-              <td style="text-align: right">いいねボタン</td>
+              <td style="text-align: right">
+                <?php if(!empty($_SESSION['user_info'])){ ?> いいねボタン <?php } ?>
+              </td>
             </tr>
             <tr>
               <td colspan="2"><a href="./articles/browse-article.php?article_id=<?php echo $data['article_id'] ?>"><?php echo $data['article_content'] ?></a></td>
@@ -122,6 +127,9 @@ $tags = get_tags();
 
           <br>
         <?php
+        }
+        }else{
+          echo "<h2>一致する記事はありませんでした</h2>";
         }
         ?>
       </div>

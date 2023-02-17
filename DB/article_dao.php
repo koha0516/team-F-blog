@@ -68,6 +68,29 @@ function get_user_articles($user_id) {
   }
 }
 
+//キーワード検索して記事を取り出す
+function get_keyword_articles($keyword) {
+  try {
+    // sql文の構築
+    $keyword = "%".$keyword."%";
+    $sql = "SELECT * FROM articles WHERE title LIKE :keyword AND delete_frag < 1 AND published > 0";
+    $stm = get_connect()->prepare($sql);
+
+    $stm->bindValue(':keyword', $keyword, PDO::PARAM_STR);
+
+    $stm->execute();
+    // 検索結果を配列として全件取得する
+    return $stm->fetchAll(PDO::FETCH_ASSOC);
+
+  } catch (PDOException $e) {
+    // エラー発生
+    echo $e->getMessage();
+  } finally {
+    // DB接続を閉じる
+    $pdo = null;
+  }
+}
+
 function get_own_articles($user_id) {
   try {
     // sql文の構築
