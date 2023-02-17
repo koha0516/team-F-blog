@@ -21,6 +21,7 @@ function article_register($title, $contents, $tag, $userid, $published) {
   } catch (PDOException $e) {
     // エラー発生
     echo $e->getMessage();
+    return false;
   } finally {
     // DB接続を閉じる
     $pdo = null;
