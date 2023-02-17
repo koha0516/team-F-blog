@@ -5,22 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e537442-cd55-47f6-ab13-fead5df2173c" name="変更" comment="">
-      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/2/126b0f8c1ec95fb3a2541745bfc21365b438d668" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/c/4cbace06f52523d8eb46c80ac15c4739df1787e2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/e/9ec38d3a49aa036dd4822ca3c523b262fa76e7ef" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/design/browse.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/design/follow.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/design/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/design/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/design/mypage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/design/password.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/design/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/design/registeraccount.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/user_dao.php" beforeDir="false" afterPath="$PROJECT_DIR$/DB/user_dao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/post-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/articles/post-form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/articles/post.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/login.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +19,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,12 +39,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1676440231" />
+                    <option name="branchName" value="feature_articles" />
+                    <option name="lastUsedInstant" value="1676512413" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="feature_articles" />
-                    <option name="lastUsedInstant" value="1676439292" />
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1676511826" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="feature-login" />
@@ -73,19 +70,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/php_demo/team-F-blog/DB&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/xampp/htdocs/php_demo/team-F-blog/DB",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\php_demo\team-F-blog\DB" />
@@ -112,7 +111,9 @@
       <workItem from="1676249346730" duration="9341000" />
       <workItem from="1676335332757" duration="4978000" />
       <workItem from="1676421200368" duration="16426000" />
-      <workItem from="1676449366917" duration="4880000" />
+      <workItem from="1676449366917" duration="11823000" />
+      <workItem from="1676518489651" duration="604000" />
+      <workItem from="1676537001645" duration="917000" />
     </task>
     <servers />
   </component>

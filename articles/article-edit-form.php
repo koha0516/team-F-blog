@@ -4,19 +4,41 @@ require_once '../DB/get_connect.php';
 require_once '../DB/article_dao.php';
 
 //記事のIDを取得
-if (isset($_GET['articleid'])) {
-  $_SESSION['articleid'] = $_GET['articleid'];
+if (isset($_GET['article_id'])) {
+  $_SESSION['article_id'] = $_GET['article_id'];
 }
+
+$tag = [
+  "1" => "",
+  "2" => "",
+  "3" => "",
+  "4" => "",
+  "5" => "",
+  "6" => "",
+  "7" => "",
+  "8" => "",
+  "9" => "",
+  "10" => "",
+  "11" => "",
+];
 
 //IDをもとに記事の情報を取得
-$article = get_article($_SESSION['articleid']);
+$article = get_article($_SESSION['article_id']);
 
-//入力エラーがあった場合にエラーメッセージを表示
-if (isset($_SESSION['error_title'])) {
-  echo "<script>alert('" . $_SESSION['error_title'] . "')</script>";
+//取り出した情報をもとにタグにチェックを入れる
+for ($i = 1; $i < 12; $i++) {
+  if ($article['tag_id'] == $i) {
+    $tag["$i"] = "selected";
+  }
 }
-if (isset($_SESSION['error_contents'])) {
-  echo "<script>alert('" . $_SESSION['error_contents'] . "')</script>";
+
+//取り出した情報をもとに公開フラグを選択する
+$p1 = "";
+$p2 = "";
+if ($article['published'] == 1) {
+  $p1 = "checked";
+}else{
+  $p2 = "checked";
 }
 ?>
 
@@ -40,23 +62,20 @@ if (isset($_SESSION['error_contents'])) {
 </header>
 
 <form action="user-edit.php" method="post">
-    <input type="text" name="title" placeholder="タイトル" value="<?php echo $article['title'] ?>"><br>
-    <textarea name="contents" placeholder="内容を入力してください"><?php echo $article['article_content'] ?></textarea><br>
-    <select name="tag">
-        <option value="1">ファッション</option>
-        <option value="2">ペット</option>
-        <option value="3">料理</option>
-        <option value="4">美容</option>
-        <option value="5">旅行</option>
-        <option value="6">グルメ</option>
-        <option value="7">インテリア&DIY</option>
-        <option value="8">コラム</option>
-        <option value="9">海外生活</option>
-        <option value="10">専門家</option>
-        <option value="11">趣味</option>
-    </select>
-    <input type="radio" name="publish" value="公開">公開
-    <input type="radio" name="publish" value="非公開">非公開<br>
+  <input type="text" name="title" placeholder="タイトル" value="<?php echo $article['title']; ?>"><br>
+  <textarea name="contents" placeholder="内容を入力してください"><?php echo $article['article_content']; ?></textarea>
+  <div class="wordcount">
+    <div>残り</div>
+    <div class="length">10000</div>
+    文字
+  </div>
+  <select name="tag">
+    <?php for ($i = 1; $i < 12; $i++) { ?>
+      <option value="<?php echo $i; ?>" <?php echo $tag[$i]; ?>><?php echo get_tag_name($i); ?></option>
+    <?php } ?>
+  </select><br>
+  <input type="radio" name="publish" value="1" <?php echo $p1; ?>>公開
+  <input type="radio" name="publish" value="0" <?php echo $p2; ?>>非公開<br>
     <input type="submit"value="更新">
     <a href="../">戻る</a>
 </form>

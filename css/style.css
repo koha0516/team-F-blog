@@ -198,9 +198,9 @@ table{
    border-collapse:  collapse;
    width: 100%;
    text-align: left;
+  border-bottom:1px solid #1b2538;
  }
  th, td{
-   border:1px solid #000000;
    padding: 10px 20px;
  }
 

@@ -1,19 +1,14 @@
 <?php
-  session_start();
+//セッションを利用するためのメソッド
+session_start();
 
-  //セッションに値が入っていたら初期値としてセットする
-  $name = "";
-  if (isset($_SESSION['name'])) {
-    $name = $_SESSION['name'];
-  }
+// 初期値設定用に変数を定義
+$name = "";
+//セッションに値が入っていたら初期値としてセットする
+if (isset($_SESSION['name'])) {
+  $name = $_SESSION['name'];
+}
 
-  // エラーメッセージ表示
-  if (isset($_SESSION['error_name'])) {
-    echo "<script>alert('" . $_SESSION['error_name'] . "')</script>";
-  }
-  if (isset($_SESSION['error_pass'])) {
-    echo "<script>alert('" . $_SESSION['error_pass'] . "')</script>";
-  }
 ?>
 <!doctype html>
 <html lang="en">
@@ -26,46 +21,58 @@
 </head>
 
 <body>
-  <header>
-    <a href="/"><h1>ミジンコ</h1></a>
-    <nav class="pc-nav">
-      <ul>
-        <li class="btn"><a href="login-form.php">ログイン</a></li>
-        <li class="btn"><a href="signUp-form.php">新規登録</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <a href="/"><h1>ミジンコ</h1></a>
+  <nav class="pc-nav">
+    <ul>
+      <li class="btn"><a href="login-form.php">ログイン</a></li>
+      <li class="btn"><a href="signUp-form.php">新規登録</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!--コンテンツ-->
-  <div class="box">
-    <h2>ログイン画面</h2>
-    <form action="login.php" method="post">
+<!--コンテンツ-->
+<div class="box">
+  <h2>ログイン画面</h2>
+  <form action="login.php" method="post">
+    <span class="error" style="font-size: small;color: red;">
+      <?php if (isset($_SESSION['error_name'])) {
+        echo $_SESSION['error_name'];
+      } ?>
+    </span>
+    <div class="cp_iptxt">
+      <label class="ef">
+        <input type="text" name="name" placeholder="お名前" value="<?php echo $name; ?>" required>
+      </label>
+    </div>
 
-      <div class="cp_iptxt">
-        <label class="ef">
-          <input type="text" name="name" placeholder="お名前" value="<?php echo $name; ?>" required>
-        </label>
-      </div>
+    <span class="error" style="font-size: small;color: red;">
+      <?php
+      if (isset($_SESSION['error_pass'])) {
+        echo $_SESSION['error_pass'];
+      }
+      ?>
+    </span>
+    <div class="cp_iptxt">
+      <label class="ef">
+        <input type="password" name="password" placeholder="パスワード" required>
+      </label>
+    </div>
 
-      <div class="cp_iptxt">
-        <label class="ef">
-          <input type="password" name="password" placeholder="パスワード" required>
-        </label>
-      </div>
+    <div style="display:inline-flex;">
+      <button type="submit" value="ログイン" class="button">ログイン</button>
+  </form>
 
-      <div style="display:inline-flex;">
-        <button type="submit" value="ログイン" class="button">ログイン</button>
-    </form>
+  <div class="btn2"><a href="index.php">戻る</a></div>
+  <br>
+</div>
 
-    <div class="btn2"><a href="index.php">戻る</a></div><br>
-  </div>
+<div style="margin-top: 10px;">
+  <a href="signUp-form.php">新規登録</a>
+  <a href="edit-password.php">パスワードを忘れた方はこちら</a>
+</div>
 
-  <div style="margin-top: 10px;">
-    <a href="signUp-form.php">新規登録</a>
-    <a href="edit-password.php">パスワードを忘れた方はこちら</a>
-  </div>
-
-  </div>
+</div>
 
 </body>
 </html>
