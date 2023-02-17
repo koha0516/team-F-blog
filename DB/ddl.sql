@@ -37,7 +37,7 @@ CREATE TABLE articles
 (
     article_id      int auto_increment,
     title           varchar(64)    not null,
-    article_content varchar(10000) not null unique,
+    article_content varchar(10000) not null,
     tag_id          int            not null,
     user_id         int            not null,
     published       int            not null,
