@@ -1,6 +1,8 @@
 <?php
+//セッションを利用するためのメソッド
 session_start();
-//ログイン実行ファイル読み込み
+
+//DBに接続
 require_once '../DB/user_dao.php';
 
 //エラー変数初期化
