@@ -82,7 +82,7 @@ $tags = get_tags();
       <!--  ヘッダーナビ   -->
       <li class="btn"><a href="#">いいね</a></li>
       <li class="btn"><a href="./articles/post-form.php">投稿</a></li>
-      <li class="btn"><a href="./user/mypage.php">アカウント</a></li>
+      <li class="btn"><a href="user/my-page.php">アカウント</a></li>
       <li class="btn"><a href="./user/logout.php">ログアウト</a></li>
     </ul>
   </nav>

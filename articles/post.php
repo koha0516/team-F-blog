@@ -64,6 +64,6 @@ if(article_register($title, $contents, $tag, $userid, $published)){
   $_SESSION['contents']="";
   $_SESSION['tag']="";
   $_SESSION['publish']="";
-  header('Location: ../user/mypage.php');
+  header('Location: ../user/my-page.php');
 }
 ?>
