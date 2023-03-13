@@ -1,14 +1,14 @@
 // 未記入の時、送信ボタンを押せなくする //
 window.addEventListener('DOMContentLoaded',function(){
 	document.getElementById('submit').disabled = true;
-	document.getElementById('note').addEventListener('keyup',function(){
+	document.getElementById('article').addEventListener('keyup',function(){
 	if (this.value.length < 1) {
 	document.getElementById('submit').disabled = true;
 	} else {
 	document.getElementById('submit').disabled = false;
 	}
 	},false);
-	document.getElementById('note').addEventListener('change',function(){
+	document.getElementById('article').addEventListener('change',function(){
 	if (this.value.length < 1) {
 	document.getElementById('submit').disabled = true;
 	}
@@ -39,3 +39,5 @@ textArea.addEventListener('input', () => {
     length.style.color = '#444';
   }
 }, false);
+
+// プルダウンメニュー //

@@ -56,6 +56,7 @@
  /* カウント文字を横並び */
 .wordcount{
    display: flex;
+   justify-content: flex-end;
 }
 
 .length{
@@ -172,22 +173,9 @@ article {
    width:70%;
    height:500px;
    text-align:center;
-   overflow-y: scroll;
-   padding:50px;
+   padding:10px 50px;
    margin-left:20px;/*サイドバーとメインコンテンツの間に隙間をあけた*/
 }
- 
-.content2 {
-   position: relative;
-   background:rgba(255,255,255,0.75);
-   top: 85px;
-   margin: 0 auto;
-   width:70%;
-   height:500px;
-   text-align:center;
-   overflow-y: scroll;
-   padding:50px;
-} 
 
 /* サイドバーなしの時のボックス */
 .box {
@@ -221,34 +209,16 @@ table{
 .cp_iptxt input[type='text'] {
 	font: 15px/24px sans-serif;
 	box-sizing: border-box;
-	width: 75%;
+	width: 100%;
    margin:15px auto;
 	padding: 0.3em;
 	transition: 0.3s;
 	letter-spacing: 1px;
-	color: #aaaaaa;
+	color: #000000;
 	border: 1px solid #005B75;
 	border-radius: 4px;
 }
 .ef input[type='text']:focus {
-	border: 1px solid #005B75;
-	outline: none;
-	box-shadow: 0 0 5px 1px rgba(0, 37, 79, 0.5);
-}
-
-.cp_iptxt input[type='password'] {
-	font: 15px/24px sans-serif;
-	box-sizing: border-box;
-	width: 75%;
-   margin:15px auto;
-	padding: 0.3em;
-	transition: 0.3s;
-	letter-spacing: 1px;
-	color: #aaaaaa;
-	border: 1px solid #1b2538;
-	border-radius: 4px;
-}
-.ef input[type='password']:focus {
 	border: 1px solid #005B75;
 	outline: none;
 	box-shadow: 0 0 5px 1px rgba(0, 37, 79, 0.5);
@@ -262,7 +232,7 @@ table{
 	padding: 0.3em;
 	transition: 0.3s;
 	letter-spacing: 1px;
-	color: #aaaaaa;
+	color: #000000;
 	border: 1px solid #005B75;
 	border-radius: 4px;
 }
@@ -275,7 +245,16 @@ table{
 /* textarea */
 textarea {
    resize: none;
+   width: 100%;
+   height: 250px;
+   font: 15px/24px sans-serif;
  }
+
+textarea:focus {
+	border: 1px solid #005B75;
+	outline: none;
+	box-shadow: 0 0 5px 1px rgba(0, 37, 79, 0.5);
+}
 
 /* submitボタン */
 .submit {
@@ -379,3 +358,173 @@ textarea {
  background: #DCEBDD;
  border: 2px outset #DCEBDD;
 }
+
+/* トグルボタン */
+ /* === ボタンを表示するエリア ============================== */
+ .switchArea {
+   line-height    : 40px;                /* 1行の高さ          */
+   letter-spacing : 0;                   /* 文字間             */
+   text-align     : center;              /* 文字位置は中央     */
+   font-size      : 17px;                /* 文字サイズ         */
+ 
+   position       : relative;            /* 親要素が基点       */
+   margin         : auto;                /* 中央寄せ           */
+   width          : 97px;               /* ボタンの横幅       */
+   background     : #fff;                /* デフォルト背景色   */
+ }
+ 
+  /* === チェックボックス ==================================== */
+ .switchArea input[type="checkbox"] {
+   display        : none;            /* チェックボックス非表示 */
+ }
+ 
+  /* === チェックボックスのラベル（標準） ==================== */
+ .switchArea label {
+   display        : block;               /* ボックス要素に変更 */
+   box-sizing     : border-box;          /* 枠線を含んだサイズ */
+   height         : 40px;                /* ボタンの高さ       */
+   border         : 2px solid #999999;   /* 未選択タブのの枠線 */
+ }
+ 
+  /* === チェックボックスのラベル（ONのとき） ================ */
+ .switchArea input[type="checkbox"]:checked +label {
+   border-color   : #005b75;             /* 選択タブの枠線     */
+ }
+ 
+  /* === 表示する文字（標準） ================================ */
+ .switchArea label span:after{
+   content        : "非公開";               /* 表示する文字       */
+   padding        : 0 0 0 24px;          /* 表示する位置       */
+   color          : #999999;             /* 文字色             */
+ }
+ 
+  /* === 表示する文字（ONのとき） ============================ */
+ .switchArea  input[type="checkbox"]:checked + label span:after{
+   content        : "公開";                /* 表示する文字       */
+   padding        : 0 24px 0 0;          /* 表示する位置       */
+   color          : #005b75;             /* 文字色             */
+ }
+ 
+  /* === 丸部分のSTYLE（標準） =============================== */
+ .switchArea #swImg {
+   position       : absolute;            /* 親要素からの相対位置*/
+   width          : 32px;                /* 丸の横幅           */
+   height         : 32px;                /* 丸の高さ           */
+   background     : #999999;             /* カーソルタブの背景 */
+   top            : 4px;                 /* 親要素からの位置   */
+   left           : 4px;                 /* 親要素からの位置   */
+   transition     : .2s;                 /* 滑らか変化         */
+ }
+ 
+  /* === 丸部分のSTYLE（ONのとき） =========================== */
+ .switchArea input[type="checkbox"]:checked ~ #swImg {
+   transform      : translateX(57px);    /* 丸も右へ移動       */
+   background     : #005b75;             /* カーソルタブの背景 */
+ }
+
+ /** Custom Select **/
+.custom-select-wrapper {
+   position: relative;
+   display: inline-block;
+   user-select: none;
+ }
+   .custom-select-wrapper select {
+     display: none;
+   }
+   .custom-select {
+     position: relative;
+     display: inline-block;
+   }
+     .custom-select-trigger {
+       position: relative;
+       display: block;
+       width: 130px;
+       padding: 0 84px 0 22px;
+       font-size: 22px;
+       font-weight: 300;
+       color: #fff;
+       line-height: 60px;
+       background: #5c9cd8;
+       border-radius: 4px;
+       cursor: pointer;
+     }
+       .custom-select-trigger:after {
+         position: absolute;
+         display: block;
+         content: '';
+         width: 10px; height: 10px;
+         top: 50%; right: 25px;
+         margin-top: -3px;
+         border-bottom: 1px solid #fff;
+         border-right: 1px solid #fff;
+         transform: rotate(45deg) translateY(-50%);
+         transition: all .4s ease-in-out;
+         transform-origin: 50% 0;
+       }
+       .custom-select.opened .custom-select-trigger:after {
+         margin-top: 3px;
+         transform: rotate(-135deg) translateY(-50%);
+       }
+   .custom-options {
+     position: absolute;
+     display: block;
+     top: 100%; left: 0; right: 0;
+     min-width: 100%;
+     margin: 15px 0;
+     border: 1px solid #b5b5b5;
+     border-radius: 4px;
+     box-sizing: border-box;
+     box-shadow: 0 2px 1px rgba(0,0,0,.07);
+     background: #fff;
+     transition: all .4s ease-in-out;
+     
+     opacity: 0;
+     visibility: hidden;
+     pointer-events: none;
+     transform: translateY(-15px);
+   }
+   .custom-select.opened .custom-options {
+     opacity: 1;
+     visibility: visible;
+     pointer-events: all;
+     transform: translateY(0);
+   }
+     .custom-options:before {
+       position: absolute;
+       display: block;
+       content: '';
+       bottom: 100%; right: 25px;
+       width: 7px; height: 7px;
+       margin-bottom: -4px;
+       border-top: 1px solid #b5b5b5;
+       border-left: 1px solid #b5b5b5;
+       background: #fff;
+       transform: rotate(45deg);
+       transition: all .4s ease-in-out;
+     }
+     .option-hover:before {
+       background: #f9f9f9;
+     }
+     .custom-option {
+       position: relative;
+       display: block;
+       padding: 0 22px;
+       border-bottom: 1px solid #b5b5b5;
+       font-size: 18px;
+       font-weight: 600;
+       color: #b5b5b5;
+       line-height: 47px;
+       cursor: pointer;
+       transition: all .4s ease-in-out;
+     }
+     .custom-option:first-of-type {
+       border-radius: 4px 4px 0 0;
+     }
+     .custom-option:last-of-type {
+       border-bottom: 0;
+       border-radius: 0 0 4px 4px;
+     }
+     .custom-option:hover,
+     .custom-option.selection {
+       background: #f9f9f9;
+     }
