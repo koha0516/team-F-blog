@@ -52,7 +52,7 @@ if ($error) {
   header('Location: user-edit-form.php');
 }
 //アップデート
-if(article_update($title, $contents, $tag, $userid, $published, $articleid)){
+if(update_article($title, $contents, $tag, $userid, $published, $articleid)){
   header('Location: index.php');
 }
 ?>
