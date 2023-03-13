@@ -2,19 +2,24 @@
 //セッションを利用するためのメソッド
 session_start();
 
-//DBに接続
+//DB操作用ファイルを読み込む
 require_once './DB/user_dao.php';
 require_once './DB/article_dao.php';
 
-//dbからデータを取得(記事とタグ)
+//  DBから記事を取得
 $articles =[];
 if(!empty($_GET['tag_id'])) {
+//  タグidのパラメータがあればタグごとに取り出す
   $articles = get_tag_articles($_GET['tag_id']);
 }else if(!empty($_GET['keyword'])) {
+//  キーワードのパラメータがあればキーワード検索して取り出す
   $articles = get_keyword_articles($_GET['keyword']);
 }else{
+//  指定が無ければすべての記事を取り出す
   $articles = get_articles();
 }
+
+//  DBからサイドバーに表示するタグ名を取得
 $tags = get_tags();
 ?>
 
@@ -33,7 +38,7 @@ $tags = get_tags();
 <!--ヘッダー　（ログイン後とログイン前で場合分け）-->
 <?php if(empty($_SESSION['user_info'])){ ?>
 <header>
-  <a href="/"><h1>ミジンコ</h1></a>
+  <a href="index.php"><h1>ミジンコ</h1></a>
   <nav class="pc-nav">
     <ul>
       <!--  検索窓　-->
