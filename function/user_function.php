@@ -1,18 +1,6 @@
 <?php
 
   class user_function {
-    // ハッシュ化する関数
-    static function hash256($pw, $salt) {
-      return hash('sha256', $pw . $salt);
-    }
-
-    //    空白置換をする関数
-    static function space_replacement($str) {
-      $target = array(' ', '　');
-      //    全角半角スペースを削除する
-      str_replace($target, '', $str);
-      return $str;
-    }
 
     //    文字数チェックをする関数
 

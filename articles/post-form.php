@@ -123,7 +123,7 @@ if (isset($_SESSION['error_contents'])) {
       <div class="content">
         <form action="post.php" method="post">
           <input type="text" name="title" placeholder="タイトル" value="<?php echo $title; ?>"><br>
-          <textarea name="contents" placeholder="内容を入力してください" value="<?php echo $contents; ?>"></textarea>
+          <textarea name="contents" id="article" placeholder="内容を入力してください" value="<?php echo $contents; ?>"></textarea>
           <div class="wordcount">
             <div>残り</div>
             <div class="length">10000</div>
@@ -136,7 +136,7 @@ if (isset($_SESSION['error_contents'])) {
           </select><br>
           <input type="radio" name="publish" value="1">公開
           <input type="radio" name="publish" value="0">非公開<br>
-          <button type="submit" value="投稿" class="button" >投稿</button>
+          <button type="submit" value="投稿" id="submit" class="button" >投稿</button>
         </form>
       </div>
 

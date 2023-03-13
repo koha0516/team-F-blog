@@ -9,7 +9,9 @@ require_once '../DB/article_dao.php';
 //dbからデータを取得(記事とタグ)
 $article = get_article($_GET['article_id']);
 $tags = get_tags();
-
+if($_SESSION['user_info'] !== null){
+  $user = $_SESSION(['user_info']);
+}
 ?>
 
 
@@ -98,6 +100,7 @@ $tags = get_tags();
       </div>
 
       <!--   記事　　-->
+      <?php if($article['published'] > 0){ ?>
       <div class="content">
         <div class="box">
           <h2><?php echo $article['title'] ?></h2>
@@ -106,11 +109,11 @@ $tags = get_tags();
           <p><?php echo $article['article_content'] ?></p>
           <hr>
           <?php echo get_tag_name($article['tag_id']) ?>
-          <div class="btn2"><a href="../">戻る</a></div>
         </div>
+        <div class="btn2"><a href="../">戻る</a></div>
         <br>
       </div>
-
+      <?php } ?>
       <!--  コメント  -->
       <div class="comment">
         <!--  コメント欄  -->
@@ -130,8 +133,20 @@ $tags = get_tags();
             <button type="submit" aria-label="送信" class="comment_btn">送信</button>
           </div>
         </form>
-      </div>
+        <div class="like">like</div> <!--勝手に追加-->
 
+        <div id="text-button" onclick="clickDisplayAlert()">Click</div>
+
+        <script>
+          function clickDisplayAlert() {
+            alert("ボタンがクリックされました！");
+          }
+          function clickTextRewrite() {
+            <?php create_follow($user['user_id'], $article['user_id']) ?>
+            document.getElementById("text-button").textContent="Clicked!";
+          }
+        </script>
+      </div>
     </article>
   </div>
 </div>
