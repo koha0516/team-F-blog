@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded',function(){
 }
 
 // 入力した文字カウント //
-const textArea = document.querySelector('#textarea'); // テキストエリアの要素
+const textArea = document.querySelector('#article'); // テキストエリアの要素
 const length = document.querySelector('.length'); // 残り文字数を表示させる要素
 const maxLength = 10000 // 最大文字数
 textArea.addEventListener('input', () => {

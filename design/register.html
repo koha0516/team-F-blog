@@ -50,16 +50,18 @@
                             <label class="ef">
                             <input type="text" name="" placeholder="タイトル">
                             </label>
-                          </div>
-
-                        <textarea name="article" id="article" placeholder="内容を入力してください"></textarea>
-                        <div class="wordcount">
-                            残り<div class="length">10000</div>文字
                         </div>
 
+                        <div class="wordcounter">
+                            <textarea name="article" id="article" placeholder="内容を入力してください"></textarea>
+                            <div class="wordcount">
+                                残り<div class="length">10000</div>文字
+                            </div>
+                          </div>
+
                         <!-- カテゴリー(プルダウンメニュー) -->
-                        <div>
-                            <select name="sources" id="sources" class="custom-select sources" placeholder="タグ">
+                        <div class="cp_ipselect cp_sl01">
+                            <select required name="sources" id="sources" placeholder="タグ">
                               <option value="ファッション">ファッション</option>
                               <option value="ペット">ペット</option>
                               <option value="料理">料理</option>
@@ -81,8 +83,12 @@
                             <div id="swImg"></div>
                         </div>
                     
-                    <button type="submit" id="submit" value="投稿" class="button" disabled>投稿</button>
-                </form>
+                        <div style="display:inline-flex;">
+                            <button type="submit" id="submit" value="投稿" class="button" disabled>投稿</button>
+                          </form>
+                        
+                          <div class="btn2"><a href="mypage.html">戻る</a></div><br>
+                        </div>
                 </div>
               </article>
           <br>
