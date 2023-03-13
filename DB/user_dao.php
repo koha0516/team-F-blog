@@ -1,8 +1,8 @@
 <?php
   require_once "get_connect.php";
 
-  //ユーザ情報をINSERTするメソッド
-  function user_register($name, $birth, $mail, $salt, $password) {
+  //ユーザ情報をINSERTする関数
+  function register_user($name, $birth, $mail, $salt, $password) {
     try {
       $sql = "INSERT INTO users (user_name, user_birth, user_mail, salt, password) VALUES (:name, :birth, :mail, :salt, :password)";
       $stm = get_connect()->prepare($sql);
@@ -27,6 +27,7 @@
     }
   }
 
+//  ソルトを生成する関数
   function get_salt($name) {
     try {
       // sql文の構築
@@ -72,6 +73,7 @@
     }
   }
 
+//  フォローする関数
 function create_follow($follow_user_id, $followed_user_id) {
   try {
     $sql = "INSERT INTO follow (follow_user_id, followed_user_id) VALUES (:follow_user_id, :followed_user_id)";
@@ -95,6 +97,7 @@ function create_follow($follow_user_id, $followed_user_id) {
 }
 
 //DELETE文ではなくUPDATE文で後で実装
+//フォローを解除する関数
 function delete_follow($follow_user_id, $followed_user_id) {
   try {
     $sql = "DELETE FROM follow WHERE follow_user_id = :follow_user_id AND followed_user_id = :followed_user_id";

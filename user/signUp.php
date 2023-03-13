@@ -68,7 +68,7 @@ $salt = substr(base_convert(hash('sha256', uniqid()), 16, 36), 0, 20);
 $password = hash('sha256', $pass . $salt);
 
 //sql実行
-if (user_register($name, $birth, $mail, $salt, $password)) {
+if (register_user($name, $birth, $mail, $salt, $password)) {
   $_SESSION['user_info'] = login($name, $password);
   header('Location: ../');
 } else {
