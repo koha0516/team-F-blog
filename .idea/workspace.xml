@@ -5,23 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e537442-cd55-47f6-ab13-fead5df2173c" name="変更" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/4/14f47a7b69f06981a9c03cd6faa8749b6d35ea00" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/4/54098807d673388d7e194f6976c417a4bfc9b87c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8a32220f3f06053f201c4bc899d90991c58be062" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/1/a15ba7fc14306f7d779b0e9df20b1700e8b3a581" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/5/a5bd4d09b939cb191bb3e919eb5a2492c882095a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/b/bb6499b8e938f92a3695fff1afe57edea4b9efb7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/4/c4ac91c2a51238cee9cc8426ffe51c932c03b862" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/1/e1aebcf98549ff4795a5abb4990834d787598f8d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/1/f1b0da010fedeb853ee00f54e11788c5068969f6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/7/77e9ecdc7a8c3471cb0d558201b7b5ec3ccebcd6" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/articles/browse-article.php" beforeDir="false" afterPath="$PROJECT_DIR$/articles/browse-article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/post-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/articles/post-form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/articles/post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/mypage.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/my-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/mypage.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/my-page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/browse_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/browse_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +121,7 @@
       <workItem from="1677202427935" duration="6000" />
       <workItem from="1677930700231" duration="2607000" />
       <workItem from="1678626582082" duration="2987000" />
-      <workItem from="1678668050160" duration="6123000" />
+      <workItem from="1678668050160" duration="8769000" />
     </task>
     <servers />
   </component>

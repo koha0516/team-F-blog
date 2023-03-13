@@ -114,6 +114,7 @@ if($_SESSION['user_info'] !== null){
         <br>
       </div>
       <?php } ?>
+
       <!--  コメント  -->
       <div class="comment">
         <!--  コメント欄  -->
@@ -122,6 +123,7 @@ if($_SESSION['user_info'] !== null){
             コメント
           </div>
         </div>
+
 　　　　　<!--  コメント入力フォーム　　-->
         <form>
           <div style="display:inline-flex">
@@ -133,19 +135,17 @@ if($_SESSION['user_info'] !== null){
             <button type="submit" aria-label="送信" class="comment_btn">送信</button>
           </div>
         </form>
-        <div class="like">like</div> <!--勝手に追加-->
 
+        <div class="like">like</div> <!--勝手に追加-->
         <div id="text-button" onclick="clickDisplayAlert()">Click</div>
 
         <script>
           function clickDisplayAlert() {
             alert("ボタンがクリックされました！");
-          }
-          function clickTextRewrite() {
             <?php create_follow($user['user_id'], $article['user_id']) ?>
-            document.getElementById("text-button").textContent="Clicked!";
           }
         </script>
+
       </div>
     </article>
   </div>

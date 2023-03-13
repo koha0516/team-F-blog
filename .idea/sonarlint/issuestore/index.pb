@@ -1,8 +1,6 @@
 
 D
 user/signUp-form.php,3\4\342248eeba3ee09715a4532926898d5326b3686e
-?
-user/logout.php,7\7\77e9ecdc7a8c3471cb0d558201b7b5ec3ccebcd6
 9
 	.htaccess,f\1\f14dd8fe84b7e99eb63debbf029152463832e7ad
 B
@@ -16,5 +14,3 @@ K
 DB/ddl.sql,c\b\cb1e18d25e4d05cb885a3133e96967f16b6a7b98
 B
 design/browse.html,9\e\9ec38d3a49aa036dd4822ca3c523b262fa76e7ef
-=
-css/style.css,1\2\126b0f8c1ec95fb3a2541745bfc21365b438d668
