@@ -18,7 +18,7 @@ Y	php:S1808'"DPut one space between this "if" keyword and the opening parenthe
 X	php:S1808r"DPut one space between this "if" keyword and the opening parenthesis.(·¨ÇE
 Y	php:S1808y"DPut one space between this "if" keyword and the opening parenthesis.(©¿”É
 \	php:S1808ˆ"FPut one space between this "else" keyword and the opening curly brace.(å¥ž‡
-d	php:S1779"PReplace all non line feed end of line characters in this file "index.php" by LF.8†ËÑ•î0
+d	php:S1779"PReplace all non line feed end of line characters in this file "index.php" by LF.8Ø»Ì•î0
 V	php:S1793"<Replace this "else if" keyword sequence by "elseif" keyword.(ÌÁÙ’ýÿÿÿÿ
 k	php:S4833"QReplace "require_once" with namespace import mechanism through the "use" keyword.(æ«Ã¼úÿÿÿÿ
 k	php:S4833"QReplace "require_once" with namespace import mechanism through the "use" keyword.(û”ÕÑþÿÿÿÿ

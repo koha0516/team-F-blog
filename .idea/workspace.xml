@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e537442-cd55-47f6-ab13-fead5df2173c" name="変更" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/4/14f47a7b69f06981a9c03cd6faa8749b6d35ea00" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/6/6690c27fcc4f448773aac83092daa4efdba9951c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/9/7998de980510f2c9d2ddf0f39dd104111a5902ae" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/article-edit-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/articles/article-edit-form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/article-edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/articles/article-edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/register_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/register_style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +118,7 @@
       <workItem from="1677930700231" duration="2607000" />
       <workItem from="1678626582082" duration="2987000" />
       <workItem from="1678668050160" duration="10365000" />
-      <workItem from="1678840614696" duration="9078000" />
+      <workItem from="1678840614696" duration="10169000" />
     </task>
     <servers />
   </component>
