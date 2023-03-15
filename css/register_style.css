@@ -365,7 +365,7 @@ textarea:focus {
   line-height    : 40px;                /* 1行の高さ          */
   letter-spacing : 0;                   /* 文字間             */
   text-align     : center;              /* 文字位置は中央     */
-  font-size      : 17px;                /* 文字サイズ         */
+  font-size      : 15px;                /* 文字サイズ         */
 
   position       : relative;            /* 親要素が基点       */
   margin         : auto;                /* 中央寄せ           */
@@ -384,6 +384,7 @@ textarea:focus {
   box-sizing     : border-box;          /* 枠線を含んだサイズ */
   height         : 40px;                /* ボタンの高さ       */
   border         : 2px solid #999999;   /* 未選択タブのの枠線 */
+  margin-bottom: 5px;
 }
 
 /* === チェックボックスのラベル（ONのとき） ================ */
@@ -422,109 +423,50 @@ textarea:focus {
   background     : #005b75;             /* カーソルタブの背景 */
 }
 
-/** Custom Select **/
-.custom-select-wrapper {
-  position: relative;
-  display: inline-block;
-  user-select: none;
+/** プルダウンメニュー **/
+.cp_ipselect {
+  overflow: hidden;
+  width: 100%;
+  margin: 5px auto;
+  text-align: center;
 }
-.custom-select-wrapper select {
+.cp_ipselect select {
+  width: 100%;
+  padding-right: 1em;
+  cursor: pointer;
+  text-indent: 0.01px;
+  text-overflow: ellipsis;
+  border: none;
+  outline: none;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.cp_ipselect select::-ms-expand {
   display: none;
 }
-.custom-select {
+.cp_ipselect.cp_sl01 {
   position: relative;
-  display: inline-block;
+  border: 1px solid #000000;
+  border-radius: 2px;
+  background: #ffffff;
 }
-.custom-select-trigger {
-  position: relative;
-  display: block;
-  width: 130px;
-  padding: 0 84px 0 22px;
-  font-size: 22px;
-  font-weight: 300;
-  color: #fff;
-  line-height: 60px;
-  background: #5c9cd8;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.custom-select-trigger:after {
+.cp_ipselect.cp_sl01::before {
   position: absolute;
-  display: block;
+  top: 0.8em;
+  right: 0.9em;
+  width: 0;
+  height: 0;
+  padding: 0;
   content: '';
-  width: 10px; height: 10px;
-  top: 50%; right: 25px;
-  margin-top: -3px;
-  border-bottom: 1px solid #fff;
-  border-right: 1px solid #fff;
-  transform: rotate(45deg) translateY(-50%);
-  transition: all .4s ease-in-out;
-  transform-origin: 50% 0;
-}
-.custom-select.opened .custom-select-trigger:after {
-  margin-top: 3px;
-  transform: rotate(-135deg) translateY(-50%);
-}
-.custom-options {
-  position: absolute;
-  display: block;
-  top: 100%; left: 0; right: 0;
-  min-width: 100%;
-  margin: 15px 0;
-  border: 1px solid #b5b5b5;
-  border-radius: 4px;
-  box-sizing: border-box;
-  box-shadow: 0 2px 1px rgba(0,0,0,.07);
-  background: #fff;
-  transition: all .4s ease-in-out;
-
-  opacity: 0;
-  visibility: hidden;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #666666;
   pointer-events: none;
-  transform: translateY(-15px);
 }
-.custom-select.opened .custom-options {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: all;
-  transform: translateY(0);
-}
-.custom-options:before {
-  position: absolute;
-  display: block;
-  content: '';
-  bottom: 100%; right: 25px;
-  width: 7px; height: 7px;
-  margin-bottom: -4px;
-  border-top: 1px solid #b5b5b5;
-  border-left: 1px solid #b5b5b5;
-  background: #fff;
-  transform: rotate(45deg);
-  transition: all .4s ease-in-out;
-}
-.option-hover:before {
-  background: #f9f9f9;
-}
-.custom-option {
-  position: relative;
-  display: block;
-  padding: 0 22px;
-  border-bottom: 1px solid #b5b5b5;
-  font-size: 18px;
-  font-weight: 600;
-  color: #b5b5b5;
-  line-height: 47px;
-  cursor: pointer;
-  transition: all .4s ease-in-out;
-}
-.custom-option:first-of-type {
-  border-radius: 4px 4px 0 0;
-}
-.custom-option:last-of-type {
-  border-bottom: 0;
-  border-radius: 0 0 4px 4px;
-}
-.custom-option:hover,
-.custom-option.selection {
-  background: #f9f9f9;
+.cp_ipselect.cp_sl01 select {
+  padding: 8px 38px 8px 8px;
+  color: #666666;
 }

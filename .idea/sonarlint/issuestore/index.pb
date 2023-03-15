@@ -3,9 +3,6 @@
 	.htaccess,f\1\f14dd8fe84b7e99eb63debbf029152463832e7ad
 B
 design/mypage.html,f\a\fafdb52fa4927678fd11f333300fea54c40757ba
-:
-
-js/main.js,d\a\dae13fd6f331d1c91ab58b06e81d05cb8958bfb1
 N
 articles/article-edit-form.php,6\6\6690c27fcc4f448773aac83092daa4efdba9951c
 I
@@ -20,8 +17,6 @@ J
 user/signUp.php,4\c\4cbace06f52523d8eb46c80ac15c4739df1787e2
 A
 design/index.html,a\1\a15ba7fc14306f7d779b0e9df20b1700e8b3a581
-B
-DB/article_dao.php,8\7\8744f1d407af089e6e7d123307820c03e374060a
 @
 user/my-page.php,7\b\7b37faf406bb21168a1d3b05e09bf25904c229a8
 F
@@ -39,5 +34,7 @@ C
 DB/ddl.sql,c\b\cb1e18d25e4d05cb885a3133e96967f16b6a7b98
 K
 articles/browse-article.php,1\4\14f47a7b69f06981a9c03cd6faa8749b6d35ea00
-A
-articles/post.php,d\9\d978d90bc4294528f4127051864a7a8d8bd3fc1e
+9
+	index.php,b\b\bb6499b8e938f92a3695fff1afe57edea4b9efb7
+B
+design/browse.html,9\e\9ec38d3a49aa036dd4822ca3c523b262fa76e7ef

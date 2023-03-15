@@ -68,7 +68,8 @@ if (isset($_SESSION['error_contents'])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/register_style.css">
+
   <title>投稿ページ</title>
 </head>
 
@@ -122,21 +123,35 @@ if (isset($_SESSION['error_contents'])) {
       <!--   投稿フォーム   -->
       <div class="content">
         <form action="post.php" method="post">
-          <input type="text" name="title" placeholder="タイトル" value="<?php echo $title; ?>"><br>
-          <textarea name="contents" id="article" placeholder="内容を入力してください" value="<?php echo $contents; ?>"></textarea>
-          <div class="wordcount">
-            <div>残り</div>
-            <div class="length">10000</div>
-            文字
+          <div class="cp_iptxt">
+            <label class="ef">
+              <input type="text" name="title" placeholder="タイトル" value="<?php echo $title; ?>"><br>
+            </label>
           </div>
-          <select name="tag">
-            <?php for ($i = 1; $i < 12; $i++) { ?>
-              <option value="<?php echo $i; ?>" <?php echo $tag[$i]; ?>><?php echo get_tag_name($i); ?></option>
-            <?php } ?>
-          </select><br>
-          <input type="radio" name="publish" value="1">公開
-          <input type="radio" name="publish" value="0">非公開<br>
-          <button type="submit" value="投稿" id="submit" class="button" >投稿</button>
+          <div class="wordcounter">
+            <textarea name="contents" id="article" placeholder="内容を入力してください" value="<?php echo $contents; ?>"></textarea>
+            <div class="wordcount">
+              残り<div class="length">10000</div>文字
+            </div>
+          </div>
+
+          <div class="cp_ipselect cp_sl01">
+            <select name="tag" id="sources" required placeholder="カテゴリー">
+              <?php for ($i = 1; $i < 12; $i++) { ?>
+                <option value="<?php echo $i; ?>" <?php echo $tag[$i]; ?>><?php echo get_tag_name($i); ?></option>
+              <?php } ?>
+            </select><br>
+          </div>
+          <!-- 公開非公開(トグルボタン) -->
+          <div class="switchArea">
+            <input type="checkbox" id="switch1" name="publish" value="1">
+            <label for="switch1"><span></span></label>
+            <div id="swImg"></div>
+          </div>
+          <div style="display:inline-flex;">
+            <button type="submit" id="submit" value="投稿" class="button" disabled>投稿</button>
+            <div class="btn2"><a href="../index.php">戻る</a></div><br>
+          </div>
         </form>
       </div>
 
