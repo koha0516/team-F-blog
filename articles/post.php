@@ -59,7 +59,7 @@ if ($error) {
 }
 
 //登録が成功したら投稿内容に関するセッションを空にして、ページ遷移する
-if(article_register($title, $contents, $tag, $userid, $published)){
+if(update_article($title, $contents, $tag, $userid, $published)){
   $_SESSION['title']="";
   $_SESSION['contents']="";
   $_SESSION['tag']="";

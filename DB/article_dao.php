@@ -2,7 +2,7 @@
 require_once "get_connect.php";
 
 //投稿内容をINSERTするメソッド
-function article_register($title, $contents, $tag, $userid, $published) {
+function register_article($title, $contents, $tag, $userid, $published) {
   try {
     $sql = "INSERT INTO articles (title, article_content, tag_id, user_id, published) VALUES (:title, :contents, :tag, :user, :published)";
     $stm = get_connect()->prepare($sql);
@@ -114,7 +114,7 @@ function get_own_articles($user_id) {
 }
 
 //投稿内容をUPDATEするメソッド
-function article_update($title, $contents, $tag, $userid, $published, $articleid) {
+function update_article($title, $contents, $tag, $userid, $published, $articleid) {
   try {
     $sql = "UPDATE articles SET title=:title, article_content=:contents, tag_id=:tag, user_id=:user, published=:published WHERE article_id=:articleid";
     $stm = get_connect()->prepare($sql);
