@@ -10,7 +10,7 @@ require_once '../DB/article_dao.php';
 $article = get_article($_GET['article_id']);
 $tags = get_tags();
 if($_SESSION['user_info'] !== null){
-  $user = $_SESSION(['user_info']);
+  $user = $_SESSION['user_info'];
 }
 ?>
 
@@ -74,7 +74,7 @@ if($_SESSION['user_info'] !== null){
         <!--  ヘッダーナビ   -->
         <li class="btn"><a href="#">いいね</a></li>
         <li class="btn"><a href="../articles/post-form.php">投稿</a></li>
-        <li class="btn"><a href="../user/mypage.php">アカウント</a></li>
+        <li class="btn"><a href="../user/my-page.php">アカウント</a></li>
         <li class="btn"><a href="../user/logout.php">ログアウト</a></li>
       </ul>
     </nav>
@@ -114,6 +114,7 @@ if($_SESSION['user_info'] !== null){
         <br>
       </div>
       <?php } ?>
+
       <!--  コメント  -->
       <div class="comment">
         <!--  コメント欄  -->
@@ -122,6 +123,7 @@ if($_SESSION['user_info'] !== null){
             コメント
           </div>
         </div>
+
 　　　　　<!--  コメント入力フォーム　　-->
         <form>
           <div style="display:inline-flex">
@@ -133,19 +135,17 @@ if($_SESSION['user_info'] !== null){
             <button type="submit" aria-label="送信" class="comment_btn">送信</button>
           </div>
         </form>
-        <div class="like">like</div> <!--勝手に追加-->
 
+        <div class="like">like</div> <!--勝手に追加-->
         <div id="text-button" onclick="clickDisplayAlert()">Click</div>
 
         <script>
           function clickDisplayAlert() {
             alert("ボタンがクリックされました！");
-          }
-          function clickTextRewrite() {
             <?php create_follow($user['user_id'], $article['user_id']) ?>
-            document.getElementById("text-button").textContent="Clicked!";
           }
         </script>
+
       </div>
     </article>
   </div>

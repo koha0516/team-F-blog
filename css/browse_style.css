@@ -399,3 +399,17 @@ table{
  background: #005B75;
  border: 2px outset #005B75;
 }
+
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#text-button {
+  display: block;
+  cursor: pointer;
+  width: 160px;
+  text-align: center;
+  border: 1px solid #232323;
+  padding: 10px;
+}

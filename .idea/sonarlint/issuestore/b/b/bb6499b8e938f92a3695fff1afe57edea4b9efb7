@@ -1,24 +1,0 @@
-
-MWeb:TableWithoutCaptionChecku" Add a description to this table.(¿‰˜ÿÿÿÿÿ
-?	Web:S5256u"%Add "<th>" headers to this "<table>".(¿‰˜ÿÿÿÿÿ
-Y	Web:S5255*"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(Êı°
-Y	Web:S5255B"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(Êı°
-fphp:S103w"KSplit this 141 characters long line (which is greater than 120 authorized).(÷ù³Æ8¹¢äê0
-ephp:S103}"KSplit this 162 characters long line (which is greater than 120 authorized).(›ë¿e8º¢äê0
-gphp:S103€"KSplit this 144 characters long line (which is greater than 120 authorized).(íÿª½8º¢äê0
-gphp:S103"KSplit this 157 characters long line (which is greater than 120 authorized).(´ ˜¥8º¢äê0
-f	php:S1808'"JPut one space between the closing parenthesis and the opening curly brace.(à€š…8º¢äê0
-f	php:S1808h"JPut one space between the closing parenthesis and the opening curly brace.(‚™¼ı8º¢äê0
-e	php:S1808r"JPut one space between the closing parenthesis and the opening curly brace.(·¨ÇE8º¢äê0
-f	php:S1808y"JPut one space between the closing parenthesis and the opening curly brace.(©¿”É8º¢äê0
-e	php:S1808"DPut one space between this "if" keyword and the opening parenthesis.(ëßˆäÿÿÿÿÿ8º¢äê0
-e	php:S1808"DPut one space between this "if" keyword and the opening parenthesis.(ÌÁÙ’ıÿÿÿÿ8º¢äê0
-b	php:S1808"FPut one space between this "else" keyword and the opening curly brace.(å¥‡8º¢äê0
-`	php:S1808'"DPut one space between this "if" keyword and the opening parenthesis.(à€š…8º¢äê0
-_	php:S1808r"DPut one space between this "if" keyword and the opening parenthesis.(·¨ÇE8º¢äê0
-`	php:S1808y"DPut one space between this "if" keyword and the opening parenthesis.(©¿”É8º¢äê0
-c	php:S1808ˆ"FPut one space between this "else" keyword and the opening curly brace.(å¥‡8º¢äê0
-d	php:S1779"PReplace all non line feed end of line characters in this file "index.php" by LF.8ö©è¯í0
-]	php:S1793"<Replace this "else if" keyword sequence by "elseif" keyword.(ÌÁÙ’ıÿÿÿÿ8º¢äê0
-r	php:S4833"QReplace "require_once" with namespace import mechanism through the "use" keyword.(æ«Ã¼úÿÿÿÿ8º¢äê0
-r	php:S4833"QReplace "require_once" with namespace import mechanism through the "use" keyword.(û”ÕÑşÿÿÿÿ8º¢äê0
