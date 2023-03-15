@@ -1,0 +1,26 @@
+
+Q	php:S1808"=Move this open curly brace to the beginning of the next line.(†ôÇc
+Q	php:S1808"=Move this open curly brace to the beginning of the next line.(¯şÖ
+W	php:S1808"=Move this open curly brace to the beginning of the next line.(½ğÑçøÿÿÿÿ
+W	php:S1808"=Move this open curly brace to the beginning of the next line.(×‹Äûÿÿÿÿ
+R	php:S1808*"=Move this open curly brace to the beginning of the next line.(óü±†
+Q	php:S1808."=Move this open curly brace to the beginning of the next line.(Ñ—ÄR
+_	php:S18082"JPut one space between the closing parenthesis and the opening curly brace.(³¢Ø…
+Y	php:S18082"DPut one space between this "if" keyword and the opening parenthesis.(³¢Ø…
+[	php:S18084"FPut one space between this "else" keyword and the opening curly brace.(å¥‡
+kphp:S100"XRename function "length_validation" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(¯şÖ
+ophp:S100"VRename function "mail_validation" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(½ğÑçøÿÿÿÿ
+mphp:S100"TRename function "pw_validation" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(×‹Äûÿÿÿÿ
+jphp:S100*"VRename function "repeat_pw_check" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(óü±†
+hphp:S100."URename function "age_validation" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(Ñ—ÄR
+dphp:S101"QRename class "user_function" to match the regular expression ^[A-Z][a-zA-Z0-9]*$.(†ôÇc
+Y	php:S1784"EExplicitly mention the visibility of this method "length_validation".(¯şÖ
+]	php:S1784"CExplicitly mention the visibility of this method "mail_validation".(½ğÑçøÿÿÿÿ
+[	php:S1784"AExplicitly mention the visibility of this method "pw_validation".(×‹Äûÿÿÿÿ
+X	php:S1784*"CExplicitly mention the visibility of this method "repeat_pw_check".(óü±†
+V	php:S1784."BExplicitly mention the visibility of this method "age_validation".(Ñ—ÄR
+gphp:S117*"SRename this parameter "$re_pw" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(óü±†
+Z	php:S1126"EReplace this "if-then-else" statement by a single "return" statement.(“ñ½
+_	php:S1126!"EReplace this "if-then-else" statement by a single "return" statement.(È„°Ğúÿÿÿÿ
+Z	php:S11262"EReplace this "if-then-else" statement by a single "return" statement.(³¢Ø…
+D	php:S5869!"*Remove duplicates in this character class.(È„°Ğúÿÿÿÿ

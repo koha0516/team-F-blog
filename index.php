@@ -142,5 +142,6 @@ $tags = get_tags();
     </article>
   </div>
 </div>
+
 </body>
 </html>
