@@ -26,8 +26,6 @@ C
 :
 
 DB/ddl.sql,c\b\cb1e18d25e4d05cb885a3133e96967f16b6a7b98
-9
-	index.php,b\b\bb6499b8e938f92a3695fff1afe57edea4b9efb7
 B
 design/browse.html,9\e\9ec38d3a49aa036dd4822ca3c523b262fa76e7ef
 K
@@ -73,5 +71,3 @@ A
 articles/post.php,d\9\d978d90bc4294528f4127051864a7a8d8bd3fc1e
 F
 articles/post-form.php,9\d\9d1775cdc12bf0f6992c62163f22f4596a281d42
-@
-user/my-page.php,7\b\7b37faf406bb21168a1d3b05e09bf25904c229a8
