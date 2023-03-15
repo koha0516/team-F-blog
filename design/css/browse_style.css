@@ -122,7 +122,7 @@
    margin: 0 auto;
    width: 110px;
    max-width: 240px;
-   padding: 10px 25px;
+   padding: 10px 10px;
    color: #313131;
    transition: 0.3s ease-in-out;
    font-weight: 500;
@@ -143,6 +143,78 @@
    color: #FFF;
 }
 .btn2 a:hover:before {
+   width: 100%;
+   z-index: -1;
+}
+
+/* いいねぇ */
+.like a {
+   font-size: 14px;
+   background: #74a7be;
+   position: relative;
+   display: inline-block;
+   justify-content: space-around;
+   align-items: center;
+   margin: 10px -70px;
+   width: 75px;
+   max-width: 240px;
+   padding: 5px 5px;
+   color: #313131;
+   transition: 0.3s ease-in-out;
+   font-weight: 500;
+   z-index:0;
+}
+.like a:before {
+   content: "";
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   width: 0;
+   display: block;
+   background: #005B75;
+   transition: .3s;
+   left:0;
+}
+.like a:hover {
+   color: #FFF;
+}
+.like a:hover:before {
+   width: 100%;
+   z-index: -1;
+}
+
+/* ふぉろー */
+.follow a {
+   font-size: 14px;
+   background: #74a7be;
+   position: relative;
+   display: inline-block;
+   justify-content: space-around;
+   align-items: center;
+   margin: 10px 30px;
+   width: 75px;
+   max-width: 240px;
+   padding: 5px 5px;
+   color: #313131;
+   transition: 0.3s ease-in-out;
+   font-weight: 500;
+   z-index:0;
+}
+.follow a:before {
+   content: "";
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   width: 0;
+   display: block;
+   background: #005B75;
+   transition: .3s;
+   left:0;
+}
+.follow a:hover {
+   color: #FFF;
+}
+.follow a:hover:before {
    width: 100%;
    z-index: -1;
 }
@@ -398,4 +470,10 @@ table{
 ::-webkit-scrollbar-thumb {
  background: #005B75;
  border: 2px outset #005B75;
+}
+
+/* センター揃え */
+.center {
+   display: flex;
+   justify-content: center;
 }
