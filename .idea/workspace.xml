@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e537442-cd55-47f6-ab13-fead5df2173c" name="変更" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/e/9ec38d3a49aa036dd4822ca3c523b262fa76e7ef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/browse_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/browse_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/register_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/register_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/signUp-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/signUp-form.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +127,7 @@
       <workItem from="1677930700231" duration="2607000" />
       <workItem from="1678626582082" duration="2987000" />
       <workItem from="1678668050160" duration="10365000" />
-      <workItem from="1678840616151" duration="499000" />
+      <workItem from="1678840616151" duration="654000" />
     </task>
     <servers />
   </component>
