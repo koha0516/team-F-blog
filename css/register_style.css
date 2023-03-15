@@ -32,6 +32,14 @@ h2 {
   padding-top: 25px;
 }
 
+h3{
+  color: #005B75;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 a {
   text-decoration: none;
   color: #00556D;
@@ -171,7 +179,7 @@ article {
   top: 85px;
   left: 10%;
   width:70%;
-  height:500px;
+  /*height:500px;*/
   text-align:center;
   padding:10px 50px;
   margin-left:20px;/*サイドバーとメインコンテンツの間に隙間をあけた*/

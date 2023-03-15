@@ -3,10 +3,6 @@
 	.htaccess,f\1\f14dd8fe84b7e99eb63debbf029152463832e7ad
 B
 design/mypage.html,f\a\fafdb52fa4927678fd11f333300fea54c40757ba
-N
-articles/article-edit-form.php,6\6\6690c27fcc4f448773aac83092daa4efdba9951c
-I
-articles/article-edit.php,7\9\7998de980510f2c9d2ddf0f39dd104111a5902ae
 ?
 DB/user_dao.php,3\c\3cd38f1500c5020f36332ca52efac83f70db39f0
 B
@@ -32,8 +28,6 @@ C
 :
 
 DB/ddl.sql,c\b\cb1e18d25e4d05cb885a3133e96967f16b6a7b98
-K
-articles/browse-article.php,1\4\14f47a7b69f06981a9c03cd6faa8749b6d35ea00
 9
 	index.php,b\b\bb6499b8e938f92a3695fff1afe57edea4b9efb7
 B

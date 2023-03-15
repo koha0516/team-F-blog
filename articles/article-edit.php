@@ -1,7 +1,13 @@
 <?php
+//セッションを利用するためのメソッド
 session_start();
+
+//DBに接続
 require_once '../DB/get_connect.php';
 require_once '../DB/article_dao.php';
+
+//バリデーションチェック用クラスの読み込み
+require_once '../function/user_function.php';
 
 
 if (isset($_POST['title'])) {
@@ -28,8 +34,12 @@ $error=false;
 $title = $_SESSION['title'];
 $contents = $_SESSION['contents'];
 $tag = $_SESSION['tag'];
-$published = $_SESSION['publish'];
-$articleid=$_SESSION['articleid'];
+if (isset($_SESSION['publish'])) {
+  $published = 1;
+} else {
+  $published = 0;
+}
+$articleid=$_SESSION['article_id'];
 
 // エラーチェック
 if (empty($title)) {
@@ -51,8 +61,9 @@ if (empty($contents)) {
 if ($error) {
   header('Location: user-edit-form.php');
 }
+
 //アップデート
 if(update_article($title, $contents, $tag, $userid, $published, $articleid)){
-  header('Location: index.php');
+  header('Location: ../user/my-page.php');
 }
 ?>
