@@ -1,4 +1,5 @@
 <?php
+//push テスト
 //セッションを利用するためのメソッド
 session_start();
 
