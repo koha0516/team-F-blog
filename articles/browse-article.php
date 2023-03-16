@@ -17,6 +17,12 @@ if($_SESSION['user_info'] !== null){
 $articles = $_SESSION['articles'];
 $id_array = array_column( $articles, 'article_id');
 $article_index = array_keys($id_array, $_GET['article_id'])[0];
+
+//　いいね情報取得
+$like = check_like($_GET['article_id'], $user['user_id']);
+
+//  フォロー情報取得
+$follow = check_follow($user['user_id'], $article['user_id']);
 ?>
 
 
