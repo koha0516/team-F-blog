@@ -172,6 +172,17 @@ article {
   overflow-y: scroll;
   padding:0px;
   margin-left:20px;/*サイドバーとメインコンテンツの間に隙間をあけた*/
+}
+
+.content2 {
+  position: relative;
+  top: 115px;
+  left: 10%;
+  width:55%;
+  height:500px;
+  text-align:center;
+  padding:0px;
+  margin-left:20px;/*サイドバーとメインコンテンツの間に隙間をあけた*/
 
 }
 

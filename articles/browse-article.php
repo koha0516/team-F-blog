@@ -113,8 +113,13 @@ if($_SESSION['user_info'] !== null){
         <div class="btn2"><a href="../">戻る</a></div>
         <br>
       </div>
-      <?php } ?>
-
+      <?php } else {?>
+      <div class="content2">
+        <div class="box">
+          <h2>この記事は非公開or削除された可能性があります</h2>
+        </div>
+      </div>
+      <?php }?>
       <!--  コメント  -->
       <div class="comment">
         <!--  コメント欄  -->

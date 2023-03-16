@@ -223,4 +223,28 @@ function get_tag_articles($tag_id) {
 }
 
 
+//  いいねする関数
+function create_like($article_id, $like_user_id) {
+  try {
+    $sql = "INSERT INTO likes (article_id, like_user_id) VALUES (:article_id, :like_user_id)";
+    $stm = get_connect()->prepare($sql);
+
+    // プレースホルダに値をバインドする
+    $stm->bindValue(':follow_user_id', $article_id, PDO::PARAM_INT);
+    $stm->bindValue(':followed_user_id', $like_user_id, PDO::PARAM_INT);
+
+    // SQL文を実行する
+    $stm->execute();
+
+    return true;
+  } catch (PDOException $e) {
+    // エラー発生
+    echo $e->getMessage();
+  } finally {
+    // DB接続を閉じる
+    $pdo = null;
+  }
+}
+
+
 
