@@ -94,10 +94,41 @@
         </div>
         </form>
 
-        <ul>
-          <li class="like"><a href="#">いいね</a></li>
-          <li class="follow"><a href="#">フォロー</a></li>
-        </ul>
+        <!--いいねとフォロー(変更部分)-->
+        <div style="display:inline-flex">
+          <!--いいねしていないとき-->
+            <button type="button" class="like_btn">いいね</button>
+        
+          <!--いいね中-->
+          <!--<span class="swtext">
+            <span>
+              <li>
+                <button type="button" class="like2_btn">いいね中</button>
+              </li>
+            </span>
+            
+            <span>
+              <li>
+                <button type="button" class="like2_btn">いいねを外す</button>
+              </li>
+            </span>
+          </span>
+        -->
+
+          <!--フォローしてないとき-->
+          <!--button type="button" class="follow_btn">フォロー</button>-->
+
+          <!--フォロー中-->
+            <span class="swtext">
+              <span>
+                <button type="button" class="follow2_btn">フォロー中</button>
+              </span>
+              
+              <span>
+                <button type="button" class="follow2_btn">フォローを外す</button>
+              </span>
+            </span>
+        </div>
 
       </div>
     </article>

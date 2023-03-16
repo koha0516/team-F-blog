@@ -147,78 +147,6 @@
    z-index: -1;
 }
 
-/* いいねぇ */
-.like a {
-   font-size: 14px;
-   background: #74a7be;
-   position: relative;
-   display: inline-block;
-   justify-content: space-around;
-   align-items: center;
-   margin: 10px -70px;
-   width: 75px;
-   max-width: 240px;
-   padding: 5px 5px;
-   color: #313131;
-   transition: 0.3s ease-in-out;
-   font-weight: 500;
-   z-index:0;
-}
-.like a:before {
-   content: "";
-   position: absolute;
-   top: 0;
-   bottom: 0;
-   width: 0;
-   display: block;
-   background: #005B75;
-   transition: .3s;
-   left:0;
-}
-.like a:hover {
-   color: #FFF;
-}
-.like a:hover:before {
-   width: 100%;
-   z-index: -1;
-}
-
-/* ふぉろー */
-.follow a {
-   font-size: 14px;
-   background: #74a7be;
-   position: relative;
-   display: inline-block;
-   justify-content: space-around;
-   align-items: center;
-   margin: 10px 30px;
-   width: 75px;
-   max-width: 240px;
-   padding: 5px 5px;
-   color: #313131;
-   transition: 0.3s ease-in-out;
-   font-weight: 500;
-   z-index:0;
-}
-.follow a:before {
-   content: "";
-   position: absolute;
-   top: 0;
-   bottom: 0;
-   width: 0;
-   display: block;
-   background: #005B75;
-   transition: .3s;
-   left:0;
-}
-.follow a:hover {
-   color: #FFF;
-}
-.follow a:hover:before {
-   width: 100%;
-   z-index: -1;
-}
-
 /* コンテンツ */
 article {
    display:flex;/*サイドバーとメインコンテンツを横並びにする指定をした*/
@@ -472,8 +400,164 @@ table{
  border: 2px outset #005B75;
 }
 
-/* センター揃え */
-.center {
-   display: flex;
-   justify-content: center;
+/* 追加したもの */
+/* いいねぇ */
+.like_btn {
+   background: #eee;
+   position: relative;
+   display:inline-block;
+   justify-content: space-around;
+   align-items: center;
+   left: 50px;
+   margin: 10px -50px;
+   width: 50px;
+   max-width: 240px;
+   padding: 5px 5px;
+   color: #313131;
+   transition: 0.3s ease-in-out;
+   font-weight: 500;
+   z-index:0;
+   border: none;
 }
+.like_btn::before{
+   content: "";
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   width: 0;
+   display: block;
+   background: #6599AF;
+   transition: .3s;
+   left:0;
+}
+
+.like_btn:hover {
+   color: #FFF;
+}
+
+.like_btn:hover:before{
+   width: 100%;
+   z-index: -1;
+}
+
+/* いいねぇ中 */
+.like2_btn {
+   background: #6599AF;
+   position: relative;
+   display:inline-block;
+   justify-content: space-around;
+   align-items: center;
+   left: 50px;
+   margin: 10px -70px;
+   width: 50px;
+   max-width: 240px;
+   padding: 5px 5px;
+   color: #313131;
+   transition: 0.3s ease-in-out;
+   font-weight: 500;
+   z-index:0;
+   border: none;
+}
+.like2_btn::before{
+   content: "";
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   width: 0;
+   display: block;
+   background: #005B75;
+   transition: .3s;
+   left:0;
+}
+
+.like2_btn:hover {
+   color: #FFF;
+}
+
+.like2_btn:hover:before{
+   width: 100%;
+   z-index: -1;
+}
+
+/* ふぉろー */
+.follow_btn {
+   background: #eee;
+   position: relative;
+   display:inline-block;
+   justify-content: space-around;
+   align-items: center;
+   left: 55px;
+   margin: 10px 60px;
+   width: 75px;
+   max-width: 240px;
+   padding: 5px 5px;
+   color: #313131;
+   transition: 0.3s ease-in-out;
+   font-weight: 500;
+   z-index:0;
+   border: none;
+}
+.follow_btn::before{
+   content: "";
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   width: 0;
+   display: block;
+   background: #6599AF;
+   transition: .3s;
+   left:0;
+}
+
+.follow_btn:hover {
+   color: #FFF;
+}
+
+.follow_btn:hover:before{
+   width: 100%;
+   z-index: -1;
+}
+
+/* ふぉろー中 */
+.follow2_btn {
+   background: #6599AF;
+   position: relative;
+   display:inline-block;
+   justify-content: space-around;
+   align-items: center;
+   left: 55px;
+   margin: 10px 60px;
+   width: 75px;
+   max-width: 240px;
+   padding: 5px 5px;
+   color: #313131;
+   transition: 0.3s ease-in-out;
+   font-weight: 500;
+   z-index:0;
+   border: none;
+}
+.follow2_btn::before{
+   content: "";
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   width: 0;
+   display: block;
+   background: #005B75;
+   transition: .3s;
+   left:0;
+}
+
+.follow2_btn:hover {
+   color: #FFF;
+}
+
+.follow2_btn:hover:before{
+   width: 100%;
+   z-index: -1;
+}
+
+/* カーソルを合わせて吹き出し */
+.swtext span:nth-of-type(2) { display: none }
+.swtext:hover span:nth-of-type(1) { display: none }
+.swtext:hover span:nth-of-type(2) { display: inline }
