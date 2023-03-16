@@ -56,8 +56,6 @@ B
 DB/article_dao.php,8\7\8744f1d407af089e6e7d123307820c03e374060a
 K
 articles/browse-article.php,1\4\14f47a7b69f06981a9c03cd6faa8749b6d35ea00
-I
-articles/article-edit.php,7\9\7998de980510f2c9d2ddf0f39dd104111a5902ae
 :
 
 js/main.js,d\a\dae13fd6f331d1c91ab58b06e81d05cb8958bfb1
@@ -65,9 +63,9 @@ F
 css/register_style.css,e\e\ee912a32bcbdc98cedb656e9440f0449421df601
 D
 design/register.html,0\9\09ecefed4bb57eade104d3e88868a039645c4d9b
-N
-articles/article-edit-form.php,6\6\6690c27fcc4f448773aac83092daa4efdba9951c
 A
 articles/post.php,d\9\d978d90bc4294528f4127051864a7a8d8bd3fc1e
 F
 articles/post-form.php,9\d\9d1775cdc12bf0f6992c62163f22f4596a281d42
+@
+user/my-page.php,7\b\7b37faf406bb21168a1d3b05e09bf25904c229a8
