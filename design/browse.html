@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/browse_style.css">
+  <link rel="stylesheet" href="./css/browse_style.css">
   <title>ミジンコ</title>
 </head>
 <body>
@@ -65,7 +65,15 @@
           <hr>
           カテゴリー
         </div>
-        <div class="btn2"><a href="index.html">戻る</a></div>
+        
+        <div class="center">
+          <ul>
+            <li class="btn2"><a href="#">←</a></li>
+            <li class="btn2"><a href="#">戻る</a></li>
+            <li class="btn2"><a href="#">→</a></li>
+          </ul>
+        </div>
+        
         <br>
       </div>
 
@@ -85,6 +93,43 @@
           <button type="submit" aria-label="送信" class="comment_btn">送信</button>
         </div>
         </form>
+
+        <!--いいねとフォロー(変更部分)-->
+        <div style="display:inline-flex">
+          <!--いいねしていないとき-->
+            <button type="button" class="like_btn">いいね</button>
+        
+          <!--いいね中-->
+          <!--<span class="swtext">
+            <span>
+              <li>
+                <button type="button" class="like2_btn">いいね中</button>
+              </li>
+            </span>
+            
+            <span>
+              <li>
+                <button type="button" class="like2_btn">いいねを外す</button>
+              </li>
+            </span>
+          </span>
+        -->
+
+          <!--フォローしてないとき-->
+          <!--button type="button" class="follow_btn">フォロー</button>-->
+
+          <!--フォロー中-->
+            <span class="swtext">
+              <span>
+                <button type="button" class="follow2_btn">フォロー中</button>
+              </span>
+              
+              <span>
+                <button type="button" class="follow2_btn">フォローを外す</button>
+              </span>
+            </span>
+        </div>
+
       </div>
     </article>
     <br>
