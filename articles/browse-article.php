@@ -116,26 +116,6 @@ $article_index = array_keys($id_array, $_GET['article_id'])[0];
           <hr>
           <?php echo get_tag_name($article['tag_id']) ?>
         </div>
-        <div class="btn2"><a href="../">戻る</a></div>
-        <br>
-
-        <?php
-
-        if(isset($articles[$article_index + 1])) {
-          $next_page = $articles[$article_index + 1]['article_id'];
-        }else{
-          $next_page = $articles[0]['article_id'];
-        }
-
-        if(isset($articles[$article_index - 1])) {
-          $pre_page = $articles[$article_index - 1]['article_id'];
-        }else{
-          $pre_page = $articles[count($id_array)-1]['article_id'];
-        }
-        ?>
-        <a href="./browse-article.php?article_id=<?php echo $next_page ?>">次のページへ</a>
-        <a href="./browse-article.php?article_id=<?php echo $pre_page ?>">前のページへ</a>
-
       </div>
       <?php } else {?>
       <div class="content2">
@@ -165,9 +145,74 @@ $article_index = array_keys($id_array, $_GET['article_id'])[0];
           </div>
         </form>
 
+        <div style="display:inline-flex">
+          <!--いいねしていないとき-->
+          <?php if(empty($like)){ ?>
+          <button type="button" class="like_btn">いいね</button>
+          <?php }else{ ?>
+          <!--    いいね中    -->
+          <span class="swtext">
+            <span>
+              <li>
+                <button type="button" class="like2_btn">いいね中</button>
+              </li>
+            </span>
+
+            <span>
+              <li>
+                <button type="button" class="like2_btn">いいねを外す</button>
+              </li>
+            </span>
+          </span>
+          <?php } ?>
+
+          <?php if(empty($follow)){ ?>
+            <!--フォローしていないとき-->
+            <button type="button" class="follow_btn" onclick="follow()">フォロー</button>
+          <?php }else{ ?>
+            <!--    フォロー中    -->
+            <span class="swtext">
+              <span>
+                <button type="button" class="follow2_btn">フォロー中</button>
+              </span>
+
+              <span>
+                <button type="button" class="follow2_btn">フォローを外す</button>
+              </span>
+            </span>
+          <?php } ?>
+        </div>
+
       </div>
     </article>
   </div>
 </div>
+<?php
+//  次のページ前のページ
+if(isset($articles[$article_index + 1])) {
+  $next_page = $articles[$article_index + 1]['article_id'];
+}else{
+  $next_page = $articles[0]['article_id'];
+}
+
+if(isset($articles[$article_index - 1])) {
+  $pre_page = $articles[$article_index - 1]['article_id'];
+}else{
+  $pre_page = $articles[count($id_array)-1]['article_id'];
+}
+?>
+<div class="lower_contents">
+  <ul>
+    <li class="btn2"><a href="./browse-article.php?article_id=<?php echo $pre_page ?>">←</a></li>
+    <li class="btn2"><a href="../">戻る</a></li>
+    <li class="btn2"><a href="./browse-article.php?article_id=<?php echo $next_page ?>">→</a></li>
+  </ul>
+</div>
+
+<script>
+  function follow() {
+    <?php create_follow($user['user_id'], $article['user_id']) ?>
+  }
+</script>
 </body>
 </html>
