@@ -12,6 +12,11 @@ $tags = get_tags();
 if($_SESSION['user_info'] !== null){
   $user = $_SESSION['user_info'];
 }
+
+// 記事のインデックス番号取得
+$articles = $_SESSION['articles'];
+$id_array = array_column( $articles, 'article_id');
+$article_index = array_keys($id_array, $_GET['article_id'])[0];
 ?>
 
 
@@ -93,8 +98,9 @@ if($_SESSION['user_info'] !== null){
           <li><a href="../index.php">すべて</a></li>
           <?php
           foreach ($tags as $t) {
-            ?>
-            <li><a href="../index.php?tag_id=<?php echo $t['tag_id'] ?>"><?php echo $t['tag_name'] ?></a></li>
+          ?>
+
+            <a href="../index.php?tag_id=<?php echo $t['tag_id'] ?>"><?php echo $t['tag_name'] ?></a></li>
           <?php } ?>
         </ol>
       </div>
@@ -112,6 +118,24 @@ if($_SESSION['user_info'] !== null){
         </div>
         <div class="btn2"><a href="../">戻る</a></div>
         <br>
+
+        <?php
+
+        if(isset($articles[$article_index + 1])) {
+          $next_page = $articles[$article_index + 1]['article_id'];
+        }else{
+          $next_page = $articles[0]['article_id'];
+        }
+
+        if(isset($articles[$article_index - 1])) {
+          $pre_page = $articles[$article_index - 1]['article_id'];
+        }else{
+          $pre_page = $articles[count($id_array)-1]['article_id'];
+        }
+        ?>
+        <a href="./browse-article.php?article_id=<?php echo $next_page ?>">次のページへ</a>
+        <a href="./browse-article.php?article_id=<?php echo $pre_page ?>">前のページへ</a>
+
       </div>
       <?php } else {?>
       <div class="content2">
@@ -140,16 +164,6 @@ if($_SESSION['user_info'] !== null){
             <button type="submit" aria-label="送信" class="comment_btn">送信</button>
           </div>
         </form>
-
-        <div class="like">like</div> <!--勝手に追加-->
-        <div id="text-button" onclick="clickDisplayAlert()">Click</div>
-
-        <script>
-          function clickDisplayAlert() {
-            alert("ボタンがクリックされました！");
-            <?php create_follow($user['user_id'], $article['user_id']) ?>
-          }
-        </script>
 
       </div>
     </article>

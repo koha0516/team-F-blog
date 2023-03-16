@@ -19,6 +19,7 @@ if(!empty($_GET['tag_id'])) {
 //  指定が無ければすべての記事を取り出す
   $articles = get_articles();
 }
+$_SESSION['articles'] = $articles;
 
 //  DBからサイドバーに表示するタグ名を取得
 $tags = get_tags();
