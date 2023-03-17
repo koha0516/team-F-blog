@@ -10,18 +10,19 @@ require_once '../DB/article_dao.php';
 $article = get_article($_GET['article_id']);
 $tags = get_tags();
 if($_SESSION['user_info'] !== null){
-  $user = $_SESSION(['user_info']);
+  $user = $_SESSION['user_info'];
 }
 ?>
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/browse_style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <title>ミジンコ</title>
 </head>
 
@@ -119,32 +120,52 @@ if($_SESSION['user_info'] !== null){
         <!--  コメント欄  -->
         <div class="box2">
           <div class="co">
-            コメント
+            <div id="return"></div>
+            <!-- <script src="../js/main.js"></script> -->
           </div>
         </div>
-　　　　　<!--  コメント入力フォーム　　-->
-        <form>
+        <!--  コメント入力フォーム　　-->
+        
           <div style="display:inline-flex">
             <div class="cp_iptxt">
               <label class="ef">
-                <input type="text" name="comment" placeholder="コメント">
+                <input type="text" name="comment" placeholder="コメント" id="comment">
               </label>
             </div>
-            <button type="submit" aria-label="送信" class="comment_btn">送信</button>
+            <button type="submit" aria-label="送信" class="comment_btn" id="send">送信</button>
           </div>
-        </form>
+        
+        
         <div class="like">like</div> <!--勝手に追加-->
 
         <div id="text-button" onclick="clickDisplayAlert()">Click</div>
 
         <script>
-          function clickDisplayAlert() {
-            alert("ボタンがクリックされました！");
-          }
-          function clickTextRewrite() {
-            <?php create_follow($user['user_id'], $article['user_id']) ?>
-            document.getElementById("text-button").textContent="Clicked!";
-          }
+          // function clickDisplayAlert() {
+          //   alert("ボタンがクリックされました！");
+          // }
+          // function clickTextRewrite() {
+          //   <?php create_follow($user['user_id'], $article['user_id']); ?>
+          //   document.getElementById("text-button").textContent="Clicked!";
+          // }
+
+          //ajax//
+        $(function(){
+          $("#send").on("click", function(event){//ボタンが押された時に動作
+            let comment = $("#comment").val();
+            $.ajax({
+              type: "POST",
+              url: "articles-comment.php",
+              dataType: "json",
+              data: {comment:comment,name:name}
+            }).done(function(data){
+              console.log(data.comment);
+              $("#return").append('<p>'+data.comment+':'+data.name+'</p>');
+            }).fail(function(XMLHttpRequest, status, e){
+              console.log(e);
+            });
+          });
+        });
         </script>
       </div>
     </article>
