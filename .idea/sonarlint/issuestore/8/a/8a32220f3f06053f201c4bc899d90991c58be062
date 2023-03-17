@@ -1,5 +1,5 @@
 
-^	php:S1808"JPut one space between the closing parenthesis and the opening curly brace.(¯ªÚy
-X	php:S1808"DPut one space between this "if" keyword and the opening parenthesis.(¯ªÚy
+^	php:S1808 "JPut one space between the closing parenthesis and the opening curly brace.(¯ªÚy
+X	php:S1808 "DPut one space between this "if" keyword and the opening parenthesis.(¯ªÚy
 d	php:S1779"PReplace all non line feed end of line characters in this file "login.php" by LF.8±Õ´Àå0
-k	php:S4833"QReplace "require_once" with namespace import mechanism through the "use" keyword.(Ú¦•¶ùÿÿÿÿ
+k	php:S4833"QReplace "require_once" with namespace import mechanism through the "use" keyword.(Ú¦•¶ùÿÿÿÿ

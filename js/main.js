@@ -1,20 +1,20 @@
 // 未記入の時、送信ボタンを押せなくする //
 window.addEventListener('DOMContentLoaded',function(){
-	document.getElementById('submit').disabled = true;
-	document.getElementById('article').addEventListener('keyup',function(){
-	if (this.value.length < 1) {
-	document.getElementById('submit').disabled = true;
-	} else {
-	document.getElementById('submit').disabled = false;
-	}
-	},false);
-	document.getElementById('article').addEventListener('change',function(){
-	if (this.value.length < 1) {
-	document.getElementById('submit').disabled = true;
-	}
-	},false);
-	},false);
-    function toggleNav() {
+  document.getElementById('submit').disabled = true;
+  document.getElementById('article').addEventListener('keyup',function(){
+    if (this.value.length < 1) {
+      document.getElementById('submit').disabled = true;
+    } else {
+      document.getElementById('submit').disabled = false;
+    }
+  },false);
+  document.getElementById('article').addEventListener('change',function(){
+    if (this.value.length < 1) {
+      document.getElementById('submit').disabled = true;
+    }
+  },false);
+},false);
+function toggleNav() {
   var body = document.body;
   var hamburger = document.getElementById('js-hamburger');
   var blackBg = document.getElementById('js-black-bg');
@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded',function(){
 }
 
 // 入力した文字カウント //
-const textArea = document.querySelector('#textarea'); // テキストエリアの要素
+const textArea = document.querySelector('#article'); // テキストエリアの要素
 const length = document.querySelector('.length'); // 残り文字数を表示させる要素
 const maxLength = 10000 // 最大文字数
 textArea.addEventListener('input', () => {
@@ -39,3 +39,5 @@ textArea.addEventListener('input', () => {
     length.style.color = '#444';
   }
 }, false);
+
+// プルダウンメニュー //

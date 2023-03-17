@@ -1,4 +1,5 @@
 <?php
+//push テスト
 //セッションを利用するためのメソッド
 session_start();
 
@@ -18,6 +19,7 @@ if(!empty($_GET['tag_id'])) {
 //  指定が無ければすべての記事を取り出す
   $articles = get_articles();
 }
+$_SESSION['articles'] = $articles;
 
 //  DBからサイドバーに表示するタグ名を取得
 $tags = get_tags();
@@ -82,7 +84,7 @@ $tags = get_tags();
       <!--  ヘッダーナビ   -->
       <li class="btn"><a href="#">いいね</a></li>
       <li class="btn"><a href="./articles/post-form.php">投稿</a></li>
-      <li class="btn"><a href="./user/mypage.php">アカウント</a></li>
+      <li class="btn"><a href="user/my-page.php">アカウント</a></li>
       <li class="btn"><a href="./user/logout.php">ログアウト</a></li>
     </ul>
   </nav>
@@ -142,5 +144,6 @@ $tags = get_tags();
     </article>
   </div>
 </div>
+
 </body>
 </html>

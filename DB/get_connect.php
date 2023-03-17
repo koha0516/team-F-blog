@@ -1,5 +1,5 @@
 <?php
-
+//  DBに接続する関数
 function get_connect() {
   //ユーザー名
   $user = "grant_all_user";

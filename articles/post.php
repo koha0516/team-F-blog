@@ -35,7 +35,11 @@ $error=false;
 $title = $_SESSION['title'];
 $contents = $_SESSION['contents'];
 $tag = $_SESSION['tag'];
-$published = $_SESSION['publish'];
+if (isset($_SESSION['publish'])) {
+  $published = 1;
+} else {
+  $published = 0;
+}
 
 // エラーチェック
 if (empty($title)) {
@@ -57,13 +61,14 @@ if (empty($contents)) {
 if ($error) {
   header('Location: post-form.php');
 }
+var_dump($title, $contents, $tag, $userid, $published);
 
 //登録が成功したら投稿内容に関するセッションを空にして、ページ遷移する
-if(update_article($title, $contents, $tag, $userid, $published)){
+if(register_article($title, $contents, $tag, $userid, $published)){
   $_SESSION['title']="";
   $_SESSION['contents']="";
   $_SESSION['tag']="";
   $_SESSION['publish']="";
-  header('Location: ../user/mypage.php');
+  header('Location: ../user/my-page.php');
 }
 ?>

@@ -366,17 +366,3 @@ table{
  background: #DCEBDD;
  border: 2px outset #DCEBDD;
 }
-
-.grid{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-#text-button {
-  display: block;
-  cursor: pointer;
-  width: 160px;
-  text-align: center;
-  border: 1px solid #232323;
-  padding: 10px;
-}
