@@ -10,7 +10,12 @@ require_once '../DB/article_dao.php';
 $article = get_article($_GET['article_id']);
 $tags = get_tags();
 if($_SESSION['user_info'] !== null){
+//  ログイン情報取得
   $user = $_SESSION['user_info'];
+//　いいね情報取得
+  $like = check_like($_GET['article_id'], $user['user_id']);
+//  フォロー情報取得
+  $follow = check_follow($user['user_id'], $article['user_id']);
 }
 
 // 記事のインデックス番号取得
@@ -18,11 +23,6 @@ $articles = $_SESSION['articles'];
 $id_array = array_column( $articles, 'article_id');
 $article_index = array_keys($id_array, $_GET['article_id'])[0];
 
-//　いいね情報取得
-$like = check_like($_GET['article_id'], $user['user_id']);
-
-//  フォロー情報取得
-$follow = check_follow($user['user_id'], $article['user_id']);
 ?>
 
 
@@ -154,7 +154,7 @@ $follow = check_follow($user['user_id'], $article['user_id']);
         <div style="display:inline-flex">
           <!--いいねしていないとき-->
           <?php if(empty($like)){ ?>
-          <button type="button" class="like_btn">いいね</button>
+          <button type="button" class="like_btn" onclick="like()">いいね</button>
           <?php }else{ ?>
           <!--    いいね中    -->
           <span class="swtext">
@@ -217,7 +217,11 @@ if(isset($articles[$article_index - 1])) {
 
 <script>
   function follow() {
-    <?php create_follow($user['user_id'], $article['user_id']) ?>
+    <?php create_follow($user['user_id'], $article['user_id']); ?>
+  }
+
+  function like(){
+    <?php create_like($article['article_id'], $user['user_id']); ?>
   }
 </script>
 </body>
