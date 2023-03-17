@@ -73,6 +73,29 @@
     }
   }
 
+
+function get_user_name($user_id) {
+  try {
+    // sql文の構築
+    $sql = "SELECT * FROM users WHERE user_id = :user_id";
+    $stm = get_connect()->prepare($sql);
+    // プレースホルダに値をバインドする
+    $stm->bindValue(":user_id", $user_id, PDO::PARAM_INT);
+    // sql文の実行
+    $stm->execute();
+
+    $res = $stm->fetch(PDO::FETCH_ASSOC);
+    return $res['user_name'];
+
+  } catch (PDOException $e) {
+    // エラー発生
+    echo $e->getMessage();
+  } finally {
+    // DB接続を閉じる
+    $pdo = null;
+  }
+}
+
 //  フォローする関数
 function create_follow($follow_user_id, $followed_user_id) {
   try {
@@ -120,18 +143,22 @@ function delete_follow($follow_user_id, $followed_user_id) {
   }
 }
 
-function get_user_name($user_id) {
+
+//  フォロー情報を確認する関数
+function check_follow($follow_user_id, $followed_user_id) {
   try {
     // sql文の構築
-    $sql = "SELECT * FROM users WHERE user_id = :user_id";
+    $sql = "SELECT * FROM likes WHERE follow_user_id = :follow_user_id AND followed_user_id = :followed_user_id";
     $stm = get_connect()->prepare($sql);
-    // プレースホルダに値をバインドする
-    $stm->bindValue(":user_id", $user_id, PDO::PARAM_INT);
-    // sql文の実行
-    $stm->execute();
 
-    $res = $stm->fetch(PDO::FETCH_ASSOC);
-    return $res['user_name'];
+    // プレースホルダに値をバインドする
+    $stm->bindValue(':follow_user_id', $follow_user_id, PDO::PARAM_INT);
+    $stm->bindValue(':followed_user_id', $followed_user_id, PDO::PARAM_INT);
+
+    //  SQLを実行
+    $stm->execute();
+    // 検索結果を配列として全件取得する
+    return $stm->fetch(PDO::FETCH_ASSOC);
 
   } catch (PDOException $e) {
     // エラー発生

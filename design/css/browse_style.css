@@ -400,6 +400,7 @@ table{
  border: 2px outset #005B75;
 }
 
+
 /* 追加したもの */
 /* いいねぇ */
 .like_btn {
@@ -561,3 +562,12 @@ table{
 .swtext span:nth-of-type(2) { display: none }
 .swtext:hover span:nth-of-type(1) { display: none }
 .swtext:hover span:nth-of-type(2) { display: inline }
+
+.center{
+  text-align: center;
+}
+.lower_contents{
+  position: absolute;
+  left: 450px;
+  bottom: 10px;
+}

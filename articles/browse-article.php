@@ -10,8 +10,19 @@ require_once '../DB/article_dao.php';
 $article = get_article($_GET['article_id']);
 $tags = get_tags();
 if($_SESSION['user_info'] !== null){
+//  ログイン情報取得
   $user = $_SESSION['user_info'];
+//　いいね情報取得
+  $like = check_like($_GET['article_id'], $user['user_id']);
+//  フォロー情報取得
+  $follow = check_follow($user['user_id'], $article['user_id']);
 }
+
+// 記事のインデックス番号取得
+$articles = $_SESSION['articles'];
+$id_array = array_column( $articles, 'article_id');
+$article_index = array_keys($id_array, $_GET['article_id'])[0];
+
 ?>
 
 
@@ -93,8 +104,9 @@ if($_SESSION['user_info'] !== null){
           <li><a href="../index.php">すべて</a></li>
           <?php
           foreach ($tags as $t) {
-            ?>
-            <li><a href="../index.php?tag_id=<?php echo $t['tag_id'] ?>"><?php echo $t['tag_name'] ?></a></li>
+          ?>
+
+            <a href="../index.php?tag_id=<?php echo $t['tag_id'] ?>"><?php echo $t['tag_name'] ?></a></li>
           <?php } ?>
         </ol>
       </div>
@@ -110,11 +122,14 @@ if($_SESSION['user_info'] !== null){
           <hr>
           <?php echo get_tag_name($article['tag_id']) ?>
         </div>
-        <div class="btn2"><a href="../">戻る</a></div>
-        <br>
       </div>
-      <?php } ?>
-
+      <?php } else {?>
+      <div class="content2">
+        <div class="box">
+          <h2>この記事は非公開or削除された可能性があります</h2>
+        </div>
+      </div>
+      <?php }?>
       <!--  コメント  -->
       <div class="comment">
         <!--  コメント欄  -->
@@ -136,19 +151,78 @@ if($_SESSION['user_info'] !== null){
           </div>
         </form>
 
-        <div class="like">like</div> <!--勝手に追加-->
-        <div id="text-button" onclick="clickDisplayAlert()">Click</div>
+        <div style="display:inline-flex">
+          <!--いいねしていないとき-->
+          <?php if(empty($like)){ ?>
+          <button type="button" class="like_btn" onclick="like()">いいね</button>
+          <?php }else{ ?>
+          <!--    いいね中    -->
+          <span class="swtext">
+            <span>
+              <li>
+                <button type="button" class="like2_btn">いいね中</button>
+              </li>
+            </span>
 
-        <script>
-          function clickDisplayAlert() {
-            alert("ボタンがクリックされました！");
-            <?php create_follow($user['user_id'], $article['user_id']) ?>
-          }
-        </script>
+            <span>
+              <li>
+                <button type="button" class="like2_btn">いいねを外す</button>
+              </li>
+            </span>
+          </span>
+          <?php } ?>
+
+          <?php if(empty($follow)){ ?>
+            <!--フォローしていないとき-->
+            <button type="button" class="follow_btn" onclick="follow()">フォロー</button>
+          <?php }else{ ?>
+            <!--    フォロー中    -->
+            <span class="swtext">
+              <span>
+                <button type="button" class="follow2_btn">フォロー中</button>
+              </span>
+
+              <span>
+                <button type="button" class="follow2_btn">フォローを外す</button>
+              </span>
+            </span>
+          <?php } ?>
+        </div>
 
       </div>
     </article>
   </div>
 </div>
+<?php
+//  次のページ前のページ
+if(isset($articles[$article_index + 1])) {
+  $next_page = $articles[$article_index + 1]['article_id'];
+}else{
+  $next_page = $articles[0]['article_id'];
+}
+
+if(isset($articles[$article_index - 1])) {
+  $pre_page = $articles[$article_index - 1]['article_id'];
+}else{
+  $pre_page = $articles[count($id_array)-1]['article_id'];
+}
+?>
+<div class="lower_contents">
+  <ul>
+    <li class="btn2"><a href="./browse-article.php?article_id=<?php echo $pre_page ?>">←</a></li>
+    <li class="btn2"><a href="../">戻る</a></li>
+    <li class="btn2"><a href="./browse-article.php?article_id=<?php echo $next_page ?>">→</a></li>
+  </ul>
+</div>
+
+<script>
+  function follow() {
+    <?php create_follow($user['user_id'], $article['user_id']); ?>
+  }
+
+  function like(){
+    <?php create_like($article['article_id'], $user['user_id']); ?>
+  }
+</script>
 </body>
 </html>

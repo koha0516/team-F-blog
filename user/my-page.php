@@ -14,6 +14,7 @@ if (isset($_SESSION['user_info'])) {
 
 //dbからデータを取得(記事とタグ)
 $articles = get_own_articles($user_id);
+$_SESSION['articles'] = $articles;
 ?>
 
 
