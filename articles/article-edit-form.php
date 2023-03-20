@@ -53,7 +53,7 @@ if ($article['published'] == 1) {
     <link rel="stylesheet" href="../css/register_style.css">
 
 
-  <title>編集ページ</title>
+  <title>ミジンコ|編集ページ</title>
 </head>
 
 <body>
