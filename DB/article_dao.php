@@ -254,8 +254,33 @@ function check_like($article_id, $like_user_id) {
     $stm = get_connect()->prepare($sql);
 
     // プレースホルダに値をバインドする
-    $stm->bindValue(':follow_user_id', $article_id, PDO::PARAM_INT);
-    $stm->bindValue(':followed_user_id', $like_user_id, PDO::PARAM_INT);
+    $stm->bindValue(':article_id', $article_id, PDO::PARAM_INT);
+    $stm->bindValue(':like_user_id', $like_user_id, PDO::PARAM_INT);
+
+    //  SQLを実行
+    $stm->execute();
+    // 検索結果を配列として全件取得する
+    return $stm->fetch(PDO::FETCH_ASSOC);
+
+  } catch (PDOException $e) {
+    // エラー発生
+    echo $e->getMessage();
+  } finally {
+    // DB接続を閉じる
+    $pdo = null;
+  }
+}
+
+// いいね情報を削除する関数
+function delete_like($article_id, $like_user_id) {
+  try {
+    // sql文の構築
+    $sql = "DELETE FROM likes WHERE article_id=:article_id AND like_user_id=:like_user_id";
+    $stm = get_connect()->prepare($sql);
+
+    // プレースホルダに値をバインドする
+    $stm->bindValue(':article_id', $article_id, PDO::PARAM_INT);
+    $stm->bindValue(':like_user_id', $like_user_id, PDO::PARAM_INT);
 
     //  SQLを実行
     $stm->execute();

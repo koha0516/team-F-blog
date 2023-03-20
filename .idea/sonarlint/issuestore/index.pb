@@ -11,16 +11,12 @@ J
 user/signUp.php,4\c\4cbace06f52523d8eb46c80ac15c4739df1787e2
 A
 design/index.html,a\1\a15ba7fc14306f7d779b0e9df20b1700e8b3a581
-F
-user/edit-password.php,b\a\ba257fd0c6b9f725bcb67b7a6f70bc58ef9e15f0
 >
 user/login.php,8\a\8a32220f3f06053f201c4bc899d90991c58be062
 ?
 user/logout.php,7\7\77e9ecdc7a8c3471cb0d558201b7b5ec3ccebcd6
 D
 design/css/style.css,6\9\6942cbf8ef6721a8b1eac6a23e287682b96fd673
-=
-css/style.css,1\2\126b0f8c1ec95fb3a2541745bfc21365b438d668
 L
 design/css/account_style.css,c\a\ca6a1d998bd51fe487874c0913b3bef03b31657c
 A
