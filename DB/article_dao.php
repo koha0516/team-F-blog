@@ -230,8 +230,8 @@ function create_like($article_id, $like_user_id) {
     $stm = get_connect()->prepare($sql);
 
     // プレースホルダに値をバインドする
-    $stm->bindValue(':follow_user_id', $article_id, PDO::PARAM_INT);
-    $stm->bindValue(':followed_user_id', $like_user_id, PDO::PARAM_INT);
+    $stm->bindValue(':article_id', $article_id, PDO::PARAM_INT);
+    $stm->bindValue(':like_user_id', $like_user_id, PDO::PARAM_INT);
 
     // SQL文を実行する
     $stm->execute();

@@ -1,5 +1,4 @@
 <?php
-//push テスト
 //セッションを利用するためのメソッド
 session_start();
 
@@ -33,7 +32,7 @@ $tags = get_tags();
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
-  <title>ミジンコ</title>
+  <title>ミジンコ|トップページ</title>
 </head>
 
 <body>
