@@ -148,7 +148,7 @@ function delete_follow($follow_user_id, $followed_user_id) {
 function check_follow($follow_user_id, $followed_user_id) {
   try {
     // sql文の構築
-    $sql = "SELECT * FROM likes WHERE follow_user_id = :follow_user_id AND followed_user_id = :followed_user_id";
+    $sql = "SELECT * FROM follow WHERE follow_user_id = :follow_user_id AND followed_user_id = :followed_user_id";
     $stm = get_connect()->prepare($sql);
 
     // プレースホルダに値をバインドする

@@ -16,7 +16,7 @@ if ($_SESSION['user_info'] !== null) {
 //　いいね情報取得
   $like = check_like($_GET['article_id'], $user['user_id']);
 //  フォロー情報取得
-//  $follow = check_follow($user['user_id'], $article['user_id']);
+  $follow = check_follow($user['user_id'], $article['user_id']);
 }
 
 // 記事のインデックス番号取得
@@ -151,10 +151,6 @@ $article_index = array_keys($id_array, $_GET['article_id'])[0];
             </div>
             <button type="submit" aria-label="送信" class="comment_btn" id="send">送信</button>
           </div>
-        
-        <div class="like">like</div> <!--勝手に追加-->
-
-        <div id="text-button" onclick="clickDisplayAlert()">Click</div>
 
         <script>
           //ajax//
@@ -183,42 +179,32 @@ $article_index = array_keys($id_array, $_GET['article_id'])[0];
           } else {
             $li = 1;
           } ?>
+          <?php if (empty($follow)) {
+            $fo = 0;
+          } else {
+            $fo= 1;
+          } ?>
+
           <!--いいねしていないとき-->
           <button type="button" class="like_btn" id="like_btn" data-like="<?php echo $li; ?>" data-user="<?php echo $user['user_id']; ?>"
                   data-article="<?php echo $article['article_id']; ?>">いいね
           </button>
-          <!-- いいね中 -->
-          <!--            <span class="swtext">-->
-          <!--            <span>-->
-          <!--              <li>-->
-          <!--                <button type="button" class="like2_btn" id="like2_btn">いいね中</button>-->
-          <!--              </li>-->
-          <!--            </span>-->
-          <!---->
-          <!--            <span>-->
-          <!--              <li>-->
-          <!--                <button type="button" class="like2_btn" id="like2_btn">いいねを外す</button>-->
-          <!--              </li>-->
-          <!--            </span>-->
-          <!--          </span>-->
 
-          <?php if (empty($follow)) { ?>
-            <!--フォローしていないとき-->
-            <button type="button" class="follow_btn" 　id="follow_btn" data-follow="<?php echo $article['user_id']; ?>"
-                    data-user="<?php echo $user['user_id']; ?>">フォロー
-            </button>
-          <?php } else { ?>
-            <!--    フォロー中    -->
-            <span class="swtext">
-              <span>
-                <button type="button" class="follow2_btn">フォロー中</button>
-              </span>
+          <!--フォローしていないとき-->
+          <button type="button" class="follow_btn" id="follow_btn" data-fo="<?php echo $fo; ?>" data-follow="<?php echo $article['user_id']; ?>"
+                  data-user="<?php echo $user['user_id']; ?>">フォロー
+          </button>
 
-              <span>
-                <button type="button" class="follow2_btn">フォローを外す</button>
-              </span>
-            </span>
-          <?php } ?>
+          <!--    フォロー中    -->
+<!--            <span class="swtext">-->
+<!--              <span>-->
+<!--                <button type="button" class="follow2_btn">フォロー中</button>-->
+<!--              </span>-->
+<!---->
+<!--              <span>-->
+<!--                <button type="button" class="follow2_btn">フォローを外す</button>-->
+<!--              </span>-->
+<!--            </span>-->
         </div>
       </div>
     </article>
@@ -240,30 +226,21 @@ if (isset($articles[$article_index - 1])) {
 ?>
 <div class="lower_contents">
   <ul>
-    <li class="btn2"><a href="./browse-article.php?article_id=<?php echo $pre_page ?>">←</a></li>
+    <li class="btn2"><a href="./browse-article.php?article_id=<?php echo $pre_page; ?>">←</a></li>
     <li class="btn2"><a href="../">戻る</a></li>
-    <li class="btn2"><a href="./browse-article.php?article_id=<?php echo $next_page ?>">→</a></li>
+    <li class="btn2"><a href="./browse-article.php?article_id=<?php echo $next_page; ?>">→</a></li>
   </ul>
 </div>
-
-<!--<script>-->
-<!--  function follow() {-->
-<!--    --><?php //create_follow($user['user_id'], $article['user_id']); ?>
-<!--  }-->
-<!---->
-<!--  function like() {-->
-<!--    alert('いいねしました');-->
-<!--//  --><?php //create_like($article['article_id'], $user['user_id']); ?>
-<!--  }-->
-<!--</script>-->
-
 
 <script>
   $(function () {
     let like_btn = $('#like_btn');
     let li = document.getElementById('like_btn').dataset.like;
+    let follow_btn = $('#follow_btn');
+    let fo = document.getElementById('follow_btn').dataset.fo;
 
     toggle_like(li);
+    toggle_follow(fo);
 
     function toggle_like(li) {
       if (li == 0) {
@@ -272,6 +249,15 @@ if (isset($articles[$article_index - 1])) {
       } else {
         like_btn.removeClass('like_btn');
         like_btn.addClass('like2_btn');
+      }
+    }
+    function toggle_follow(fo) {
+      if (fo == 0) {
+        follow_btn.removeClass('follow2_btn');
+        follow_btn.addClass('follow_btn');
+      } else {
+        follow_btn.removeClass('follow_btn');
+        follow_btn.addClass('follow2_btn');
       }
     }
 
@@ -315,29 +301,48 @@ if (isset($articles[$article_index - 1])) {
         li = 0;
       }
       toggle_like(li);
-
     })
 
     // フォロー機能
-    $('.like_btn').on('click', function () {
-      let user = document.getElementById('follow_btn').dataset.user;
-      let followed = document.getElementById('follow_btn').dataset.follow;
-      console.log(user);
-      console.log(followed);
-      alert('フォローしました！');
-      $.ajax({
-        url: '../user/follow.php',
-        type: 'POST',
-        data: {uid: user, fid: followd},
-      }).then(
-        // 1つめは通信成功時のコールバック
-        function (data) {
-          console.log(data);
-        },
-        // 2つめは通信失敗時のコールバック
-        function () {
-          alert("読み込み失敗");
-        });
+    follow_btn.on('click', function () {
+      let follow = document.getElementById('follow_btn').dataset.follow;
+      let user_id = document.getElementById('follow_btn').dataset.user;
+      if(fo == 0){
+        // フォローする
+        $.ajax({
+          url: '../user/follow.php',
+          type: 'POST',
+          data: {fid: follow, uid: user_id},
+        }).then(
+          // 1つめは通信成功時のコールバック
+          function (data) {
+            console.log(data);
+          },
+          // 2つめは通信失敗時のコールバック
+          function () {
+            alert("読み込み失敗");
+          }
+        );
+        fo = 1;
+      } else {
+        // フォローを外す
+        $.ajax({
+          url: '../user/delete-follow.php',
+          type: 'POST',
+          data: {fid: follow, uid: user_id},
+        }).then(
+          // 1つめは通信成功時のコールバック
+          function (data) {
+            console.log(data);
+          },
+          // 2つめは通信失敗時のコールバック
+          function () {
+            alert("読み込み失敗");
+          }
+        );
+        fo = 0;
+      }
+      toggle_follow(fo);
     })
   })
 </script>
