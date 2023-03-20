@@ -16,7 +16,7 @@ if ($_SESSION['user_info'] !== null) {
 //　いいね情報取得
   $like = check_like($_GET['article_id'], $user['user_id']);
 //  フォロー情報取得
-  $follow = check_follow($user['user_id'], $article['user_id']);
+//  $follow = check_follow($user['user_id'], $article['user_id']);
 }
 
 // 記事のインデックス番号取得
@@ -133,6 +133,7 @@ $article_index = array_keys($id_array, $_GET['article_id'])[0];
           </div>
         </div>
       <?php } ?>
+
       <!--  コメント  -->
       <div class="comment">
         <!--  コメント欄  -->
@@ -175,30 +176,37 @@ $article_index = array_keys($id_array, $_GET['article_id'])[0];
         });
         </script>
 
+        <!--    いいねボタンとフォローボタン    -->
         <div style="display:inline-flex">
+          <?php if (empty($like)) {
+            $li = 0;
+          } else {
+            $li = 1;
+          } ?>
           <!--いいねしていないとき-->
-          <?php if (empty($like)) { ?>
-            <button type="button" class="like_btn" id="like_btn" data-user="<?php echo $user['user_id']; ?>" data-article="<?php echo $article['article_id']; ?>">いいね</button>
-          <?php } else { ?>
-            <!--    いいね中    -->
-            <span class="swtext">
-            <span>
-              <li>
-                <button type="button" class="like2_btn">いいね中</button>
-              </li>
-            </span>
-
-            <span>
-              <li>
-                <button type="button" class="like2_btn">いいねを外す</button>
-              </li>
-            </span>
-          </span>
-          <?php } ?>
+          <button type="button" class="like_btn" id="like_btn" data-like="<?php echo $li; ?>" data-user="<?php echo $user['user_id']; ?>"
+                  data-article="<?php echo $article['article_id']; ?>">いいね
+          </button>
+          <!-- いいね中 -->
+          <!--            <span class="swtext">-->
+          <!--            <span>-->
+          <!--              <li>-->
+          <!--                <button type="button" class="like2_btn" id="like2_btn">いいね中</button>-->
+          <!--              </li>-->
+          <!--            </span>-->
+          <!---->
+          <!--            <span>-->
+          <!--              <li>-->
+          <!--                <button type="button" class="like2_btn" id="like2_btn">いいねを外す</button>-->
+          <!--              </li>-->
+          <!--            </span>-->
+          <!--          </span>-->
 
           <?php if (empty($follow)) { ?>
             <!--フォローしていないとき-->
-            <button type="button" class="follow_btn"　id="follow_btn" data-follow="<?php echo $article['user_id']; ?>" data-user="<?php echo $user['user_id']; ?>">フォロー</button>
+            <button type="button" class="follow_btn" 　id="follow_btn" data-follow="<?php echo $article['user_id']; ?>"
+                    data-user="<?php echo $user['user_id']; ?>">フォロー
+            </button>
           <?php } else { ?>
             <!--    フォロー中    -->
             <span class="swtext">
@@ -252,26 +260,62 @@ if (isset($articles[$article_index - 1])) {
 
 <script>
   $(function () {
+    let like_btn = $('#like_btn');
+    let li = document.getElementById('like_btn').dataset.like;
+
+    toggle_like(li);
+
+    function toggle_like(li) {
+      if (li == 0) {
+        like_btn.removeClass('like2_btn');
+        like_btn.addClass('like_btn');
+      } else {
+        like_btn.removeClass('like_btn');
+        like_btn.addClass('like2_btn');
+      }
+    }
+
     // いいね機能
-    $('.like_btn').on('click', function () {
+    like_btn.on('click', function () {
       let article_id = document.getElementById('like_btn').dataset.article;
       let user_id = document.getElementById('like_btn').dataset.user;
-      console.log(article_id);
-      console.log(user_id);
-      alert('いいねしました！');
-      $.ajax({
-        url: 'like.php',
-        type: 'POST',
-        data: {aid:article_id,uid:user_id},
-      }).then(
-        // 1つめは通信成功時のコールバック
-        function (data) {
-          console.log(data);
-        },
-        // 2つめは通信失敗時のコールバック
-        function () {
-          alert("読み込み失敗");
-      });
+      if(li == 0){
+        // いいねする
+        $.ajax({
+          url: 'like.php',
+          type: 'POST',
+          data: {aid: article_id, uid: user_id},
+        }).then(
+          // 1つめは通信成功時のコールバック
+          function (data) {
+            console.log(data);
+          },
+          // 2つめは通信失敗時のコールバック
+          function () {
+            alert("読み込み失敗");
+          }
+        );
+        li = 1;
+      } else {
+        // いいねを外す
+        $.ajax({
+          url: 'dislike.php',
+          type: 'POST',
+          data: {aid: article_id, uid: user_id},
+        }).then(
+          // 1つめは通信成功時のコールバック
+          function (data) {
+            console.log(data);
+          },
+          // 2つめは通信失敗時のコールバック
+          function () {
+            alert("読み込み失敗");
+          }
+        );
+        li = 0;
+      }
+      toggle_like(li);
+
     })
 
     // フォロー機能
@@ -284,7 +328,7 @@ if (isset($articles[$article_index - 1])) {
       $.ajax({
         url: '../user/follow.php',
         type: 'POST',
-        data: {uid:user,fid:followd},
+        data: {uid: user, fid: followd},
       }).then(
         // 1つめは通信成功時のコールバック
         function (data) {
@@ -296,7 +340,6 @@ if (isset($articles[$article_index - 1])) {
         });
     })
   })
-</script>
 </script>
 </body>
 </html>

@@ -1,21 +1,18 @@
 <?php
-//セッションを利用するためのメソッド
+// セッションを利用するためのメソッド
 session_start();
 
-//DB操作用ファイルを読み込む
+// DB操作用ファイルを読み込む
 require_once './DB/user_dao.php';
 require_once './DB/article_dao.php';
 
-//  DBから記事を取得
+// DBから記事を取得
 $articles =[];
-if(!empty($_GET['tag_id'])) {
-//  タグidのパラメータがあればタグごとに取り出す
+if(!empty($_GET['tag_id'])) {     // タグidのパラメータがあればタグごとに取り出す
   $articles = get_tag_articles($_GET['tag_id']);
-}else if(!empty($_GET['keyword'])) {
-//  キーワードのパラメータがあればキーワード検索して取り出す
+}else if(!empty($_GET['keyword'])) {  // キーワードのパラメータがあればキーワード検索して取り出す
   $articles = get_keyword_articles($_GET['keyword']);
-}else{
-//  指定が無ければすべての記事を取り出す
+}else{    // 指定が無ければすべての記事を取り出す
   $articles = get_articles();
 }
 $_SESSION['articles'] = $articles;
@@ -90,7 +87,6 @@ $tags = get_tags();
 </header>
 <?php } ?>
 
-
 <!--コンテンツ-->
 <div class="wrapper">
   <div class="container">
@@ -111,10 +107,10 @@ $tags = get_tags();
 
       <!--   記事一覧  (新しい順) -->
       <div class="content">
-        <?php
-        if(!empty($articles)){
+      <?php
+      if(!empty($articles)){
         foreach (array_reverse($articles) as $data) {
-        ?>
+      ?>
           <table>
             <tr>
               <td><a href="./articles/browse-article.php?article_id=<?php echo $data['article_id'] ?>"><?php echo $data['title']; ?></a></td>
@@ -130,14 +126,12 @@ $tags = get_tags();
               <td><a href="./articles/browse-article.php?article_id=<?php echo $data['article_id'] ?>"><?php echo get_user_name($data['user_id']) ?></a></td>
             </tr>
           </table>
-
-          <br>
         <?php
         }
-        }else{
-          echo "<h2>一致する記事はありませんでした</h2>";
-        }
-        ?>
+      }else{
+        echo "<h2>一致する記事はありませんでした</h2>";
+      }
+      ?>
       </div>
 
     </article>
