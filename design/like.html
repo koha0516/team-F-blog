@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/follow_style.css">
-    <title>ミジンコ/フォローリスト</title>
+    <link rel="stylesheet" href="./css/like_style.css">
+    <title>ミジンコ/いいねリスト</title>
 </head>
 <body>
     <!--ヘッダー-->
@@ -56,19 +56,29 @@
                 </div>
                 
                 <div class="content">
-                    <h2>フォローリスト</h2>
+                    <h2>いいねした記事</h2>
                     <!--繰り返し表示してほしいところ-->
-                    <table>
-                        <tr>
-                            <th>アカウント名</th>
-                            <td>フォロー中</td>
-                        </tr>
-                    </table>
-                    <!--ここまで-->
-
-                    <!--フォローがいないときの表示-->
-                        <!--<h3>フォローしていません</h3>-->
+                    <a href="browse.html">
+                        <table>
+                                <tr>
+                                    <th>タイトル</th>
+                                    <td style="text-align: right;">いいね</td>
+                                </tr>
+                                <tr>
+                                    <th colspan="2">文章</th>
+                                </tr>
+                                <tr>
+                                    <th>時間</th>
+                                    <td>ユーザー名</td>
+                                </tr>
+                        </table>
+                    </a>
+                    <!---->
                 </div>
+                <!--ここまで-->
+
+                <!--記事をいいねしていないときの表示-->
+                        <!--<h3>いいねした記事がありません</h3>-->
               </article>
           <br>
          </div>
