@@ -162,55 +162,37 @@ li {
 }
 
 /* コンテンツ */
-article {
-  display:flex;/*サイドバーとメインコンテンツを横並びにする指定をした*/
-}
-
 .upper_content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   position: relative;
-  top: 60px;
-  left: 10%;
+  top: 35px;
   width:70%;
   height:120px;
   text-align:center;
   padding:50px;
+  margin: 0 auto;
   margin-bottom: 15px;
 }
 
 .left_under{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 150px 150px 150px;
 }
 
 .content {
-  border-top: 2px solid;
+  border-top: 1px solid;
   border-top-color: #1b2538;
   position: relative;
   background:rgba(255,255,255,0.75);
-  top: 40px;
-  left: 10%;
+  top: 15px;
   width:70%;
-  height:500px;
+  height:425px;
   text-align:center;
   overflow-y: scroll;
   padding:50px;
-  margin-left:20px;/*サイドバーとメインコンテンツの間に隙間をあけた*/
-}
-
-.content2 {
-  position: relative;
-  background:rgba(255,255,255,0.75);
-  top: 85px;
   margin: 0 auto;
-  width:70%;
-  height:500px;
-  text-align:center;
-  overflow-y: scroll;
-  padding:50px;
 }
-
 /* サイドバーなしの時のボックス */
 .box {
   background:rgba(255,255,255,0.75);
@@ -239,41 +221,6 @@ th, td{
   position: relative;
   width: 100%;
   margin:0px auto;
-}
-.cp_iptxt input[type='text'] {
-  font: 15px/24px sans-serif;
-  box-sizing: border-box;
-  width: 75%;
-  margin:15px auto;
-  padding: 0.3em;
-  transition: 0.3s;
-  letter-spacing: 1px;
-  color: #aaaaaa;
-  border: 1px solid #005B75;
-  border-radius: 4px;
-}
-.ef input[type='text']:focus {
-  border: 1px solid #005B75;
-  outline: none;
-  box-shadow: 0 0 5px 1px rgba(0, 37, 79, 0.5);
-}
-
-.cp_iptxt input[type='password'] {
-  font: 15px/24px sans-serif;
-  box-sizing: border-box;
-  width: 75%;
-  margin:15px auto;
-  padding: 0.3em;
-  transition: 0.3s;
-  letter-spacing: 1px;
-  color: #aaaaaa;
-  border: 1px solid #1b2538;
-  border-radius: 4px;
-}
-.ef input[type='password']:focus {
-  border: 1px solid #005B75;
-  outline: none;
-  box-shadow: 0 0 5px 1px rgba(0, 37, 79, 0.5);
 }
 
 .cp_iptxt input[type='search'] {
@@ -369,6 +316,41 @@ th, td{
 }
 
 .search_btn:hover:before{
+  width: 100%;
+  z-index: -1;
+}
+
+/* 編集ボタン */
+.edit_btn a {
+  background: #005B75;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  width: 100px;
+  max-width: 240px;
+  padding: 10px 25px;
+  color: #FFFFFF;
+  transition: 0.3s ease-in-out;
+  font-weight: 500;
+  z-index:0;
+}
+.edit_btn a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  display: block;
+  background: #74a7be;
+  transition: .3s;
+  left:0;
+}
+.edit_btn a:hover {
+  color: #FFF;
+}
+.edit_btn a:hover:before {
   width: 100%;
   z-index: -1;
 }
