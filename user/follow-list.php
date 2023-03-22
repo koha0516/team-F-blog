@@ -106,7 +106,7 @@ if ($_SESSION['user_info'] !== null) {
           foreach ($follows as $f) {?>
         <table>
           <tr>
-            <th><?php echo $f['followed_user_id'];?></th>
+            <th><?php echo get_user_name($f['followed_user_id']);?></th>
             <td>フォロー中</td>
           </tr>
         </table>
