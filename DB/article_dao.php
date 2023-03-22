@@ -296,5 +296,24 @@ function delete_like($article_id, $like_user_id) {
   }
 }
 
+function get_likes($like_user_id) {
+  try {
+    // sql文の構築
+    $sql = "SELECT * FROM likes WHERE like_user_id=:like_user_id";
+    $stm = get_connect()->prepare($sql);
 
+    $stm->bindValue(':like_user_id', $like_user_id, PDO::PARAM_STR);
+
+    $stm->execute();
+    // 検索結果を配列として全件取得する
+    return $stm->fetchAll(PDO::FETCH_ASSOC);
+
+  } catch (PDOException $e) {
+    // エラー発生
+    echo $e->getMessage();
+  } finally {
+    // DB接続を閉じる
+    $pdo = null;
+  }
+}
 
