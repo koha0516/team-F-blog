@@ -271,5 +271,48 @@ function check_like($article_id, $like_user_id) {
   }
 }
 
+//コメントをINSERTするメソッド
+function register_comments($article_id, $comment_user_id, $comment) {
+  try {
+    $sql = "INSERT INTO comments (article_id, comment_user_id, comment_content) VALUES (:article_id, :comment_user_id, :comment_content)";
+    $stm = get_connect()->prepare($sql);
 
+    // プレースホルダに値をバインドする
+    $stm->bindValue(':article_id', $article_id, PDO::PARAM_INT);
+    $stm->bindValue(':comment_user_id', $comment_user_id, PDO::PARAM_INT);
+    $stm->bindValue(':comment_content', $comment, PDO::PARAM_STR);
+    // SQL文を実行する
+    $stm->execute();
+
+    return true;
+  } catch (PDOException $e) {
+    // エラー発生
+    echo $e->getMessage();
+    return false;
+  } finally {
+    // DB接続を閉じる
+    $pdo = null;
+  }
+}
+
+//article_idをもとにコメントとユーザー名を取得
+function get_comments($article_id) {
+  try {
+    // sql文の構築
+    $sql = "SELECT comments.comment_content,users.user_name FROM comments JOIN users ON user_id = comment_user_id WHERE article_id=:articleid";
+    $stm = get_connect()->prepare($sql);
+
+    $stm->bindValue(':articleid', $article_id, PDO::PARAM_INT);
+    $stm->execute();
+    // 検索結果を配列として全件取得する
+    return $stm->fetchAll(PDO::FETCH_ASSOC);
+    
+    } catch (PDOException $e) {
+    // エラー発生
+    echo $e->getMessage();
+  } finally {
+    // DB接続を閉じる
+    $pdo = null;
+  }
+}
 
