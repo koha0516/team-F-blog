@@ -170,6 +170,7 @@ article {
   /*height:500px;*/
   text-align:center;
   overflow-y: scroll;
+  word-break: break-all;
   padding:0px;
   margin-left:20px;/*サイドバーとメインコンテンツの間に隙間をあけた*/
 }
@@ -227,6 +228,7 @@ article {
   text-align:left;
   padding: 2.5px;
   margin: 1px auto;
+  word-break: break-all;
 }
 
 /* Table */
