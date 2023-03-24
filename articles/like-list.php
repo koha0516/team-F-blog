@@ -26,7 +26,7 @@ $tags = get_tags();
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/like_style.css">
   <title>ミジンコ|トップページ</title>
 </head>
 
@@ -105,26 +105,33 @@ $tags = get_tags();
 
       <!--   記事一覧  (新しい順) -->
       <div class="content">
+        <h2>いいねした記事</h2>
         <?php
         if(!empty($likes)){
           foreach (array_reverse($likes) as $li) {
             $article = get_article($li['article_id']);
             ?>
-            <table>
-              <tr>
-                <td><a href="../articles/browse-article.php?article_id=<?php echo $article['article_id']; ?>"><?php $article['title']; ?></a></td>
-                <td style="text-align: right">
-                  <?php if(!empty($_SESSION['user_info'])){ ?> いいねボタン <?php } ?>
-                </td>
-              </tr>
-              <tr>
-                <td colspan="2"><a href="../articles/browse-article.php?article_id=<?php echo $article['article_id']; ?>"><?php echo $article['article_content'] ?></a></td>
-              </tr>
-              <tr>
-                <td><a href="../articles/browse-article.php?article_id=<?php echo $article['article_id']; ?>"><?php echo $article['update_at'] ?></a></td>
-                <td><a href="../articles/browse-article.php?article_id=<?php echo $article['article_id']; ?>"><?php echo get_user_name($article['user_id']) ?></a></td>
-              </tr>
-            </table>
+            <a href="../articles/browse-article.php?article_id=<?php echo $article['article_id']; ?>">
+              <table>
+                <tr>
+                  <th><?php echo $article['title']; ?></th>
+                  <!--    いいねボタン    -->
+                  <td style="text-align: right; z-index: 10000; position: relative;">
+                    <button type="button" class="like_btn" id="like_btn"
+                            data-like="<?php echo $li; ?>" data-user="<?php echo $user['user_id']; ?>"
+                            data-article="<?php echo $article['article_id']; ?>">いいね
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <th colspan="2"><?php echo $article['article_content'] ?></th>
+                </tr>
+                <tr>
+                  <th><?php echo $article['update_at'] ?></th>
+                  <td><?php echo get_user_name($article['user_id']) ?></td>
+                </tr>
+              </table>
+            </a>
             <?php
           }
         }else{
