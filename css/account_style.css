@@ -29,7 +29,7 @@
  h2 {
     font-size: 30px;
     color: #005B75;
-    padding-top: 25px;
+    padding-top: 20px;
  }
 
  a {	
@@ -185,7 +185,7 @@ article {
 .box {
 	background:rgba(255,255,255,0.75);
 	position: relative;
-	top: 125px;
+	top: 100px;
 	width: 80%;
 	text-align:center;
 	padding-bottom:20px;

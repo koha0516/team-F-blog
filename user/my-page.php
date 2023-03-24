@@ -80,7 +80,7 @@ $_SESSION['articles'] = $articles;
     </div>
   </div>
 
-  <div class="right">
+  <div class="right2">
     <div class="btn3"><a href="edit-password.php">パスワード変更</a></div>
   </div>
 
@@ -97,7 +97,9 @@ $_SESSION['articles'] = $articles;
           <a href="../articles/browse-article.php?article_id=<?php echo $data['article_id'] ?>"><?php echo $data['title']; ?></a>
         </td>
         <td style="text-align: right">
-          <a href="../articles/article-edit-form.php?article_id=<?php echo $data['article_id'] ?>">編集ボタン</a>
+        <div class="edit_btn">
+          <a href="../articles/article-edit-form.php?article_id=<?php echo $data['article_id'] ?>">編集</a>
+        </div>
         </td>
       </tr>
       <tr>
