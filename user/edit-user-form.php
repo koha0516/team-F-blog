@@ -73,7 +73,7 @@ if (isset($_SESSION['error_pass'])) {
 
 <!--コンテンツ-->
 <div class="box">
-  <h2>新規登録</h2>
+  <h2>編集ページ</h2>
   <form action="edit-user.php" method="post">
 
     <div class="cp_iptxt">

@@ -12,7 +12,7 @@ if (isset($_SESSION['user_info'])) {
 }
 $title = "パスワードの変更について";
 $content = "以下のURLをクリックしてパスワードを変更してください\n".$url."?auth=".$auth;
-$headers = "From: k.watanabe.sys22@morijyobi.ac.jp";
+$headers = "From: ".$to;
 if(mb_send_mail($to, $title, $content, $headers)){
   echo "メールを送信しました";
 } else {

@@ -1,0 +1,61 @@
+
+dphp:S103"KSplit this 139 characters long line (which is greater than 120 authorized).(¾ô´ñşÿÿÿÿ
+dphp:S103w"KSplit this 151 characters long line (which is greater than 120 authorized).(Î©†òùÿÿÿÿ
+W	php:S1808"=Move this open curly brace to the beginning of the next line.(®ºÅùÿÿÿÿ
+W	php:S1808 "=Move this open curly brace to the beginning of the next line.(·¸”©şÿÿÿÿ
+R	php:S18083"=Move this open curly brace to the beginning of the next line.(®Î‘
+W	php:S1808I"=Move this open curly brace to the beginning of the next line.(ÑüÒÂşÿÿÿÿ
+R	php:S1808_"=Move this open curly brace to the beginning of the next line.(Ïˆàí
+W	php:S1808u"=Move this open curly brace to the beginning of the next line.(Î¢ó‡ùÿÿÿÿ
+S	php:S1808"=Move this open curly brace to the beginning of the next line.(‘“¡
+X	php:S1808£"=Move this open curly brace to the beginning of the next line.(€à×üÿÿÿÿ
+X	php:S1808·"=Move this open curly brace to the beginning of the next line.(¼…ëˆüÿÿÿÿ
+X	php:S1808Ì"=Move this open curly brace to the beginning of the next line.( ´ºÛşÿÿÿÿ
+S	php:S1808ã"=Move this open curly brace to the beginning of the next line.(šƒç
+X	php:S1808ú"=Move this open curly brace to the beginning of the next line.(Ñ…“–øÿÿÿÿ
+S	php:S1808“"=Move this open curly brace to the beginning of the next line.(Ê²ê
+Z	php:S1808«"=Move this open curly brace to the beginning of the next line.(÷”è©8ÅÆ—·ğ0
+pphp:S100"WRename function "register_article" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(®ºÅùÿÿÿÿ
+lphp:S100 "SRename function "get_articles" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(·¸”©şÿÿÿÿ
+lphp:S1003"XRename function "get_user_articles" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(®Î‘
+tphp:S100I"[Rename function "get_keyword_articles" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(ÑüÒÂşÿÿÿÿ
+kphp:S100_"WRename function "get_own_articles" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(Ïˆàí
+nphp:S100u"URename function "update_article" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(Î¢ó‡ùÿÿÿÿ
+dphp:S100"ORename function "get_tags" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(‘“¡
+mphp:S100£"SRename function "get_tag_name" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(€à×üÿÿÿÿ
+lphp:S100·"RRename function "get_article" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(¼…ëˆüÿÿÿÿ
+qphp:S100Ì"WRename function "get_tag_articles" to match the regular expression ^[a-z][a-zA-Z0-9]*$.( ´ºÛşÿÿÿÿ
+gphp:S100ã"RRename function "create_like" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(šƒç
+kphp:S100ú"QRename function "check_like" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(Ñ…“–øÿÿÿÿ
+gphp:S100“"RRename function "delete_like" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(Ê²ê
+lphp:S100«"PRename function "get_likes" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(÷”è©8Àø—·ğ0
+iphp:S1173"URename this parameter "$user_id" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(®Î‘
+iphp:S117_"URename this parameter "$user_id" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(Ïˆàí
+nphp:S117£"TRename this parameter "$tag_id" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(€à×üÿÿÿÿ
+rphp:S117·"XRename this parameter "$article_id" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(¼…ëˆüÿÿÿÿ
+nphp:S117Ì"TRename this parameter "$tag_id" to match the regular expression ^[a-z][a-zA-Z0-9]*$.( ´ºÛşÿÿÿÿ
+mphp:S117ã"XRename this parameter "$article_id" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(šƒç
+ophp:S117ã"ZRename this parameter "$like_user_id" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(šƒç
+rphp:S117ú"XRename this parameter "$article_id" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(Ñ…“–øÿÿÿÿ
+tphp:S117ú"ZRename this parameter "$like_user_id" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(Ñ…“–øÿÿÿÿ
+mphp:S117“"XRename this parameter "$article_id" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(Ê²ê
+ophp:S117“"ZRename this parameter "$like_user_id" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(Ê²ê
+vphp:S117«"ZRename this parameter "$like_user_id" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(÷”è©8ú¨›·ğ0
+j	php:S1779"VReplace all non line feed end of line characters in this file "article_dao.php" by LF.8Ù£ÿºğ0
+d	php:S1192ê"NDefine a constant instead of duplicating this literal ":like_user_id" 4 times.(¯ŒóÃ
+b	php:S1192é"LDefine a constant instead of duplicating this literal ":article_id" 3 times.(ºçÌº
+D	php:S1481")Remove this unused "$pdo" local variable.(â†¹éúÿÿÿÿ
+D	php:S1481¼")Remove this unused "$pdo" local variable.(â†¹éúÿÿÿÿ
+D	php:S1481Œ")Remove this unused "$pdo" local variable.(â†¹éúÿÿÿÿ
+C	php:S1481D")Remove this unused "$pdo" local variable.(â†¹éúÿÿÿÿ
+D	php:S1481")Remove this unused "$pdo" local variable.(â†¹éúÿÿÿÿ
+D	php:S1481İ")Remove this unused "$pdo" local variable.(â†¹éúÿÿÿÿ
+C	php:S1481.")Remove this unused "$pdo" local variable.(â†¹éúÿÿÿÿ
+C	php:S1481p")Remove this unused "$pdo" local variable.(â†¹éúÿÿÿÿ
+C	php:S1481[")Remove this unused "$pdo" local variable.(â†¹éúÿÿÿÿ
+K	php:S1481§")Remove this unused "$pdo" local variable.(â†¹éúÿÿÿÿ8ÇÆ—·ğ0
+D	php:S1481õ")Remove this unused "$pdo" local variable.(â†¹éúÿÿÿÿ
+D	php:S1481²")Remove this unused "$pdo" local variable.(â†¹éúÿÿÿÿ
+C	php:S1481")Remove this unused "$pdo" local variable.(â†¹éúÿÿÿÿ
+D	php:S1481Ç")Remove this unused "$pdo" local variable.(â†¹éúÿÿÿÿ
+k	php:S4833"QReplace "require_once" with namespace import mechanism through the "use" keyword.(Õ­…†üÿÿÿÿ

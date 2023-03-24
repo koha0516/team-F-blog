@@ -41,7 +41,7 @@ if ($error) {
 }
 
 //sql実行
-if (edit_user($name, $mail)) {
+if (edit_user($_SESSION['user_info']['user_id'] ,$name, $mail)) {
   header('Location: my-page.php');
   $_SESSION['user_info']['user_name'] = $name;
   $_SESSION['user_info']['user_mail'] = $mail;
