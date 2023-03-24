@@ -121,6 +121,7 @@ if (isset($_SESSION['error_contents'])) {
 
       <!--   投稿フォーム   -->
       <div class="content">
+        <h3>投稿ページ</h3>
         <form action="post.php" method="post">
           <div class="cp_iptxt">
             <label class="ef">

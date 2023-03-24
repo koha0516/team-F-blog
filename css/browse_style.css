@@ -170,6 +170,7 @@ article {
   /*height:500px;*/
   text-align:center;
   overflow-y: scroll;
+  word-break: break-all;
   padding:0px;
   margin-left:20px;/*サイドバーとメインコンテンツの間に隙間をあけた*/
 }
@@ -227,6 +228,7 @@ article {
   text-align:left;
   padding: 2.5px;
   margin: 1px auto;
+  word-break: break-all;
 }
 
 /* Table */
@@ -237,6 +239,7 @@ table{
 }
 th, td{
   border:1px solid #000000;
+  word-break: break-all;
   padding: 10px 20px;
 }
 
@@ -253,7 +256,7 @@ th, td{
   padding: 0.3em;
   transition: 0.3s;
   letter-spacing: 1px;
-  color: #aaaaaa;
+  color: #000000;
   border: 1px solid #005B75;
   border-radius: 4px;
 }
@@ -271,7 +274,7 @@ th, td{
   padding: 0.3em;
   transition: 0.3s;
   letter-spacing: 1px;
-  color: #aaaaaa;
+  color: #000000;
   border: 1px solid #005B75;
   border-radius: 4px;
 }
