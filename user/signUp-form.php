@@ -40,7 +40,7 @@ if (isset($_SESSION['error_pass'])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/account_style.css">
-  <title>signUp</title>
+  <title>ミジンコ|新規登録</title>
 </head>
 <body>
 
@@ -92,7 +92,7 @@ if (isset($_SESSION['error_pass'])) {
       <button type="submit" value="登録" class="button">登録</button>
   </form>
 
-  <div class="btn2"><a href="index.php">戻る</a></div>
+  <div class="btn2"><a href="../index.php">戻る</a></div>
   <br>
 </div>
 

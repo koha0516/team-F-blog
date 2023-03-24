@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/follow_style.css"><!--css同じ-->
+    <title>ミジンコ/フォロワーリスト</title>
+</head>
+<body>
+    <!--ヘッダー-->
+    <header>
+            <a href="/"><h1>ミジンコ</h1></a>
+        <nav class="pc-nav">
+            <ul>
+                <form action="index.html" method="post">
+                    <li>
+                        <div style="display:inline-flex">
+                            <div class="cp_iptxt">
+                                <label class="ef">
+                                    <input type="search" name="keyward" placeholder="キーワード">
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" aria-label="検索" class="search_btn">検索</button>
+                    </form>
+                </li>
+                <li class="btn"><a href="">いいね</a></li>
+                <li class="btn"><a href="register.html">投稿</a></li>
+                <li class="btn"><a href="mypage.html">アカウント</a></li>
+                <li class="btn"><a href="">ログアウト</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--コンテンツ-->
+    <div class="wrapper">
+        <div class="container">
+            <article>
+                <div class="side">
+                    <h3>カテゴリー</h3>
+                    <ol class="sample1">
+                        <li><a href="">ファッション</a></li>
+                        <li><a href="">ペット</a></li>
+                        <li><a href="">料理</a></li>
+                        <li><a href="">美容</a></li>
+                        <li><a href="">旅行</a></li>
+                        <li><a href="">グルメ</a></li>
+                        <li><a href="">インテリア＆DIY</a></li>
+                        <li><a href="">コラム</a></li>
+                        <li><a href="">海外生活</a></li>
+                        <li><a href="">専門家</a></li>
+                        <li><a href="">趣味</a></li>
+                    </ol>
+                </div>
+                
+                <div class="content">
+                    <h2>フォロワーリスト</h2>
+                    <!--繰り返し表示してほしいところ-->
+                    <table>
+                        <tr>
+                            <th>アカウント名</th>
+                            <td>フォロー中</td>
+                        </tr>
+                    </table>
+                    
+                    <!--ここまで-->
+
+                    <!--フォロワーがいないときの表示-->
+                        <!--<h3>フォロワーがいません</h3>-->
+                </div>
+              </article>
+          <br>
+         </div>
+        </div>
+</body>
+</html>

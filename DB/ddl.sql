@@ -79,7 +79,7 @@ CREATE TABLE comments
     comment_id          int             auto_increment,
     article_id          int             not null,
     comment_user_id     int             not null,
-    comment_content     varchar(500)    not null unique,
+    comment_content     varchar(500)    not null,
     create_at           timestamp       DEFAULT CURRENT_TIMESTAMP,
     delete_frag         int             not null default 0,
     primary key (comment_id),

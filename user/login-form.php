@@ -16,8 +16,8 @@ if (isset($_SESSION['name'])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/style.css">
-  <title>login</title>
+  <link rel="stylesheet" href="../css/account_style.css">
+  <title>ミジンコ|ログインページ</title>
 </head>
 
 <body>
@@ -63,7 +63,7 @@ if (isset($_SESSION['name'])) {
       <button type="submit" value="ログイン" class="button">ログイン</button>
   </form>
 
-  <div class="btn2"><a href="index.php">戻る</a></div>
+  <div class="btn2"><a href="../index.php">戻る</a></div>
   <br>
 </div>
 

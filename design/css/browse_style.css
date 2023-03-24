@@ -180,7 +180,7 @@ article {
    background:rgba(255,255,255,0.75);
    top: 85px;
    left: 10%;
-   width:15%;
+   width:17.5%;
    height:95%;
    text-align:center;
    margin-left:20px;/*サイドバーとメインコンテンツの間に隙間をあけた*/
@@ -203,7 +203,7 @@ article {
 	width: 100%;
    height: 300px;
 	text-align:left;
-   padding: 25px;
+   padding: 15px;
    margin: 0 auto;
    overflow-y: scroll;
 }

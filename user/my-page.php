@@ -25,7 +25,7 @@ $_SESSION['articles'] = $articles;
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/my-page.css">
-  <title>ミジンコ</title>
+  <title>ミジンコ|マイページ</title>
 </head>
 
 <body>
@@ -65,18 +65,22 @@ $_SESSION['articles'] = $articles;
     <?php
     echo $user['user_name'];
     ?>
+    <a href="./edit-user-info.php"><img src="../img/edit.png" class="edit-icon"></a>
     <br>
     <div class="left_under">
       <div class="left2">
-        フォロワー：〇人
+        フォロワー：<?php echo count($articles) ?>人
       </div>
       <div class="right2">
-        投稿した記事：<?php echo count($articles) ?>件
+        投稿：<?php echo count($articles) ?>件
+      </div>
+      <div class="left2">
+        <a href="./follow-list.php">フォローリスト</a>
       </div>
     </div>
   </div>
 
-  <div class="right">
+  <div class="right2">
     <div class="btn3"><a href="edit-password.php">パスワード変更</a></div>
   </div>
 
@@ -93,7 +97,9 @@ $_SESSION['articles'] = $articles;
           <a href="../articles/browse-article.php?article_id=<?php echo $data['article_id'] ?>"><?php echo $data['title']; ?></a>
         </td>
         <td style="text-align: right">
-          <a href="../articles/article-edit-form.php?article_id=<?php echo $data['article_id'] ?>">編集ボタン</a>
+        <div class="edit_btn">
+          <a href="../articles/article-edit-form.php?article_id=<?php echo $data['article_id'] ?>">編集</a>
+        </div>
         </td>
       </tr>
       <tr>

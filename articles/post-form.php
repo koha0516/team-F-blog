@@ -70,7 +70,7 @@ if (isset($_SESSION['error_contents'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/register_style.css">
 
-  <title>投稿ページ</title>
+  <title>ミジンコ|投稿ページ</title>
 </head>
 
 <body>
@@ -89,7 +89,6 @@ if (isset($_SESSION['error_contents'])) {
             </div>
           </div>
           <button type="submit" aria-label="検索" class="search_btn">検索</button>
-          <a href="../">戻る</a>
         </form>
       </li>
       <!--  ヘッダーナビ   -->

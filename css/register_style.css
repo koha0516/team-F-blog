@@ -10,6 +10,7 @@ body {
 }
 
 header {
+  z-index: 10;
   padding: 10px 4% 10px;
   position: fixed;
   top: 0;
@@ -30,14 +31,6 @@ h2 {
   font-size: 30px;
   color: #005B75;
   padding-top: 25px;
-}
-
-h3{
-  color: #005B75;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 a {
@@ -177,7 +170,6 @@ article {
   position: relative;
   background:rgba(255,255,255,0.75);
   top: 85px;
-  left: 10%;
   width:70%;
   /*height:500px;*/
   text-align:center;

@@ -9,8 +9,8 @@ require_once '../DB/article_dao.php';
 //dbからデータを取得(記事とタグ)
 $article = get_article($_GET['article_id']);
 $tags = get_tags();
-if($_SESSION['user_info'] !== null){
 
+if ($_SESSION['user_info'] !== null) {
 //  ログイン情報取得
   $user = $_SESSION['user_info'];
 //　いいね情報取得
@@ -25,7 +25,7 @@ $comments = get_comments($_GET['article_id']);
 
 // 記事のインデックス番号取得
 $articles = $_SESSION['articles'];
-$id_array = array_column( $articles, 'article_id');
+$id_array = array_column($articles, 'article_id');
 $article_index = array_keys($id_array, $_GET['article_id'])[0];
 
 ?>
@@ -40,13 +40,14 @@ $article_index = array_keys($id_array, $_GET['article_id'])[0];
   <link rel="stylesheet" href="../css/browse_style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <title>ミジンコ</title>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 </head>
 
 <body>
 <!--ヘッダー　（ログイン後とログイン前で場合分け）-->
 <?php if (empty($_SESSION['user_info'])) { ?>
   <header>
-    <a href="../index.php"><h1>ミジンコ</h1></a>
+    <a href="/"><h1>ミジンコ</h1></a>
     <nav class="pc-nav">
       <ul>
         <!--  検索窓　-->
@@ -110,32 +111,33 @@ $article_index = array_keys($id_array, $_GET['article_id'])[0];
           <li><a href="../index.php">すべて</a></li>
           <?php
           foreach ($tags as $t) {
-          ?>
+            ?>
 
-            <a href="../index.php?tag_id=<?php echo $t['tag_id'] ?>"><?php echo $t['tag_name'] ?></a></li>
+            <li><a href="../index.php?tag_id=<?php echo $t['tag_id'] ?>"><?php echo $t['tag_name'] ?></a></li>
           <?php } ?>
         </ol>
       </div>
 
       <!--   記事　　-->
-      <?php if($article['published'] > 0){ ?>
-      <div class="content">
-        <div class="box">
-          <h2><?php echo $article['title'] ?></h2>
-          <?php echo get_user_name($article['user_id']) ?>　<?php echo $article['update_at'] ?>
-          <hr>
-          <p><?php echo $article['article_content'] ?></p>
-          <hr>
-          <?php echo get_tag_name($article['tag_id']) ?>
+      <?php if ($article['published'] > 0) { ?>
+        <div class="content">
+          <div class="box">
+            <h2><?php echo $article['title'] ?></h2>
+            <?php echo get_user_name($article['user_id']) ?>　<?php echo $article['update_at'] ?>
+            <hr>
+            <p><?php echo $article['article_content'] ?></p>
+            <hr>
+            <?php echo get_tag_name($article['tag_id']) ?>
+          </div>
         </div>
-      </div>
-      <?php } else {?>
-      <div class="content2">
-        <div class="box">
-          <h2>この記事は非公開or削除された可能性があります</h2>
+      <?php } else { ?>
+        <div class="content2">
+          <div class="box">
+            <h2>この記事は非公開or削除された可能性があります</h2>
+          </div>
         </div>
-      </div>
-      <?php }?>
+      <?php } ?>
+
       <!--  コメント  -->
       <div class="comment">
         <!--  コメント欄  -->
@@ -157,7 +159,7 @@ $article_index = array_keys($id_array, $_GET['article_id'])[0];
             </table>
           </div>
         </div>
-        <!--  コメント入力フォーム　　-->
+        　　　　　<!--  コメント入力フォーム　　-->
           <div style="display:inline-flex">
             <div class="cp_iptxt">
               <label class="ef">
@@ -166,10 +168,6 @@ $article_index = array_keys($id_array, $_GET['article_id'])[0];
             </div>
               <button type="submit" aria-label="送信" class="comment_btn" id="send">送信</button>
           </div>
-        
-        <div class="like">like</div> <!--勝手に追加-->
-
-        <div id="text-button" onclick="clickDisplayAlert()">Click</div>
 
         <script>
           //ajax//
@@ -205,42 +203,39 @@ $article_index = array_keys($id_array, $_GET['article_id'])[0];
         });
         </script>
 
+        <!--    いいねボタンとフォローボタン    -->
         <div style="display:inline-flex">
+          <?php if (empty($like)) {
+            $li = 0;
+          } else {
+            $li = 1;
+          } ?>
+          <?php if (empty($follow)) {
+            $fo = 0;
+          } else {
+            $fo= 1;
+          } ?>
+
           <!--いいねしていないとき-->
-          <?php if(empty($like)){ ?>
-          <button type="button" class="like_btn" onclick="like()">いいね</button>
-          <?php }else{ ?>
-          <!--    いいね中    -->
-          <span class="swtext">
-            <span>
-              <li>
-                <button type="button" class="like2_btn">いいね中</button>
-              </li>
-            </span>
+          <button type="button" class="like_btn" id="like_btn" data-like="<?php echo $li; ?>" data-user="<?php echo $user['user_id']; ?>"
+                  data-article="<?php echo $article['article_id']; ?>">いいね
+          </button>
 
-            <span>
-              <li>
-                <button type="button" class="like2_btn">いいねを外す</button>
-              </li>
-            </span>
-          </span>
-          <?php } ?>
+          <!--フォローしていないとき-->
+          <button type="button" class="follow_btn" id="follow_btn" data-fo="<?php echo $fo; ?>" data-follow="<?php echo $article['user_id']; ?>"
+                  data-user="<?php echo $user['user_id']; ?>">フォロー
+          </button>
 
-          <?php if(empty($follow)){ ?>
-            <!--フォローしていないとき-->
-            <button type="button" class="follow_btn" onclick="follow()">フォロー</button>
-          <?php }else{ ?>
-            <!--    フォロー中    -->
-            <span class="swtext">
-              <span>
-                <button type="button" class="follow2_btn">フォロー中</button>
-              </span>
-
-              <span>
-                <button type="button" class="follow2_btn">フォローを外す</button>
-              </span>
-            </span>
-          <?php } ?>
+          <!--    フォロー中    -->
+<!--            <span class="swtext">-->
+<!--              <span>-->
+<!--                <button type="button" class="follow2_btn">フォロー中</button>-->
+<!--              </span>-->
+<!---->
+<!--              <span>-->
+<!--                <button type="button" class="follow2_btn">フォローを外す</button>-->
+<!--              </span>-->
+<!--            </span>-->
         </div>
       </div>
     </article>
@@ -248,34 +243,139 @@ $article_index = array_keys($id_array, $_GET['article_id'])[0];
 </div>
 <?php
 //  次のページ前のページ
-if(isset($articles[$article_index + 1])) {
+if (isset($articles[$article_index + 1])) {
   $next_page = $articles[$article_index + 1]['article_id'];
-}else{
+} else {
   $next_page = $articles[0]['article_id'];
 }
 
-if(isset($articles[$article_index - 1])) {
+if (isset($articles[$article_index - 1])) {
   $pre_page = $articles[$article_index - 1]['article_id'];
-}else{
-  $pre_page = $articles[count($id_array)-1]['article_id'];
+} else {
+  $pre_page = $articles[count($id_array) - 1]['article_id'];
 }
 ?>
 <div class="lower_contents">
   <ul>
-    <li class="btn2"><a href="./browse-article.php?article_id=<?php echo $pre_page ?>">←</a></li>
+    <li class="btn2"><a href="./browse-article.php?article_id=<?php echo $pre_page; ?>">←</a></li>
     <li class="btn2"><a href="../">戻る</a></li>
-    <li class="btn2"><a href="./browse-article.php?article_id=<?php echo $next_page ?>">→</a></li>
+    <li class="btn2"><a href="./browse-article.php?article_id=<?php echo $next_page; ?>">→</a></li>
   </ul>
 </div>
 
 <script>
-  function follow() {
-    <?php create_follow($user['user_id'], $article['user_id']); ?>
-  }
+  $(function () {
+    let like_btn = $('#like_btn');
+    let li = document.getElementById('like_btn').dataset.like;
+    let follow_btn = $('#follow_btn');
+    let fo = document.getElementById('follow_btn').dataset.fo;
 
-  function like(){
-    <?php create_like($article['article_id'], $user['user_id']); ?>
-  }
+    toggle_like(li);
+    toggle_follow(fo);
+
+    function toggle_like(li) {
+      if (li == 0) {
+        like_btn.removeClass('like2_btn');
+        like_btn.addClass('like_btn');
+      } else {
+        like_btn.removeClass('like_btn');
+        like_btn.addClass('like2_btn');
+      }
+    }
+    function toggle_follow(fo) {
+      if (fo == 0) {
+        follow_btn.removeClass('follow2_btn');
+        follow_btn.addClass('follow_btn');
+      } else {
+        follow_btn.removeClass('follow_btn');
+        follow_btn.addClass('follow2_btn');
+      }
+    }
+
+    // いいね機能
+    like_btn.on('click', function () {
+      let article_id = document.getElementById('like_btn').dataset.article;
+      let user_id = document.getElementById('like_btn').dataset.user;
+      if(li == 0){
+        // いいねする
+        $.ajax({
+          url: 'like.php',
+          type: 'POST',
+          data: {aid: article_id, uid: user_id},
+        }).then(
+          // 1つめは通信成功時のコールバック
+          function (data) {
+            console.log(data);
+          },
+          // 2つめは通信失敗時のコールバック
+          function () {
+            alert("読み込み失敗");
+          }
+        );
+        li = 1;
+      } else {
+        // いいねを外す
+        $.ajax({
+          url: 'dislike.php',
+          type: 'POST',
+          data: {aid: article_id, uid: user_id},
+        }).then(
+          // 1つめは通信成功時のコールバック
+          function (data) {
+            console.log(data);
+          },
+          // 2つめは通信失敗時のコールバック
+          function () {
+            alert("読み込み失敗");
+          }
+        );
+        li = 0;
+      }
+      toggle_like(li);
+    })
+
+    // フォロー機能
+    follow_btn.on('click', function () {
+      let follow = document.getElementById('follow_btn').dataset.follow;
+      let user_id = document.getElementById('follow_btn').dataset.user;
+      if(fo == 0){
+        // フォローする
+        $.ajax({
+          url: '../user/follow.php',
+          type: 'POST',
+          data: {fid: follow, uid: user_id},
+        }).then(
+          // 1つめは通信成功時のコールバック
+          function (data) {
+            console.log(data);
+          },
+          // 2つめは通信失敗時のコールバック
+          function () {
+            alert("読み込み失敗");
+          }
+        );
+        fo = 1;
+      } else {
+        // フォローを外す
+        $.ajax({
+          url: '../user/delete-follow.php',
+          type: 'POST',
+          data: {fid: follow, uid: user_id},
+        }).then(
+          // 1つめは通信成功時のコールバック
+          function (data) {
+            console.log(data);
+          },
+          // 2つめは通信失敗時のコールバック
+          function () {
+            alert("読み込み失敗");
+          }
+        );
+        fo = 0;
+      }
+      toggle_follow(fo);
+    })
+  })
 </script>
 </body>
 </html>
