@@ -90,7 +90,10 @@ $follower = get_followers($user_id);
 
   <!--   記事一覧  (新しい順) -->
 <div class="content">
+  <?php if(empty($articles)){ ?>
+  <h2>投稿した記事はありません</h2>
   <?php
+  }
   foreach (array_reverse($articles) as $data) {
   ?>
     <table>

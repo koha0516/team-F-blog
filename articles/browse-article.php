@@ -90,7 +90,7 @@ $article_index = array_keys($id_array, $_GET['article_id'])[0];
           </form>
         </li>
         <!--  ヘッダーナビ   -->
-        <li class="btn"><a href="#">いいね</a></li>
+        <li class="btn"><a href="../articles/like-list.php">いいね</a></li>
         <li class="btn"><a href="../articles/post-form.php">投稿</a></li>
         <li class="btn"><a href="../user/my-page.php">アカウント</a></li>
         <li class="btn"><a href="../user/logout.php">ログアウト</a></li>

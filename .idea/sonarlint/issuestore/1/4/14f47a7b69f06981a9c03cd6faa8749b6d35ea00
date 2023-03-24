@@ -1,14 +1,0 @@
-
-JWeb:AvoidCommentedOutCodeCheckÇ"Remove this commented out code.(îıäò
-OWeb:AvoidCommentedOutCodeCheckÉ"Remove this commented out code.(Şƒ³˜øÿÿÿÿ
-OWeb:AvoidCommentedOutCodeCheckÊ"Remove this commented out code.(°®‘ªşÿÿÿÿ
-OWeb:AvoidCommentedOutCodeCheckÍ"Remove this commented out code.(•’¯ªûÿÿÿÿ
-OWeb:AvoidCommentedOutCodeCheckÎ"Remove this commented out code.(°®‘ªşÿÿÿÿ
-OWeb:AvoidCommentedOutCodeCheckÏ"Remove this commented out code.(°®‘ªşÿÿÿÿ
-Y	Web:S5255/"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(Êı°
-Y	Web:S5255H"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(Êı°
-lphp:S103½"KSplit this 137 characters long line (which is greater than 120 authorized).(‚ûÃñùÿÿÿÿ8À†“‰ñ0
-gphp:S103Â"KSplit this 144 characters long line (which is greater than 120 authorized).(°É³Î8À†“‰ñ0
-:php:S113"'Add a new line at the end of this file.8À†“‰ñ0
-r	php:S4833"QReplace "require_once" with namespace import mechanism through the "use" keyword.(Ú¦•¶ùÿÿÿÿ8À†“‰ñ0
-r	php:S4833"QReplace "require_once" with namespace import mechanism through the "use" keyword.(ÈÊ³˜ùÿÿÿÿ8À†“‰ñ0

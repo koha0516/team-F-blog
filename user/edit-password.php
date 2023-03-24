@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$url = 'http://localhost/php_demo/team-F-blog/user/edit-password.php';
+$url = 'http://localhost/php_demo/team-F-blog/user/edit-password-form.php';
 $auth = uniqid();
 
 mb_language("Japanese");

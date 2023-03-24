@@ -26,32 +26,6 @@ if ($_SESSION['user_info'] !== null) {
 </head>
 
 <body>
-<!--ヘッダー　（ログイン後とログイン前で場合分け）-->
-<?php if(empty($_SESSION['user_info'])){ ?>
-<header>
-  <a href="index.php"><h1>ミジンコ</h1></a>
-  <nav class="pc-nav">
-    <ul>
-      <!--  検索窓　-->
-      <li>
-        <form action="index.php" method="get">
-          <div style="display:inline-flex">
-            <div class="cp_iptxt">
-              <label class="ef">
-                <input type="search" name="keyword" placeholder="キーワード">
-              </label>
-            </div>
-          </div>
-          <button type="submit" aria-label="検索" class="search_btn">検索</button>
-        </form>
-      </li>
-      <!--  ヘッダーナビ   -->
-      <li class="btn"><a href="../user/login-form.php">ログイン</a></li>
-      <li class="btn"><a href="../user/signUp-form.php">新規登録</a></li>
-    </ul>
-  </nav>
-</header>
-<?php }else { ?>
 <header>
   <a href="index.php"><h1>ミジンコ</h1></a>
   <nav class="pc-nav">
@@ -71,14 +45,13 @@ if ($_SESSION['user_info'] !== null) {
       </form>
       </li>
       <!--  ヘッダーナビ   -->
-      <li class="btn"><a href="#">いいね</a></li>
+      <li class="btn"><a href="../articles/like-list.php">いいね</a></li>
       <li class="btn"><a href="../articles/post-form.php">投稿</a></li>
       <li class="btn"><a href="../user/my-page.php">アカウント</a></li>
       <li class="btn"><a href="../user/logout.php">ログアウト</a></li>
     </ul>
   </nav>
 </header>
-<?php } ?>
 
 <!--コンテンツ-->
 <div class="wrapper">
