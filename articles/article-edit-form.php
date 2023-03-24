@@ -72,7 +72,6 @@ if ($article['published'] == 1) {
             </div>
           </div>
           <button type="submit" aria-label="検索" class="search_btn">検索</button>
-          <a href="../">戻る</a>
         </form>
       </li>
       <!--  ヘッダーナビ   -->

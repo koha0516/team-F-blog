@@ -210,41 +210,6 @@ table{
 	width: 100%;
 	margin:0px auto;
 }
-.cp_iptxt input[type='text'] {
-	font: 15px/24px sans-serif;
-	box-sizing: border-box;
-	width: 75%;
-   margin:15px auto;
-	padding: 0.3em;
-	transition: 0.3s;
-	letter-spacing: 1px;
-	color: #aaaaaa;
-	border: 1px solid #005B75;
-	border-radius: 4px;
-}
-.ef input[type='text']:focus {
-	border: 1px solid #005B75;
-	outline: none;
-	box-shadow: 0 0 5px 1px rgba(0, 37, 79, 0.5);
-}
-
-.cp_iptxt input[type='password'] {
-	font: 15px/24px sans-serif;
-	box-sizing: border-box;
-	width: 75%;
-   margin:15px auto;
-	padding: 0.3em;
-	transition: 0.3s;
-	letter-spacing: 1px;
-	color: #aaaaaa;
-	border: 1px solid #1b2538;
-	border-radius: 4px;
-}
-.ef input[type='password']:focus {
-	border: 1px solid #005B75;
-	outline: none;
-	box-shadow: 0 0 5px 1px rgba(0, 37, 79, 0.5);
-}
 
 .cp_iptxt input[type='search'] {
    width: 80%;
