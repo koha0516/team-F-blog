@@ -198,10 +198,11 @@ table{
    border-collapse:  collapse;
    width: 100%;
    text-align: left;
-  border-bottom:1px solid #1b2538;
+   border-bottom:1px solid #1b2538;
  }
  th, td{
    padding: 10px 20px;
+   word-break: break-all;
  }
 
 /* テキストボックス */
@@ -219,7 +220,7 @@ table{
 	padding: 0.3em;
 	transition: 0.3s;
 	letter-spacing: 1px;
-	color: #aaaaaa;
+	color: #000000;
 	border: 1px solid #005B75;
 	border-radius: 4px;
 }
