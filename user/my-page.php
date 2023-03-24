@@ -95,9 +95,9 @@ $_SESSION['articles'] = $articles;
         <td>
           <a href="../articles/browse-article.php?article_id=<?php echo $data['article_id'] ?>"><?php echo $data['title']; ?></a>
         </td>
-        <td>
+        <td style="text-align: right">
         <div class="edit_btn">
-          <a href="../articles/article-edit-form.php?article_id=<?php echo $data['article_id'] ?>" style="text-align: right">編集</a>
+          <a href="../articles/article-edit-form.php?article_id=<?php echo $data['article_id'] ?>">編集</a>
         </div>
         </td>
       </tr>
