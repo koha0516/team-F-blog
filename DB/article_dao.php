@@ -319,6 +319,7 @@ function get_likes($like_user_id) {
   }
 }
 
+
 //コメントをINSERTするメソッド
 function register_comments($article_id, $comment_user_id, $comment) {
   try {
