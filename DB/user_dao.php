@@ -190,3 +190,24 @@ function get_follows($follow_user_id) {
     $pdo = null;
   }
 }
+
+function get_followers($followed_user_id) {
+  try {
+    // sql文の構築
+    $sql = "SELECT * FROM follow WHERE followed_user_id = :followed_user_id";
+    $stm = get_connect()->prepare($sql);
+    // プレースホルダに値をバインドする
+    $stm->bindValue(':followed_user_id', $followed_user_id, PDO::PARAM_INT);
+    // sql文の実行
+    $stm->execute();
+
+    return $stm->fetchAll(PDO::FETCH_ASSOC);
+
+  } catch (PDOException $e) {
+    // エラー発生
+    echo $e->getMessage();
+  } finally {
+    // DB接続を閉じる
+    $pdo = null;
+  }
+}
