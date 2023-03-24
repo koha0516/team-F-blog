@@ -1,18 +1,20 @@
 <?php
 session_start();
-
 // htmlプレースホルダのための変数
 $name = "";
-$birth = "";
 $mail = "";
+
+if (isset($_SESSION['user_info'])) {
+  $user = $_SESSION['user_info'];
+  $name = $user['user_name'];
+  $mail = $user['user_mail'];
+}
 
 //セッションに値が入っていたらセットする
 if (isset($_SESSION['name'])) {
   $name = $_SESSION['name'];
 }
-if (isset($_SESSION['birth'])) {
-  $birth = $_SESSION['birth'];
-}
+
 if (isset($_SESSION['mail'])) {
   $mail = $_SESSION['mail'];
 }
@@ -22,9 +24,7 @@ if (isset($_SESSION['mail'])) {
 if (isset($_SESSION['error_name'])) {
   echo "<script>alert('" . $_SESSION['error_name'] . "')</script>";
 }
-if (isset($_SESSION['error_birth'])) {
-  echo "<script>alert('" . $_SESSION['error_birth'] . "')</script>";
-}
+
 if (isset($_SESSION['error_mail'])) {
   echo "<script>alert('" . $_SESSION['error_mail'] . "')</script>";
 }
@@ -44,12 +44,29 @@ if (isset($_SESSION['error_pass'])) {
 </head>
 <body>
 
+<!--  ヘッダー  -->
 <header>
-  <a href="/"><h1>ミジンコ</h1></a>
+  <a href="../index.php"><h1>ミジンコ</h1></a>
   <nav class="pc-nav">
     <ul>
-      <li class="btn"><a href="login-form.php">ログイン</a></li>
-      <li class="btn"><a href="signUp-form.php">新規登録</a></li>
+      <!--  検索窓　-->
+      <li>
+        <form action="index.php" method="get">
+          <div style="display:inline-flex">
+            <div class="cp_iptxt">
+              <label class="ef">
+                <input type="search" name="keyward" placeholder="キーワード">
+              </label>
+            </div>
+          </div>
+          <button type="submit" aria-label="検索" class="search_btn">検索</button>
+        </form>
+      </li>
+      <!--  ヘッダーナビ   -->
+      <li class="btn"><a href="#">いいね</a></li>
+      <li class="btn"><a href="../articles/post-form.php">投稿</a></li>
+      <li class="btn"><a href="my-page.php">アカウント</a></li>
+      <li class="btn"><a href="../user/logout.php">ログアウト</a></li>
     </ul>
   </nav>
 </header>
@@ -57,17 +74,11 @@ if (isset($_SESSION['error_pass'])) {
 <!--コンテンツ-->
 <div class="box">
   <h2>新規登録</h2>
-  <form action="signUp.php" method="post">
+  <form action="edit-user.php" method="post">
 
     <div class="cp_iptxt">
       <label class="ef">
-        <input type="text" name="name" placeholder="お名前"　value="<?php echo $name; ?>>
-      </label>
-    </div>
-
-    <div class="cp_iptxt">
-      <label class="ef">
-        <input type="date" name="birth" value="<?php echo $birth; ?>">
+        <input type="text" name="name" placeholder="お名前" value="<?php echo $name; ?>">
       </label>
     </div>
 
@@ -77,19 +88,8 @@ if (isset($_SESSION['error_pass'])) {
       </label>
     </div>
 
-    <div class="cp_iptxt">
-      <label class="ef">
-        <input type="password" name="pass1" placeholder="パスワード">
-      </label>
-    </div>
-
-    <div class="cp_iptxt">
-      <label class="ef">
-        <input type="password" name="pass2" placeholder="パスワードの再入力">
-      </label>
-    </div>
     <div style="display:inline-flex;">
-      <button type="submit" value="登録" class="button">登録</button>
+      <button type="submit" value="変更" class="button">変更</button>
   </form>
 
   <div class="btn2"><a href="index.php">戻る</a></div>
@@ -98,3 +98,4 @@ if (isset($_SESSION['error_pass'])) {
 
 </body>
 </html>
+

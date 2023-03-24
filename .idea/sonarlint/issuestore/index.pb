@@ -7,8 +7,6 @@ B
 DB/get_connect.php,1\6\16668789eb26f37ffda880273b198c2e698cf941
 J
 function/user_function.php,8\2\82e19492503800702f4afed19cb66c0147b65788
-?
-user/signUp.php,4\c\4cbace06f52523d8eb46c80ac15c4739df1787e2
 A
 design/index.html,a\1\a15ba7fc14306f7d779b0e9df20b1700e8b3a581
 >
@@ -38,8 +36,6 @@ I
 articles/article-edit.php,7\9\7998de980510f2c9d2ddf0f39dd104111a5902ae
 A
 articles/post.php,d\9\d978d90bc4294528f4127051864a7a8d8bd3fc1e
-D
-user/signUp-form.php,3\4\342248eeba3ee09715a4532926898d5326b3686e
 E
 css/account_style.css,e\1\e135a6fa8b86dd8188023bb2488b5343c13fb16d
 C
@@ -56,8 +52,6 @@ A
 articles/like.php,a\9\a9de4226c0f344f9cbc8122a4bd7b82366e1c43b
 F
 user/delete-follow.php,e\3\e3df2fbac02d7e0243b097d79a707ce4ea7900fc
-F
-user/edit-password.php,b\a\ba257fd0c6b9f725bcb67b7a6f70bc58ef9e15f0
 M
 articles/articles-comment.php,7\1\710adfddfc94d06cbf5ce4e2699648c4a69edd16
 D
@@ -68,8 +62,6 @@ B
 design/follow.html,7\d\7de0acd024dfff35fb3e084b0f81c66cf2482d89
 D
 css/follow_style.css,a\4\a43cc01471f8c68fb8feb472f91be86eafc9de11
-D
-user/follow-list.php,4\9\4925df4265b7ec071e3cbcc825680e8fe9cdc151
 K
 design/css/browse_style.css,0\6\061bdbf7cc54b167ce570f59f0646ef2f9d13f55
 B

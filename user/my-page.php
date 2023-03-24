@@ -67,7 +67,7 @@ $follower = get_followers($user_id);
     <?php
     echo $user['user_name'];
     ?>
-    <a href="./edit-user-info.php"><img src="../img/edit.png" class="edit-icon"></a>
+    <a href="edit-user-form.php"><img src="../img/edit.png" class="edit-icon"></a>
     <br>
     <div class="left_under">
       <div class="left2">
