@@ -43,7 +43,7 @@ $article_index = array_keys($id_array, $_GET['article_id'])[0];
 <!--ヘッダー　（ログイン後とログイン前で場合分け）-->
 <?php if (empty($_SESSION['user_info'])) { ?>
   <header>
-    <a href="../index.php"><h1>ミジンコ</h1></a>
+    <a href="/"><h1>ミジンコ</h1></a>
     <nav class="pc-nav">
       <ul>
         <!--  検索窓　-->
