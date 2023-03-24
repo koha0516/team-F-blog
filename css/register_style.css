@@ -10,6 +10,7 @@ body {
 }
 
 header {
+  z-index: 10;
   padding: 10px 4% 10px;
   position: fixed;
   top: 0;
@@ -171,9 +172,10 @@ article {
   top: 85px;
   left: 10%;
   width:70%;
-  /*height:500px;*/
+  height:500px;
   text-align:center;
-  padding:10px 50px;
+  overflow-y: scroll;
+  padding:50px;
   margin-left:20px;/*サイドバーとメインコンテンツの間に隙間をあけた*/
 }
 
@@ -198,6 +200,7 @@ table{
 th, td{
   border:1px solid #000000;
   padding: 10px 20px;
+  word-break: break-all;
 }
 
 /* テキストボックス */

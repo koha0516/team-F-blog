@@ -1,0 +1,479 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #F2EBDE;
+  }
+  
+  header {
+    z-index: 10;
+    padding: 10px 4% 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #005B75;
+    display: flex;
+    align-items: center;
+  }
+  
+  h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    color: #fff;
+  }
+  
+  h2 {
+    font-size: 30px;
+    color: #005B75;
+    padding-top: 25px;
+  }
+
+  h3 {
+    font-size: 20px;
+    color: #005B75;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #00556D;
+    display:block;
+  }
+  
+  nav {
+    margin: 0 0 0 auto;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+  }
+  
+  li {
+    margin: 0 0 0 15px;
+    font-size: 14px;
+  }
+  
+  /* カウント文字を横並び */
+  .wordcount{
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .length{
+    display: flex;
+  }
+  /* サイドバーのリスト装飾 */
+  ol.sample1{
+    counter-reset:list;
+    list-style-type:none;
+    font: 14px/1.6 'arial narrow', sans-serif;
+    padding:0;
+  }
+  ol.sample1 li{
+    position:relative;
+    padding: 0 0 0 2px;
+    margin: 5px 0 0px 0px;
+    font-weight: bold;
+    font-size:14px;
+    line-height: 30px;
+    border-bottom: dashed 1px #005B75;
+  }
+  
+  /* ボタンの装飾 */
+  .btn a {
+    background: #eee;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    width: 120px;
+    max-width: 240px;
+    padding: 10px 25px;
+    color: #313131;
+    transition: 0.3s ease-in-out;
+    font-weight: 500;
+    z-index:0;
+  }
+  .btn a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    display: block;
+    background: #74a7be;
+    transition: .3s;
+    left:0;
+  }
+  .btn a:hover {
+    color: #FFF;
+  }
+  .btn a:hover:before {
+    width: 100%;
+    z-index: -1;
+  }
+  
+  /* ボタンの装飾2 */
+  .btn2 a {
+    font-size: 14px;
+    background: #B19A7F;
+    position: relative;
+    display: inline-block;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    width: 110px;
+    max-width: 240px;
+    padding: 10px 25px;
+    color: #313131;
+    transition: 0.3s ease-in-out;
+    font-weight: 500;
+    z-index:0;
+  }
+  .btn2 a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    display: block;
+    background: #8d775e;
+    transition: .3s;
+    left:0;
+  }
+  .btn2 a:hover {
+    color: #FFF;
+  }
+  .btn2 a:hover:before {
+    width: 100%;
+    z-index: -1;
+  }
+  
+  /* コンテンツ */
+  article {
+    display:flex;/*サイドバーとメインコンテンツを横並びにする指定をした*/
+  }
+  
+  .side {
+    position: relative;
+    background:rgba(255,255,255,0.75);
+    top: 85px;
+    left: 10%;
+    width:11%;
+    height:95%;
+    text-align:center;
+  }
+  
+  .content {
+    position: relative;
+    background:rgba(255,255,255,0.75);
+    top: 85px;
+    width:70%;
+    height:500px;
+    margin: 0 auto;
+    text-align:center;
+    overflow-y: scroll;
+    padding:10px 50px;
+  }
+  
+  /* サイドバーなしの時のボックス */
+  .box {
+    background:rgba(255,255,255,0.75);
+    position: relative;
+    top: 125px;
+    width: 80%;
+    text-align:center;
+    padding-bottom:20px;
+    max-width: 500px;
+    margin:  0 auto;
+  }
+  
+  /* Table */
+  table{
+    border-collapse:  collapse;
+    width: 100%;
+    text-align: left;
+  }
+  th, td{
+    border:1px solid #000000;
+    padding: 10px 20px;
+    word-break: break-all;
+  }
+  
+  /* テキストボックス */
+  .cp_iptxt {
+    position: relative;
+    width: 100%;
+    margin:0px auto;
+  }
+  .cp_iptxt input[type='text'] {
+    font: 15px/24px sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    margin:15px auto;
+    padding: 0.3em;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    color: #000000;
+    border: 1px solid #005B75;
+    border-radius: 4px;
+  }
+  .ef input[type='text']:focus {
+    border: 1px solid #005B75;
+    outline: none;
+    box-shadow: 0 0 5px 1px rgba(0, 37, 79, 0.5);
+  }
+  
+  .cp_iptxt input[type='search'] {
+    width: 80%;
+    font: 15px/24px sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.3em;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    color: #000000;
+    border: 1px solid #005B75;
+    border-radius: 4px;
+  }
+  .ef input[type='search']:focus {
+    border: 1px solid #005B75;
+    outline: none;
+    box-shadow: 0 0 5px 1px rgba(0, 37, 79, 0.5);
+  }
+  
+  /* textarea */
+  textarea {
+    resize: none;
+    width: 100%;
+    height: 250px;
+    font: 15px/24px sans-serif;
+  }
+  
+  textarea:focus {
+    border: 1px solid #005B75;
+    outline: none;
+    box-shadow: 0 0 5px 1px rgba(0, 37, 79, 0.5);
+  }
+  
+  /* submitボタン */
+  .submit {
+    display: flex;
+  }
+  .button {
+    background: #B19A7F;
+    position: relative;
+    display:inline-block;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 10px;
+    max-width: 240px;
+    width: 110px;
+    padding: 10px 25px;
+    color: #313131;
+    transition: 0.3s ease-in-out;
+    font-weight: 500;
+    z-index:0;
+    border: none;
+  }
+  .button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    display: block;
+    background: #8d775e;
+    transition: .3s;
+    left:0;
+  }
+  
+  .button:hover {
+    color: #FFF;
+  }
+  
+  .button:hover:before{
+    width: 100%;
+    z-index: -1;
+  }
+  
+  /* 検索ボタン */
+  .search_btn {
+    background: #F2EBDE;
+    position: relative;
+    display:inline-block;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 10px;
+    max-width: 240px;
+    width: 75px;
+    padding: 10px 5px;
+    color: #313131;
+    transition: 0.3s ease-in-out;
+    font-weight: 500;
+    z-index:0;
+    border: none;
+  }
+  .search_btn::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    display: block;
+    background: #8d775e;
+    transition: .3s;
+    left:0;
+  }
+  
+  .search_btn:hover {
+    color: #FFF;
+  }
+  
+  .search_btn:hover:before{
+    width: 100%;
+    z-index: -1;
+  }
+  
+  /* スクロールバー */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #6599AF;
+  }
+  
+  
+  ::-webkit-scrollbar-track {
+    box-shadow:0 0 5px #005B75 inset ;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #DCEBDD;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #DCEBDD;
+    border: 2px outset #DCEBDD;
+  }
+  
+  /* トグルボタン */
+  /* === ボタンを表示するエリア ============================== */
+  .switchArea {
+    line-height    : 40px;                /* 1行の高さ          */
+    letter-spacing : 0;                   /* 文字間             */
+    text-align     : center;              /* 文字位置は中央     */
+    font-size      : 15px;                /* 文字サイズ         */
+  
+    position       : relative;            /* 親要素が基点       */
+    margin         : auto;                /* 中央寄せ           */
+    width          : 97px;               /* ボタンの横幅       */
+    background     : #fff;                /* デフォルト背景色   */
+  }
+  
+  /* === チェックボックス ==================================== */
+  .switchArea input[type="checkbox"] {
+    display        : none;            /* チェックボックス非表示 */
+  }
+  
+  /* === チェックボックスのラベル（標準） ==================== */
+  .switchArea label {
+    display        : block;               /* ボックス要素に変更 */
+    box-sizing     : border-box;          /* 枠線を含んだサイズ */
+    height         : 40px;                /* ボタンの高さ       */
+    border         : 2px solid #999999;   /* 未選択タブのの枠線 */
+    margin-bottom: 5px;
+  }
+  
+  /* === チェックボックスのラベル（ONのとき） ================ */
+  .switchArea input[type="checkbox"]:checked +label {
+    border-color   : #005b75;             /* 選択タブの枠線     */
+  }
+  
+  /* === 表示する文字（標準） ================================ */
+  .switchArea label span:after{
+    content        : "非公開";               /* 表示する文字       */
+    padding        : 0 0 0 24px;          /* 表示する位置       */
+    color          : #999999;             /* 文字色             */
+  }
+  
+  /* === 表示する文字（ONのとき） ============================ */
+  .switchArea  input[type="checkbox"]:checked + label span:after{
+    content        : "公開";                /* 表示する文字       */
+    padding        : 0 24px 0 0;          /* 表示する位置       */
+    color          : #005b75;             /* 文字色             */
+  }
+  
+  /* === 丸部分のSTYLE（標準） =============================== */
+  .switchArea #swImg {
+    position       : absolute;            /* 親要素からの相対位置*/
+    width          : 32px;                /* 丸の横幅           */
+    height         : 32px;                /* 丸の高さ           */
+    background     : #999999;             /* カーソルタブの背景 */
+    top            : 4px;                 /* 親要素からの位置   */
+    left           : 4px;                 /* 親要素からの位置   */
+    transition     : .2s;                 /* 滑らか変化         */
+  }
+  
+  /* === 丸部分のSTYLE（ONのとき） =========================== */
+  .switchArea input[type="checkbox"]:checked ~ #swImg {
+    transform      : translateX(57px);    /* 丸も右へ移動       */
+    background     : #005b75;             /* カーソルタブの背景 */
+  }
+  
+  /** プルダウンメニュー **/
+  .cp_ipselect {
+    overflow: hidden;
+    width: 100%;
+    margin: 5px auto;
+    text-align: center;
+  }
+  .cp_ipselect select {
+    width: 100%;
+    padding-right: 1em;
+    cursor: pointer;
+    text-indent: 0.01px;
+    text-overflow: ellipsis;
+    border: none;
+    outline: none;
+    background: transparent;
+    background-image: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .cp_ipselect select::-ms-expand {
+    display: none;
+  }
+  .cp_ipselect.cp_sl01 {
+    position: relative;
+    border: 1px solid #000000;
+    border-radius: 2px;
+    background: #ffffff;
+  }
+  .cp_ipselect.cp_sl01::before {
+    position: absolute;
+    top: 0.8em;
+    right: 0.9em;
+    width: 0;
+    height: 0;
+    padding: 0;
+    content: '';
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #000000;
+    pointer-events: none;
+  }
+  .cp_ipselect.cp_sl01 select {
+    padding: 8px 38px 8px 8px;
+    color: #000000;
+  }

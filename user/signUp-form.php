@@ -92,7 +92,7 @@ if (isset($_SESSION['error_pass'])) {
       <button type="submit" value="登録" class="button">登録</button>
   </form>
 
-  <div class="btn2"><a href="index.php">戻る</a></div>
+  <div class="btn2"><a href="../index.php">戻る</a></div>
   <br>
 </div>
 

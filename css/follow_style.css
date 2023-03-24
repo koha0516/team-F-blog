@@ -186,12 +186,14 @@ table{
    width: 80%;
    padding: 10px 20px;
    overflow-wrap: break-word;
+   word-break: break-all;
  }
  
  td{
    text-align: right;
    width: 50px;
    padding: 10px 20px;
+   word-break: break-all;
  }
 
 /* テキストボックス */
@@ -208,7 +210,7 @@ table{
 	padding: 0.3em;
 	transition: 0.3s;
 	letter-spacing: 1px;
-	color: #aaaaaa;
+	color: #000000;
 	border: 1px solid #005B75;
 	border-radius: 4px;
 }
@@ -226,7 +228,7 @@ table{
 	padding: 0.3em;
 	transition: 0.3s;
 	letter-spacing: 1px;
-	color: #aaaaaa;
+	color: #000000;
 	border: 1px solid #1b2538;
 	border-radius: 4px;
 }
@@ -244,7 +246,7 @@ table{
 	padding: 0.3em;
 	transition: 0.3s;
 	letter-spacing: 1px;
-	color: #aaaaaa;
+	color: #000000;
 	border: 1px solid #005B75;
 	border-radius: 4px;
 }
