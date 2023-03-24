@@ -65,13 +65,17 @@ $_SESSION['articles'] = $articles;
     <?php
     echo $user['user_name'];
     ?>
+    <a href="./edit-user-info.php"><img src="../img/edit.png" class="edit-icon"></a>
     <br>
     <div class="left_under">
       <div class="left2">
-        フォロワー：〇人
+        フォロワー：<?php echo count($articles) ?>人
       </div>
       <div class="right2">
-        投稿した記事：<?php echo count($articles) ?>件
+        投稿：<?php echo count($articles) ?>件
+      </div>
+      <div class="left2">
+        <a href="./follow-list.php">フォローリスト</a>
       </div>
     </div>
   </div>

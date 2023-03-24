@@ -180,8 +180,10 @@ article {
 }
 
 .left_under{
+  position: relative;
+  top: -2rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .content {
@@ -395,4 +397,12 @@ th, td{
 ::-webkit-scrollbar-thumb {
   background: #DCEBDD;
   border: 2px outset #DCEBDD;
+}
+
+.edit-icon{
+  width: 20px;
+  height: 20px;
+  position: relative;
+  left: 50px;
+  top: -1.5rem;
 }

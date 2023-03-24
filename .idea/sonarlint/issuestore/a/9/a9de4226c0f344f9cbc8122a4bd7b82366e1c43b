@@ -1,0 +1,4 @@
+
+P	php:S1808"6Put exactly one space after comma separated arguments.(ÕÚ¯Ãûÿÿÿÿ
+c	php:S1779"OReplace all non line feed end of line characters in this file "like.php" by LF.8“Ø¹ãï0
+k	php:S4833"QReplace "require_once" with namespace import mechanism through the "use" keyword.(ÈÊ³˜ùÿÿÿÿ
