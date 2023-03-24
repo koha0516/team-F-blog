@@ -27,6 +27,28 @@
     }
   }
 
+function edit_user($user_id, $name, $mail) {
+  try {
+    // sql文の構築
+    $sql = "UPDATE users SET user_name = :user_name, user_mail = :user_mail WHERE user_id = :user_id";
+    $stm = get_connect()->prepare($sql);
+    // プレースホルダに値をバインドする
+    $stm->bindValue(":user_id", $user_id, PDO::PARAM_INT);
+    $stm->bindValue(":user_name", $name, PDO::PARAM_STR);
+    $stm->bindValue(":user_mail", $mail, PDO::PARAM_STR);
+    // sql文の実行
+    $stm->execute();
+
+    return true;
+  } catch (PDOException $e) {
+    // エラー発生
+    echo $e->getMessage();
+  } finally {
+    // DB接続を閉じる
+    $pdo = null;
+  }
+}
+
 //  ソルトを生成する関数
   function get_salt($name) {
     try {
@@ -177,6 +199,27 @@ function get_follows($follow_user_id) {
     $stm = get_connect()->prepare($sql);
     // プレースホルダに値をバインドする
     $stm->bindValue(':follow_user_id', $follow_user_id, PDO::PARAM_INT);
+    // sql文の実行
+    $stm->execute();
+
+    return $stm->fetchAll(PDO::FETCH_ASSOC);
+
+  } catch (PDOException $e) {
+    // エラー発生
+    echo $e->getMessage();
+  } finally {
+    // DB接続を閉じる
+    $pdo = null;
+  }
+}
+
+function get_followers($followed_user_id) {
+  try {
+    // sql文の構築
+    $sql = "SELECT * FROM follow WHERE followed_user_id = :followed_user_id";
+    $stm = get_connect()->prepare($sql);
+    // プレースホルダに値をバインドする
+    $stm->bindValue(':followed_user_id', $followed_user_id, PDO::PARAM_INT);
     // sql文の実行
     $stm->execute();
 

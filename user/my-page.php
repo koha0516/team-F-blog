@@ -15,6 +15,8 @@ if (isset($_SESSION['user_info'])) {
 //dbからデータを取得(記事とタグ)
 $articles = get_own_articles($user_id);
 $_SESSION['articles'] = $articles;
+
+$follower = get_followers($user_id);
 ?>
 
 
@@ -65,11 +67,11 @@ $_SESSION['articles'] = $articles;
     <?php
     echo $user['user_name'];
     ?>
-    <a href="./edit-user-info.php"><img src="../img/edit.png" class="edit-icon"></a>
+    <a href="edit-user-form.php"><img src="../img/edit.png" class="edit-icon"></a>
     <br>
     <div class="left_under">
       <div class="left2">
-        フォロワー：<?php echo count($articles) ?>人
+        フォロワー：<?php echo count($follower) ?>人
       </div>
       <div class="right2">
         投稿：<?php echo count($articles) ?>件

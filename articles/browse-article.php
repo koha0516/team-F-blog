@@ -10,7 +10,7 @@ require_once '../DB/article_dao.php';
 $article = get_article($_GET['article_id']);
 $tags = get_tags();
 
-if ($_SESSION['user_info'] !== null) {
+if (!empty($_SESSION['user_info'])) {
 //  ログイン情報取得
   $user = $_SESSION['user_info'];
 //　いいね情報取得
