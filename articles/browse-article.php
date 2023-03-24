@@ -19,6 +19,10 @@ if ($_SESSION['user_info'] !== null) {
   $follow = check_follow($user['user_id'], $article['user_id']);
 }
 
+//dbからコメントを取得
+$comments = [];
+$comments = get_comments($_GET['article_id']);
+
 // 記事のインデックス番号取得
 $articles = $_SESSION['articles'];
 $id_array = array_column($articles, 'article_id');
@@ -139,7 +143,20 @@ $article_index = array_keys($id_array, $_GET['article_id'])[0];
         <!--  コメント欄  -->
         <div class="box2">
           <div class="co">
-            <div id="return"></div>
+            <table id="return">
+            <?php
+            foreach(array_reverse($comments) as $data){
+            ?> 
+            <tr>
+              <td>
+                <p><?php echo $data['user_name']; ?></p>
+                <p><?php echo $data['comment_content']; ?></p>
+              </td>
+            </tr>
+            <?php
+            }
+            ?>
+            </table>
           </div>
         </div>
         　　　　　<!--  コメント入力フォーム　　-->
@@ -149,7 +166,7 @@ $article_index = array_keys($id_array, $_GET['article_id'])[0];
                 <input type="text" name="comment" placeholder="コメント" id="comment">
               </label>
             </div>
-            <button type="submit" aria-label="送信" class="comment_btn" id="send">送信</button>
+              <button type="submit" aria-label="送信" class="comment_btn" id="send">送信</button>
           </div>
 
         <script>
@@ -157,16 +174,30 @@ $article_index = array_keys($id_array, $_GET['article_id'])[0];
         $(function(){
           $("#send").on("click", function(event){//ボタンが押された時に動作
             let comment = $("#comment").val();
+            console.log(comment);
+            console.log(window.location.search);
+            const searchParams = new URLSearchParams(window.location.search);
+            let article_id = searchParams.get('article_id');
             $.ajax({
               type: "POST",
               url: "articles-comment.php",
               dataType: "json",
-              data: {comment:comment,name:name}
+              data: {comment:comment,name:name,article_id:article_id}
             }).done(function(data){
               console.log(data.comment);
-              $("#return").append('<p>'+data.comment+':'+data.name+'</p>');
+              console.log('成功しました');
+              /* 
+              <tr>
+              <td>
+                <p><?php echo $data['user_name']; ?></p>
+                <p><?php echo $data['comment_content']; ?></p>
+              </td>
+              </tr>
+              */
+              $("#return").prepend('<tr><td><p>'+data.name+'</p><p>'+data.comment+'</p></td></tr>');
             }).fail(function(XMLHttpRequest, status, e){
               console.log(e);
+              console.log('失敗しました');
             });
           });
         });
